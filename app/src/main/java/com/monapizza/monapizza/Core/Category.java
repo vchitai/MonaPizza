@@ -10,18 +10,20 @@ public class Category {
     String m_icon;
 
     Category(String name, String level, String icon) {
-
+        m_name = name;
+        m_level = level;
+        m_icon = icon;
     }
 
     String getName() {
-        return "";
+        return m_name;
     }
 
     String getLevel() {
-        return "";
+        return m_level;
     }
 
     String getIcon() {
-        return "";
+        return m_icon;
     }
 }

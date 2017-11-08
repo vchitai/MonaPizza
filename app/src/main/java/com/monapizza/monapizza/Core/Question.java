@@ -15,34 +15,66 @@ import java.util.ArrayList;
     - Ham getType tra ve loai cau hoi, UI se dua vao do de phat sinh.
  */
 
+/*
+    Cac loai question ung voi type:
+    0: Cho tu tieng anh, chon 4 dap an tieng viet.
+    1: Cho file am thanh tieng anh, chon 4 dap an tieng anh.
+    2: Cho file hinh anh, chon dap an tieng anh.
+    3: Cho tu tieng viet, chon 4 dap an tieng anh.
+ */
+
 public class Question {
 
+    public static final int numberOfTypeQuestion = 4;
+
     // Loai cau hoi, dung de khoi tao UI tuong ung cho tung cau hoi
-    int type;
+    int m_type;
 
     ArrayList<Word> m_words;
 
-    Question(ArrayList<Word> words) {
+    // Chi tao mot khoi tao duy nhat
+    private Question() {}
 
+    Question(int type, ArrayList<Word> words) {
+        m_type = type;
+        m_words = (ArrayList<Word>)words.clone();
     }
 
-    String getQuestion() {
-        return "";
+    /*
+        Cac ham get duoi day phuc vu cho viec hien thi
+     */
+
+    // Lay tu tieng anh tu o thu thu i
+    String getEnglish(int i) {
+        return m_words.get(i).getEnglish();
     }
 
-    ArrayList<String> getAnswers() {
-        return new ArrayList<String>();
+    // Lay tu tieng viet tu word i
+    String getVietnamese(int i) {
+        return m_words.get(i).getVietnamese();
     }
 
-    int getCorrectAnswer() {
-        return 0;
+    // lay picture tu word i
+    String getPicture(int i) {
+        return m_words.get(i).getPicture();
     }
 
-    int getTypeAnswer() {
-        return 0;
+    // Lay file am thanh tu word i
+    String getSound(int i) {
+        return m_words.get(i).getSound();
     }
 
+    // Loai cau hoi
     int getTypeQuestion() {
-        return 0;
+        return m_type;
+    }
+
+    // Kiem tra ket qua tu nguoi dung
+    // id: Id cua tu ma nguoi dung chon
+    Boolean checkAnswer(int id) {
+        if (id == m_words.get(0).getId())
+            return true;
+        else
+            return false;
     }
 }

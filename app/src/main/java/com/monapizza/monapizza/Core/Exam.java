@@ -1,6 +1,7 @@
 package com.monapizza.monapizza.Core;
 
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by chita on 01/11/2017.
@@ -16,27 +17,75 @@ import java.util.ArrayList;
     tu list m_words), truyen cho UI
  */
 
+/*
+    Cac loai question ung voi type:
+    0: Cho tu tieng anh, chon 4 dap an tieng viet.
+    1: Cho file am thanh tieng anh, chon 4 dap an tieng anh.
+    2: Cho file hinh anh, chon dap an tieng anh.
+    3: Cho tu tieng viet, chon 4 dap an tieng anh.
+ */
+
 public class Exam {
+    // Danh sach cac tu trong bai hoc lesson cua category
     ArrayList<Word> m_words;
 
+    // loai category
     int m_category;
+
+    // loai lesson
     int m_lesson;
-    int m_level;
 
-    Exam(int numberOfCorrectAnswer, int category, int lesson, int level) {
+    // so cau da tra loi dung (bien nay de chon ra tu tiep theo de hoc
+    // chon tu chua hoc hoac random chon mot tu khi da hoc het
+    int m_numWords;
 
+    // tao duy nhat mot loai khoi tao
+    private Exam() {}
+
+    Exam(int category, int lesson) {
+        m_category = category;
+        m_lesson = lesson;
+        m_numWords = 0;
+
+        // Khoi tao m_words
+        // ********** chua co database
+        // m_words = database.getWordInLesson(category, lesson)
     }
 
-    void setAnswer(int index, int answer) {
-
-    }
-
+    // tra ve mot question hien thi
     Question getQuestion(int index) {
-        return new Question(new ArrayList<Word>());
+        int type = ThreadLocalRandom.current().nextInt(0, Question.numberOfTypeQuestion + 1);
+
+        if (m_numWords < m_words.size()) {
+            ArrayList<Word> new_list = new ArrayList<Word>();
+            new_list.add(m_words.get(m_numWords));
+
+            // Ham nay lay 3 tu bat ki trong data base ma khac voi id cua tu hien tai
+            //ArrayList<Word> otherThreeWords = database.getThreeRandomWords(m_words.get(m_numWords).getId());
+
+            //new_list.addAll(otherThreeWords);
+
+            Question q = new Question(type, new_list);
+
+            ++m_numWords;
+
+            return q;
+        }
+        else {
+            int pos = ThreadLocalRandom.current().nextInt(0, m_words.size());
+            ArrayList<Word> new_list = new ArrayList<Word>();
+            new_list.add(m_words.get(pos));
+
+            // Ham nay lay 3 tu bat ki trong data base ma khac voi id cua tu hien tai
+            //ArrayList<Word> otherThreeWords = database.getThreeRandomWords(m_words.get(pos).getId());
+
+            //new_list.addAll(otherThreeWords);
+
+            Question q = new Question(type, new_list);
+
+            return q;
+        }
     }
 
-    boolean getResult() {
-        return false;
-    }
 }
 

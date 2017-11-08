@@ -15,7 +15,7 @@ public class User {
     int       m_level;
 
     // Ket qua qua trinh hoc tap
-    ArrayList<ArrayList<String>> m_checkList;
+    ArrayList<ArrayList<Boolean>> m_checkList;
 
     User(String name){
 
@@ -30,7 +30,8 @@ public class User {
     }
 
     void pass(int category, int lesson) {
-
+        ArrayList<Boolean> new_category = m_checkList.get(category);
+        new_category.set(lesson, true);
     }
 
 }
