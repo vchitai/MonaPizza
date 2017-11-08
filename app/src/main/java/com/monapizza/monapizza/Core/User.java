@@ -7,8 +7,14 @@ import java.util.ArrayList;
  */
 
 public class User {
+
+    // Username
     String    m_name;
+
+    // Cap do
     int       m_level;
+
+    // Ket qua qua trinh hoc tap
     ArrayList<ArrayList<String>> m_checkList;
 
     User(String name){
