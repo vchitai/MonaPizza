@@ -72,9 +72,6 @@ public class Question {
     // Kiem tra ket qua tu nguoi dung
     // id: Id cua tu ma nguoi dung chon
     Boolean checkAnswer(int id) {
-        if (id == m_words.get(0).getId())
-            return true;
-        else
-            return false;
+        return id == m_words.get(0).getId();
     }
 }
