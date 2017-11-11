@@ -5,6 +5,10 @@
     <string name="friends_fragment_title">Friends</string>
     <string name="shopping_fragment_title">Shopping</string>
 
+    <string name="lessons_title">Lesson Title</string>
+    <string name="lessons_words">Words in this lesson</string>
+    <string name="lessons_start_button">Start</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
