@@ -8,4 +8,28 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:minWidth">@dimen/button_min_width</item>
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:layout_margin">@dimen/padding_small</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/textColorAccent</item>
+        <item name="android:textSize">@dimen/text_size_subheading</item>
+        <item name="app:elevation">@dimen/elevator_button</item>
+    </style>
+
+    <style name="TextInputLayoutStyle">
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:layout_margin">@dimen/padding_small</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+    </style>
+
 </resources>

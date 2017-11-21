@@ -1,4 +1,4 @@
-package com.monapizza.monapizza.UI;
+package com.monapizza.monapizza.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

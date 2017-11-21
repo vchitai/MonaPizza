@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.monapizza.monapizza.ui.GuestLoginActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/guest_login_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent">
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/welcome_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_logo"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="bold"
+        android:elevation="0px"
+        app:layout_constraintTop_toTopOf="@id/guest_login_toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guest_login_welcome"/>
+
+    <TextView
+        android:id="@+id/guest_login_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/guest_login_welcome"
+        android:padding="@dimen/padding_small"
+        android:layout_marginLeft="@dimen/padding_medium"
+        android:layout_marginRight="@dimen/padding_medium"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_subheading"
+        app:layout_constraintBottom_toTopOf="@id/guest_login_guideline"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guest_login_guideline"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5"/>
+
+    <EditText
+        android:id="@+id/guest_login_username_textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_medium"
+        android:layout_marginRight="@dimen/padding_medium"
+        android:layout_marginBottom="@dimen/padding_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guest_login_guideline">
+    </EditText>
+
+    <Button
+        android:id="@+id/guest_login_guest_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/ButtonStyle"
+        android:text="@string/welcome_guest_login_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guest_login_username_textInputLayout"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,7 +1,7 @@
-package com.monapizza.monapizza.Database;
+package com.monapizza.monapizza.database;
 
-import com.monapizza.monapizza.Core.Category;
-import com.monapizza.monapizza.Core.Word;
+import com.monapizza.monapizza.core.Category;
+import com.monapizza.monapizza.core.Word;
 
 import java.util.ArrayList;
 

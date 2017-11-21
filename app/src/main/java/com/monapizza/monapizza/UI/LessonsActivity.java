@@ -1,11 +1,11 @@
-package com.monapizza.monapizza.UI;
+package com.monapizza.monapizza.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.monapizza.monapizza.Core.Word;
+import com.monapizza.monapizza.core.Word;
 import com.monapizza.monapizza.R;
 
 import java.util.ArrayList;

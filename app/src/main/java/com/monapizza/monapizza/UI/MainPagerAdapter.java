@@ -1,4 +1,4 @@
-package com.monapizza.monapizza.UI;
+package com.monapizza.monapizza.ui;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;

@@ -5,41 +5,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.monapizza.monapizza.UI.QuizActivity">
-    <android.support.constraint.PlaceHolder
+    tools:context="com.monapizza.monapizza.ui.QuizActivity">
+    <TextView
         android:id="@+id/place_holder_1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintTop_toTopOf="parent"/>
-    <android.support.constraint.PlaceHolder
-        android:id="@+id/place_holder_2"
+    <ImageButton
+        android:id="@+id/answers_button1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/place_holder_1"
-        app:layout_constraintBottom_toTopOf="@id/place_holder_3"/>
-    <android.support.constraint.PlaceHolder
-        android:id="@+id/place_holder_3"
+        app:layout_constraintBottom_toTopOf="@id/answers_button3"/>
+    <ImageButton
+        android:id="@+id/answers_button3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
-    <android.support.constraint.PlaceHolder
-        android:id="@+id/place_holder_4"
+    <ImageButton
+        android:id="@+id/answers_button2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/place_holder_1"
-        app:layout_constraintBottom_toTopOf="@id/place_holder_5"/>
-    <android.support.constraint.PlaceHolder
-        android:id="@+id/place_holder_5"
+        app:layout_constraintBottom_toTopOf="@id/answers_button4"/>
+    <ImageButton
+        android:id="@+id/answers_button4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"

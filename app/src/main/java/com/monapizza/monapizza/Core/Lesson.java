@@ -1,4 +1,4 @@
-package com.monapizza.monapizza.Core;
+package com.monapizza.monapizza.core;
 
 import java.util.ArrayList;
 

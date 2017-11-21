@@ -1,4 +1,4 @@
-package com.monapizza.monapizza.Core;
+package com.monapizza.monapizza.core;
 
 /**
  * Created by chita on 01/11/2017.

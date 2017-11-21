@@ -1,4 +1,4 @@
-package com.monapizza.monapizza.UI;
+package com.monapizza.monapizza.ui;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;

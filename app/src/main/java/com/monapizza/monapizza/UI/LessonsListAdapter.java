@@ -1,4 +1,4 @@
-package com.monapizza.monapizza.UI;
+package com.monapizza.monapizza.ui;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.monapizza.monapizza.Core.Lesson;
+import com.monapizza.monapizza.core.Lesson;
 import com.monapizza.monapizza.R;
 
 import java.util.ArrayList;
