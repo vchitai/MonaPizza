@@ -29,6 +29,9 @@ public class Exam {
     // Danh sach cac tu trong bai hoc lesson cua category
     ArrayList<Word> m_words;
 
+    // level cua Exam
+    int m_level;
+
     // loai category
     int m_category;
 
@@ -42,7 +45,8 @@ public class Exam {
     // tao duy nhat mot loai khoi tao
     private Exam() {}
 
-    Exam(int category, int lesson) {
+    Exam(int level, int category, int lesson) {
+        m_level = level;
         m_category = category;
         m_lesson = lesson;
         m_numWords = 0;
@@ -86,6 +90,8 @@ public class Exam {
             return q;
         }
     }
+
+
 
 }
 
