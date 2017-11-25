@@ -8,8 +8,8 @@
     tools:context="com.monapizza.monapizza.ui.LoginActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/login_toolbar"
-        android:minHeight="?attr/actionBarSize"
-        android:layout_height="?attr/actionBarSize"
+        android:minHeight="?android:attr/actionBarSize"
+        android:layout_height="?android:attr/actionBarSize"
         android:layout_width="match_parent">
     </android.support.v7.widget.Toolbar>
 
