@@ -1,29 +1,42 @@
 package com.monapizza.monapizza.core;
 
+import com.monapizza.monapizza.database.DbHelper;
+
 /**
  * Created by chita on 01/11/2017.
  */
 
 public class Category {
-    String m_name;
-    String m_level;
-    String m_icon;
+    // ten category
+    private String m_name;
 
-    Category(String name, String level, String icon) {
+    // level cua category nay
+    private int m_level;
+
+    // link icon de hien thi
+    private String m_icon;
+
+
+    private Category() {}
+
+    // Khoi tao lop Category voi id = category
+    public Category(String name, int level, String icon) {
         m_name = name;
         m_level = level;
         m_icon = icon;
     }
 
-    String getName() {
+    // cac ham get ho tro truy xuat
+
+    public String getName() {
         return m_name;
     }
 
-    String getLevel() {
+    public int getLevel() {
         return m_level;
     }
 
-    String getIcon() {
+    public String getIcon() {
         return m_icon;
     }
 }

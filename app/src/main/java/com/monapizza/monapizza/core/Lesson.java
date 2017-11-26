@@ -1,47 +1,42 @@
 package com.monapizza.monapizza.core;
 
+import com.monapizza.monapizza.database.DbHelper;
+
 import java.util.ArrayList;
 
 /**
  * Created by chita on 11/11/2017.
  */
 
+// Lop lesson, phuc vu muc dich hien thi
+
 public class Lesson {
     // category id
-    int m_category;
+    private int m_category;
 
     // lesson id
-    int m_lesson;
+    private int m_lesson;
 
     // lesson name
-    String m_name;
+    private String m_name;
 
     // list of words in lesson
-    ArrayList<String> m_wordsList;
+    private ArrayList<String> m_wordsList;
 
     private Lesson() {}
 
-    public Lesson(int category, int lesson) {
+    public Lesson(int category, int lesson, ArrayList<String> wordsList) {
         m_category = category;
         m_lesson = lesson;
-
-        // Chua co database
-        /*
-        m_wordsList = database.getWordInLevel(category, lesson);
-
-        int numberLessonInCategory = database.getNumberOfLesson(category);
-
-        m_name = Integer.toString(lesson) + "/" + Integer.toString(numberLessonInCategory);
-        */
-
-        m_name = "Chua co ten";
+        m_name = "Lesson" + Integer.toString(lesson);
+        m_wordsList = wordsList;
     }
 
-    ArrayList<String> getWordsList() {
+    public ArrayList<String> getWordsList() {
         return m_wordsList;
     }
 
-    String getName() {
+    public String getName() {
         return m_name;
     }
 }

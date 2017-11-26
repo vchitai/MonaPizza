@@ -6,30 +6,30 @@ package com.monapizza.monapizza.core;
 
 public class Word {
     // Id in database
-    int m_wordId;
+    private int m_wordId;
 
     // English word
-    String m_english;
+    private String m_english;
 
     // Vietnamese word
-    String m_vietnamese;
+    private String m_vietnamese;
 
     // Picture link
-    String m_picture;
+    private String m_picture;
 
     // Sound link
-    String m_sound;
+    private String m_sound;
 
     // Category id
-    int m_category;
+    private int m_category;
 
     // Lesson id
-    int m_lesson;
+    private int m_lesson;
 
     // Chi khoi tao bang mot cach
     private Word() {}
 
-    Word(int id, String eng, String vie, String pic, String sou, int cat, int les) {
+    public Word(int id, String eng, String vie, String pic, String sou, int cat, int les) {
         m_wordId = id;
         m_english = eng;
         m_vietnamese = vie;
@@ -43,31 +43,31 @@ public class Word {
         Cac ham get thuoc tinh
      */
 
-    int getId() {
+    public int getId() {
         return m_wordId;
     }
 
-    String getEnglish() {
+    public String getEnglish() {
         return m_english;
     }
 
-    String getVietnamese() {
+    public String getVietnamese() {
         return m_vietnamese;
     }
 
-    String getPicture() {
+    public String getPicture() {
         return m_picture;
     }
 
-    String getSound() {
+    public String getSound() {
         return m_sound;
     }
 
-    int getCategory() {
+    public int getCategory() {
         return m_category;
     }
 
-    int getLesson() {
+    public int getLesson() {
         return m_lesson;
     }
 }

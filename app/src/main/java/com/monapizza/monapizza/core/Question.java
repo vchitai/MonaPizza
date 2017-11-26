@@ -29,19 +29,19 @@ public class Question {
     public static final int numberOfTypeQuestion = 4;
 
     // Loai cau hoi, dung de khoi tao UI tuong ung cho tung cau hoi
-    int m_type;
+    private int m_type;
 
     // Id Word tuong ung dap an trong cau hoi
-    int m_idAnswer;
+    private int m_idAnswer;
 
     // Danh sach cac tu trong cau hoi
-    ArrayList<Word> m_words;
+    private ArrayList<Word> m_words;
 
     // Chi tao mot khoi tao duy nhat
     private Question() {}
 
     // Ham khoi tao mot cau hoi - xao tron cac dap an
-    Question(int type, ArrayList<Word> words) {
+    public Question(int type, ArrayList<Word> words) {
         m_type = type;
         m_words = (ArrayList<Word>)words.clone();
 
@@ -65,23 +65,23 @@ public class Question {
     }
 
     // Lay tu tuong ung trong cau hoi - chi so wordId
-    Word getWord(int wordId) {
+    public Word getWord(int wordId) {
         return m_words.get(wordId);
     }
 
     // Loai cau hoi
-    int getQuestionType() {
+    public int getQuestionType() {
         return m_type;
     }
 
     // Kiem tra ket qua tu nguoi dung
     // id: Id cua tu ma nguoi dung chon
-    Boolean checkAnswer(int id) {
+    public Boolean checkAnswer(int id) {
         return id == m_idAnswer;
     }
 
     // Lay chi so cua dap an - hien thi
-    int getAnswerId() {
+    public int getAnswerId() {
         return m_idAnswer;
     }
 
@@ -93,7 +93,7 @@ public class Question {
         2: Cho file hinh anh, chon dap an tieng anh.
         3: Cho tu tieng viet, chon 4 dap an tieng anh.
     */
-    String getQuestion() {
+    public String getQuestion() {
         switch (m_type) {
             case 0:
                 return m_words.get(m_idAnswer).getEnglish();
@@ -112,9 +112,8 @@ public class Question {
         }
     }
 
-
     // Lay chi tiet cau tra loi tuong ung voi tung loai cau hoi m_type
-    ArrayList<String> getAnswer() {
+    public ArrayList<String> getAnswer() {
         ArrayList<String> res = new ArrayList<String>();
         switch (m_type) {
             case 0:
@@ -147,7 +146,7 @@ public class Question {
             0: cau tra loi dang text
             1: cau tra loi dang hinh anh
      */
-    int getAnswerType() {
+    public int getAnswerType() {
         switch (m_type) {
             case 0:
                 return 0;
@@ -162,5 +161,6 @@ public class Question {
                 return -1;
         }
     }
+
 
 }
