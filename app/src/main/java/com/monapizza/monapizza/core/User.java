@@ -1,6 +1,7 @@
 package com.monapizza.monapizza.core;
 
 import com.monapizza.monapizza.database.DbHelper;
+import com.monapizza.monapizza.core.ErrorList;
 
 import java.util.ArrayList;
 
@@ -28,7 +29,7 @@ public class User {
     private ArrayList<ArrayList<Boolean>> m_checkList;
 
     // Tien
-    private int money;
+    private int m_money;
 
     // Danh sach ban be
     //private ArrayList<> friends;
@@ -46,40 +47,57 @@ public class User {
 
     // Kiem tra tinh dung dan cua Username va Password trong database
     private Boolean checkUserPass(String userName, String password, DbHelper database) {
-        return false;
+        return database.checkPassword(userName, password);
     }
 
     // Load thong tin cua user voi ten la userName tu database
     private void loadUserInfo(String userName, DbHelper database) {
         m_logined = true;
-        return;
+
+        m_name = userName;
+        m_money = database.loadMoney(userName);
+        m_checkList = database.loadCheckList(userName);
+        m_level = database.loadLevel(userName);
     }
 
     // kiem tra dang nhap nguoi dung
     // Tra ve:
-    //      false: login that bai, (sai tai khoan, mat khau).
-    //      true: login thanh cong, da load data tu database cua user vao cac truong luu tru phia tren.
-    public boolean signIn(String userName, String password, DbHelper database) {
+    //      < 0: loi, xem loi tuong ung trong file ErrorList.java
+    //      1: login thanh cong, da load data tu database cua user vao cac truong luu tru phia tren.
+    public int signIn(String userName, String password, DbHelper database) {
+        if (database.isExistingUser(userName) == false)
+            return ErrorList.USERNAME_NOT_EXISTED;
+
         if (checkUserPass(userName, password, database)) {
             loadUserInfo(userName, database);
-            return true;
+            return 1;
         }
-        return false;
+        else
+            return ErrorList.WRONG_PASSWORD;
     }
 
     // Dang ky nguoi dung moi
-    private void signUp(String userName, String password, DbHelper database) {
-        // khoi tao user moi
-        // cap nhat user vao database.
+    // Tra ve:
+    //      < 0: loi, xem loi tuong ung trong file ErrorList.java
+    //      1: login thanh cong, da load data tu database cua user vao cac truong luu tru phia tren.
+    private int signUp(String userName, String password, DbHelper database) {
+        int id = database.addUser(userName, password);
+        if (id < 1) return id;
+        signIn(userName, password, database);
+        return 1;
     }
 
     // Dang xuat
-    private void logOut() {
-        // Ham dang xuat
-
-        // Luu tru thong tin user xuong database.
-        //
+    private void logOut(DbHelper database) {
         m_logined = false;
+
+        database.updateAllInfo(m_name, m_level, m_checkList, m_money);
+
+        m_level = 0;
+        m_checkList.clear();
+        m_name = "";
+        m_money = 0;
+
     }
 
     // Mua vat pham
@@ -106,27 +124,28 @@ public class User {
 
     // Cap nhat tien trinh hoc cua user
     // Cai nay con xung doi cho luu level la gi
-    public void updateLearningProcess(int level, int category, int lesson) {
+    public void updateLearningProcess(int level, int category, int lesson, DbHelper database) {
         m_level = Math.max(m_level, level);
         if (level != -1) {
             for(int i = 0; i < level - 1; ++i)
                 for(int j = 0; j < m_checkList.get(i).size(); ++j)
                     m_checkList.get(i).set(j, true);
 
-            // goi ham cap nhat database cho user
+            database.updateLearningProcess(m_name, m_checkList);
+
             return;
         }
         if (level == -1 && category != -1 && lesson == -1) {
             for(int i = 0; i < m_checkList.get(category).size(); ++i)
                 m_checkList.get(category).set(i, true);
 
-            // goi ham cap nhat database cho user
+            database.updateLearningProcess(m_name, m_checkList);
             return;
         }
         if (level == -1 && category != -1 && lesson != -1) {
             m_checkList.get(category).set(lesson, true);
 
-            // goi ham cap nhat database cho user
+            database.updateLearningProcess(m_name, m_checkList);
             return;
         }
     }
@@ -138,7 +157,7 @@ public class User {
     }
 
     public int getMoney() {
-        return money;
+        return m_money;
     }
 
     public ArrayList<ArrayList<Boolean>> getCheckList() {
