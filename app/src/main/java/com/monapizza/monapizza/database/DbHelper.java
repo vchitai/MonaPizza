@@ -320,8 +320,10 @@ public class DbHelper extends SQLiteOpenHelper {
         c.moveToFirst();
 
         while (!c.isAfterLast()) {
-            if (user.equals(c.getString(c.getColumnIndex("Username"))))
+            if (user.equals(c.getString(c.getColumnIndex("Username")))) {
                 exist = true;
+                break;
+            }
         }
         c.close();
         db.close();
@@ -338,8 +340,10 @@ public class DbHelper extends SQLiteOpenHelper {
         c.moveToFirst();
         String password = "";
         while (!c.isAfterLast()) {
-            if (userName.equals(c.getString(c.getColumnIndex("Username"))))
-                password = c.getString(c.getColumnIndex("Username"));
+            if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
+                password = c.getString(c.getColumnIndex("Password"));
+                break;
+            }
         }
         c.close();
         db.close();
@@ -406,7 +410,6 @@ public class DbHelper extends SQLiteOpenHelper {
     public int updateLearningProcess(String username, ArrayList<ArrayList<Boolean>> checkList) {
         String s = convertCheckList2String(checkList);
         //cap nhat checkList database
-        
 
         return 1;
     }
@@ -444,18 +447,61 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // Lay level nguoi dung trong database
     public int loadLevel(String username) {
-
-        return 0;
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        int level = -1;
+        while (!c.isAfterLast()) {
+            if (username.equals(c.getString(c.getColumnIndex("Username")))) {
+                level = c.getInt(c.getColumnIndex("Level"));
+                break;
+            }
+        }
+        c.close();
+        db.close();
+        return level;
     }
 
     // Lay thong tin checklist cua user trong database
     public ArrayList<ArrayList<Boolean>> loadCheckList(String username) {
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        String checkList = "";
+        while (!c.isAfterLast()) {
+            if (username.equals(c.getString(c.getColumnIndex("Username")))) {
+                checkList = c.getString(c.getColumnIndex("CheckList"));
+                break;
+            }
+        }
+        c.close();
+        db.close();
+
+        //convert tu string checkList -> ArrayList<ArrayList<Boolean>
 
         return new ArrayList<ArrayList<Boolean>>();
     }
 
     // Lay thong tin tien cua user trong database
     public int loadMoney(String username) {
-        return 0;
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        int money = -1;
+        while (!c.isAfterLast()) {
+            if (username.equals(c.getString(c.getColumnIndex("Username")))) {
+                money = (int)c.getFloat(c.getColumnIndex("UserMoney"));
+                break;
+            }
+        }
+        c.close();
+        db.close();
+        return money;
     }
 }
