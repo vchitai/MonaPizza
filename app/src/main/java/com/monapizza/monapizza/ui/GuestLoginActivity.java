@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.monapizza.monapizza.R;
+import com.monapizza.monapizza.core.User;
 
 public class GuestLoginActivity extends AppCompatActivity {
 
@@ -24,6 +25,8 @@ public class GuestLoginActivity extends AppCompatActivity {
         guestLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                User usr = User.getInstance();
+
                 Intent intent = new Intent(context,MainActivity.class);
                 startActivity(intent);
             }

@@ -40,6 +40,8 @@
             android:name=".ui.SignupActivity"
             android:theme="@style/AppTheme_NoActionBar">
         </activity>
+        <activity android:name=".ExamActivity">
+        </activity>
     </application>
 
 </manifest>

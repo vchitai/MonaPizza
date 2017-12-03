@@ -20,6 +20,13 @@
     <string name="guest_login_welcome">Hello! \nPlease enter your name to enter</string>
     <string name="signup_username">Username</string>
     <string name="signup_password">Password</string>
+
+    <string name="friend_avatar">Avatar</string>
+    <string name="friend_name">Name</string>
+    <string name="friend_summary">Summary</string>
+
+    <string name="lecture_icon">Icon</string>
+    <string name="lecture_name">Name</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
