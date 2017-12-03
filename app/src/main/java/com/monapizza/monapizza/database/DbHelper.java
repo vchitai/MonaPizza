@@ -1,5 +1,6 @@
 package com.monapizza.monapizza.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.database.Cursor;
@@ -113,7 +114,6 @@ public class DbHelper extends SQLiteOpenHelper {
     // Lay danh sach cac tu thuoc level - khoi tao checkpoint
     public ArrayList<Word> getWordInLevel(int level) {
         ArrayList<Word> words = new ArrayList<Word>();
-        String dbString = "";
         SQLiteDatabase db = getDatabase();
         String query = "select w.WordID, w.CategoryID, w.Lesson, w.Eng, w.Vi, w.ImageLocation, w.SoundLocation" +
                 " from Word w join Category c " +
@@ -136,11 +136,45 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // Lay danh sach cac tu trong mot category (bai kiem tra)
     public ArrayList<Word> getWordInCategory(int category) {
+        ArrayList<Word> words = new ArrayList<Word>();
+        SQLiteDatabase db = getDatabase();
+        String query = "select w.WordID, w.CategoryID, w.Lesson, w.Eng, w.Vi, w.ImageLocation, w.SoundLocation" +
+                " from Word w where w.CategoryID = " + String.valueOf(category);
+
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+
+        while (!c.isAfterLast()) {
+            Word word = new Word(c.getInt(c.getColumnIndex("WordID")), c.getString(c.getColumnIndex("Eng")),
+                    c.getString(c.getColumnIndex("Vi")), c.getString(c.getColumnIndex("ImageLocation")),
+                    c.getString(c.getColumnIndex("SoundLocation")), c.getInt(c.getColumnIndex("CategoryID")),
+                    c.getInt(c.getColumnIndex("Lesson")));
+            words.add(word);
+        }
+        c.close();
+        db.close();
         return new ArrayList<Word>();
     }
 
     // Lay danh sach cac tu trong mot bai hoc (khoi tao question)
     public ArrayList<Word> getWordInLesson(int category, int lesson) {
+        ArrayList<Word> words = new ArrayList<Word>();
+        SQLiteDatabase db = getDatabase();
+        String query = "select w.WordID, w.CategoryID, w.Lesson, w.Eng, w.Vi, w.ImageLocation, w.SoundLocation" +
+                " from Word w where w.Lesson = " + String.valueOf(lesson);
+
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+
+        while (!c.isAfterLast()) {
+            Word word = new Word(c.getInt(c.getColumnIndex("WordID")), c.getString(c.getColumnIndex("Eng")),
+                    c.getString(c.getColumnIndex("Vi")), c.getString(c.getColumnIndex("ImageLocation")),
+                    c.getString(c.getColumnIndex("SoundLocation")), c.getInt(c.getColumnIndex("CategoryID")),
+                    c.getInt(c.getColumnIndex("Lesson")));
+            words.add(word);
+        }
+        c.close();
+        db.close();
         return new ArrayList<Word>();
     }
 
@@ -152,6 +186,20 @@ public class DbHelper extends SQLiteOpenHelper {
     // Lay danh sach cac loai category (hien thi)
     // Xem dinh nghia trong file Category.java de biet cac thuoc tinh can luu tru
     public ArrayList<Category> getCategoryList() {
+        ArrayList<Category> cats = new ArrayList<Category>();
+        SQLiteDatabase db = getDatabase();
+        String query = "select c.CategoryID, c.CategoryName, c.Level, c.IconLocation" +
+                " from Category c";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+
+        while (!c.isAfterLast()) {
+            Category cat = new Category(c.getString(c.getColumnIndex("CategoryName")), c.getInt(c.getColumnIndex("Level")),
+                    c.getString(c.getColumnIndex("IconLocation")));
+            cats.add(cat);
+        }
+        c.close();
+        db.close();
         return new ArrayList<Category>();
     }
 
@@ -163,12 +211,28 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // Lay so level trong database
     public int getMaxLevel() {
-        return 0;
+        SQLiteDatabase db = getDatabase();
+        String query = "select c.Level" +
+                " from Category c Order by DESC";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        int maxLevel = c.getInt(c.getColumnIndex("Level"));
+        c.close();
+        db.close();
+        return maxLevel;
     }
 
     // Lay so luong danh sach category
     public int getNumberOfCategory() {
-        return 0;
+        SQLiteDatabase db = getDatabase();
+        String query = "select COUNT(c.Level) as catNum" +
+                " from Category c";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        int catNum = c.getInt(c.getColumnIndex("catNum"));
+        c.close();
+        db.close();
+        return catNum;
     }
 
     // Lay so lesson trong mot category
@@ -248,14 +312,38 @@ public class DbHelper extends SQLiteOpenHelper {
     // Ko ton tai: tra ve false
     public Boolean isExistingUser(String user) {
         // Kiem tra trong db co ton tai user.
+        boolean exist = false;
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+
+        while (!c.isAfterLast()) {
+            if (user.equals(c.getString(c.getColumnIndex("Username"))))
+                exist = true;
+        }
+        c.close();
+        db.close();
         return false;
     }
 
     // Lay mat khau nguoi dung (private)
     private String getPassword(String userName) {
         // lay password cua userName tu database
-
-        return "";
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        String password = "";
+        while (!c.isAfterLast()) {
+            if (userName.equals(c.getString(c.getColumnIndex("Username"))))
+                password = c.getString(c.getColumnIndex("Username"));
+        }
+        c.close();
+        db.close();
+        return password;
     }
 
     // Ham private: them mot userName moi vao db
@@ -263,15 +351,18 @@ public class DbHelper extends SQLiteOpenHelper {
         int level = 0;
         int money = 0;
         String checkLists = getEmptyCheckList();
-
         // them user vao database
+
+        ContentValues values = new ContentValues();
+        values.put("Username", userName);
+        values.put("Password", password);
+        SQLiteDatabase db = getDatabase();
+        db.insert("UserAccount", null, values);
+        db.close();
     }
 
     public Boolean checkPassword(String username, String password) {
-        if (password == getPassword(username))
-            return true;
-        else
-            return false;
+        return (password.equals(getPassword(username)));
     }
 
     // Thêm một user mới vào database với
@@ -280,10 +371,10 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve 1: thanh cong
     // Tra ve so am: That bai, loi tuong ung trong file ErrorList.java
     public int addUser(String userName, String password) {
-        if (isValidPassword(password) == false)
+        if (!isValidPassword(password))
             return ErrorList.PASSWORD_ERROR_FORMAT;
 
-        if (isExistingUser(userName) == true)
+        if (!isExistingUser(userName))
             return ErrorList.USERNAME_EXISTED;
 
         addNewUser(userName, password);
@@ -297,10 +388,10 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve 1: thanh cong
     // Tra ve so am: That bai, loi tuong ung trong file ErrorList.java
     public int updateUserPass(String userName, String newPassword) {
-        if (isValidPassword(newPassword) == false)
+        if (!isValidPassword(newPassword))
             return ErrorList.PASSWORD_ERROR_FORMAT;
 
-        if (newPassword == getPassword(userName))
+        if (newPassword.equals(getPassword(userName)))
             return ErrorList.SAME_PASSWORD;
 
         // cap nhat password vao database
@@ -314,9 +405,8 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve so am: That bai, loi tuong ung trong file ErrorList.java
     public int updateLearningProcess(String username, ArrayList<ArrayList<Boolean>> checkList) {
         String s = convertCheckList2String(checkList);
-
-
         //cap nhat checkList database
+        
 
         return 1;
     }
