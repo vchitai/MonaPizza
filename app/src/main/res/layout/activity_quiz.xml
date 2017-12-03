@@ -7,43 +7,66 @@
     android:layout_height="match_parent"
     tools:context="com.monapizza.monapizza.ui.QuizActivity">
     <TextView
-        android:id="@+id/place_holder_1"
+        android:id="@+id/quiz_text_question"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <ImageButton
-        android:id="@+id/answers_button1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/quiz_sound_player"
+        app:layout_constraintBottom_toTopOf="@id/quiz_guideline"/>
+    <ImageView
+        android:id="@+id/quiz_sound_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/quiz_text_question"
+        app:layout_constraintBottom_toTopOf="@id/quiz_guideline"/>
+    <android.support.constraint.Guideline
+        android:id="@+id/quiz_guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"/>
+    <Button
+        android:id="@+id/quiz_answers_button1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/place_holder_1"
-        app:layout_constraintBottom_toTopOf="@id/answers_button3"/>
-    <ImageButton
-        android:id="@+id/answers_button3"
+        app:layout_constraintRight_toLeftOf="@id/quiz_answers_button2"
+        app:layout_constraintTop_toBottomOf="@id/quiz_guideline"
+        app:layout_constraintBottom_toTopOf="@id/quiz_answers_button3"/>
+    <Button
+        android:id="@+id/quiz_answers_button3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/quiz_answers_button4"
+        app:layout_constraintTop_toBottomOf="@id/quiz_answers_button1"
         app:layout_constraintBottom_toBottomOf="parent"/>
-    <ImageButton
-        android:id="@+id/answers_button2"
+    <Button
+        android:id="@+id/quiz_answers_button2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/place_holder_1"
-        app:layout_constraintBottom_toTopOf="@id/answers_button4"/>
-    <ImageButton
-        android:id="@+id/answers_button4"
+        app:layout_constraintLeft_toRightOf="@id/quiz_answers_button1"
+        app:layout_constraintTop_toBottomOf="@id/quiz_guideline"
+        app:layout_constraintBottom_toTopOf="@id/quiz_answers_button4"/>
+    <Button
+        android:id="@+id/quiz_answers_button4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/quiz_answers_button3"
+        app:layout_constraintTop_toBottomOf="@id/quiz_answers_button2"
         app:layout_constraintBottom_toBottomOf="parent"/>
 </android.support.constraint.ConstraintLayout>
