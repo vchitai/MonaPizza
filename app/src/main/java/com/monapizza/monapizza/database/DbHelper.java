@@ -2,6 +2,7 @@ package com.monapizza.monapizza.database;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -13,6 +14,11 @@ import com.monapizza.monapizza.core.Word;
 import com.monapizza.monapizza.core.Lesson;
 import com.monapizza.monapizza.core.ErrorList;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 /**
@@ -23,7 +29,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private Context context;
     private String DB_PATH = "data/data/com.monapizza.monapizza";
-    private static String DB_NAME = "database.sqlite";
+    private static String DB_NAME = "database.db";
     private SQLiteDatabase myDatabase;
 
     public DbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -57,7 +63,7 @@ public class DbHelper extends SQLiteOpenHelper {
         AssetManager  dirPath = context.getAssets();
         InputStream myInput = context.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;
-        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/database.sqlite");
+        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/database.db");
         byte[] buffer = new byte[1024];
         int len;
         while ((len = myInput.read(buffer)) > 0) {
@@ -76,6 +82,10 @@ public class DbHelper extends SQLiteOpenHelper {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public SQLiteDatabase getDatabase() {
+        return myDatabase;
     }
 
 
@@ -102,6 +112,25 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // Lay danh sach cac tu thuoc level - khoi tao checkpoint
     public ArrayList<Word> getWordInLevel(int level) {
+        ArrayList<Word> words = new ArrayList<Word>();
+        String dbString = "";
+        SQLiteDatabase db = getDatabase();
+        String query = "select w.WordID, w.CategoryID, w.Lesson, w.Eng, w.Vi, w.ImageLocation, w.SoundLocation" +
+                " from Word w join Category c " +
+                "on w.CategoryID = c.CategoryID where c.Level = " + String.valueOf(level);
+
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+
+        while (!c.isAfterLast()) {
+            Word word = new Word(c.getInt(c.getColumnIndex("WordID")), c.getString(c.getColumnIndex("Eng")),
+                    c.getString(c.getColumnIndex("Vi")), c.getString(c.getColumnIndex("ImageLocation")),
+                    c.getString(c.getColumnIndex("SoundLocation")), c.getInt(c.getColumnIndex("CategoryID")),
+                    c.getInt(c.getColumnIndex("Lesson")));
+            words.add(word);
+        }
+        c.close();
+        db.close();
         return new ArrayList<Word>();
     }
 
