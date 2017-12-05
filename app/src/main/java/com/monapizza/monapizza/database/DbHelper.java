@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class DbHelper extends SQLiteOpenHelper {
 
     private Context context;
-    private String DB_PATH = "data/data/com.monapizza.monapizza";
+    private String DB_PATH = "data/data/com.monapizza.monapizza/";
     private static String DB_NAME = "database.db";
     private SQLiteDatabase myDatabase;
 
@@ -128,6 +128,7 @@ public class DbHelper extends SQLiteOpenHelper {
                     c.getString(c.getColumnIndex("SoundLocation")), c.getInt(c.getColumnIndex("CategoryID")),
                     c.getInt(c.getColumnIndex("Lesson")));
             words.add(word);
+            c.moveToNext();
         }
         c.close();
         db.close();
@@ -150,10 +151,11 @@ public class DbHelper extends SQLiteOpenHelper {
                     c.getString(c.getColumnIndex("SoundLocation")), c.getInt(c.getColumnIndex("CategoryID")),
                     c.getInt(c.getColumnIndex("Lesson")));
             words.add(word);
+            c.moveToNext();
         }
         c.close();
         db.close();
-        return new ArrayList<Word>();
+        return words;
     }
 
     // Lay danh sach cac tu trong mot bai hoc (khoi tao question)
@@ -172,10 +174,11 @@ public class DbHelper extends SQLiteOpenHelper {
                     c.getString(c.getColumnIndex("SoundLocation")), c.getInt(c.getColumnIndex("CategoryID")),
                     c.getInt(c.getColumnIndex("Lesson")));
             words.add(word);
+            c.moveToNext();
         }
         c.close();
         db.close();
-        return new ArrayList<Word>();
+        return words;
     }
 
     // Lay danh sach cac tu trong lesson cua mot category (dung de hien thi tren man hinh)
@@ -197,10 +200,11 @@ public class DbHelper extends SQLiteOpenHelper {
             Category cat = new Category(c.getString(c.getColumnIndex("CategoryName")), c.getInt(c.getColumnIndex("Level")),
                     c.getString(c.getColumnIndex("IconLocation")));
             cats.add(cat);
+            c.moveToNext();
         }
         c.close();
         db.close();
-        return new ArrayList<Category>();
+        return cats;
     }
 
     // Lay danh sach cac lesson (hien thi)
@@ -324,6 +328,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 exist = true;
                 break;
             }
+            c.moveToNext();
         }
         c.close();
         db.close();
@@ -344,6 +349,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 password = c.getString(c.getColumnIndex("Password"));
                 break;
             }
+            c.moveToNext();
         }
         c.close();
         db.close();
@@ -399,7 +405,24 @@ public class DbHelper extends SQLiteOpenHelper {
             return ErrorList.SAME_PASSWORD;
 
         // cap nhat password vao database
-
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        String password = "";
+        while (!c.isAfterLast()) {
+            if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
+                ContentValues v = new ContentValues();
+                v.put("Password", password);
+                int id = c.getPosition();
+                db.update("UserAccount", v, "_id=" + id, null);
+                break;
+            }
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
         return 1;
     }
 
@@ -410,7 +433,24 @@ public class DbHelper extends SQLiteOpenHelper {
     public int updateLearningProcess(String username, ArrayList<ArrayList<Boolean>> checkList) {
         String s = convertCheckList2String(checkList);
         //cap nhat checkList database
-
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        String password = "";
+        while (!c.isAfterLast()) {
+            if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
+                ContentValues v = new ContentValues();
+                v.put("CheckList", s);
+                int id = c.getPosition();
+                db.update("UserAccount", v, "_id=" + id, null);
+                break;
+            }
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
         return 1;
     }
 
@@ -420,7 +460,24 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve so am: That bai, loi tuong ung trong file ErrorList.java
     public int updateMoney(String userName, int newMoney) {
         // cap nhat money trong database
-
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        String password = "";
+        while (!c.isAfterLast()) {
+            if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
+                ContentValues v = new ContentValues();
+                v.put("Money", newMoney);
+                int id = c.getPosition();
+                db.update("UserAccount", v, "_id=" + id, null);
+                break;
+            }
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
         return 1;
     }
 
@@ -430,7 +487,24 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve so am: That bai, loi tuong ung trong file ErrorList.java
     public int updateLevel(String userName, int level) {
         // cap nhat level trong database
-
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        String password = "";
+        while (!c.isAfterLast()) {
+            if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
+                ContentValues v = new ContentValues();
+                v.put("Level", level);
+                int id = c.getPosition();
+                db.update("UserAccount", v, "_id=" + id, null);
+                break;
+            }
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
         return 1;
     }
 
@@ -458,6 +532,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 level = c.getInt(c.getColumnIndex("Level"));
                 break;
             }
+            c.moveToNext();
         }
         c.close();
         db.close();
@@ -477,6 +552,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 checkList = c.getString(c.getColumnIndex("CheckList"));
                 break;
             }
+            c.moveToNext();
         }
         c.close();
         db.close();
@@ -499,6 +575,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 money = (int)c.getFloat(c.getColumnIndex("UserMoney"));
                 break;
             }
+            c.moveToNext();
         }
         c.close();
         db.close();
