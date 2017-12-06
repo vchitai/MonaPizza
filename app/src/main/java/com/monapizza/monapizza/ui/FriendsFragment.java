@@ -8,7 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.monapizza.monapizza.R;
+import com.monapizza.monapizza.core.Ultility;
 import com.monapizza.monapizza.core.User;
+import com.monapizza.monapizza.core.Word;
+import com.monapizza.monapizza.database.DbHelper;
+
+import java.util.ArrayList;
 
 
 /**

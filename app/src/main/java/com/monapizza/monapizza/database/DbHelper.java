@@ -8,12 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import android.widget.ArrayAdapter;
-
 import com.monapizza.monapizza.core.Category;
-import com.monapizza.monapizza.core.Word;
-import com.monapizza.monapizza.core.Lesson;
 import com.monapizza.monapizza.core.ErrorList;
+import com.monapizza.monapizza.core.Lesson;
+import com.monapizza.monapizza.core.Word;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -132,7 +130,7 @@ public class DbHelper extends SQLiteOpenHelper {
         }
         c.close();
         db.close();
-        return new ArrayList<Word>();
+        return words;
     }
 
     // Lay danh sach cac tu trong mot category (bai kiem tra)
@@ -440,7 +438,7 @@ public class DbHelper extends SQLiteOpenHelper {
         c.moveToFirst();
         String password = "";
         while (!c.isAfterLast()) {
-            if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
+            if (username.equals(c.getString(c.getColumnIndex("Username")))) {
                 ContentValues v = new ContentValues();
                 v.put("CheckList", s);
                 int id = c.getPosition();

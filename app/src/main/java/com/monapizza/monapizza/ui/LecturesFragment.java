@@ -7,6 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.monapizza.monapizza.R;
+import com.monapizza.monapizza.core.Ultility;
+import com.monapizza.monapizza.core.Word;
+import com.monapizza.monapizza.database.DbHelper;
+
+import java.util.ArrayList;
 
 public class LecturesFragment extends Fragment {
 
@@ -17,6 +22,9 @@ public class LecturesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        DbHelper dbHelper = Ultility.getDbHelper();
+
+        ArrayList<Word> aw = dbHelper.getWordInLevel(1);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_lectures, container, false);
     }
