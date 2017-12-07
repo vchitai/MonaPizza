@@ -1,7 +1,5 @@
 package com.monapizza.monapizza.core;
 
-import com.monapizza.monapizza.database.DbHelper;
-
 import java.util.ArrayList;
 
 /**

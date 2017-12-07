@@ -6,7 +6,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.monapizza.monapizza.R;
-import com.monapizza.monapizza.core.Ultility;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager mMainViewPager;
@@ -23,7 +22,5 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.main_tab_layout);
         tabLayout.setupWithViewPager(mMainViewPager);
-
-        Ultility.init(this);
     }
 }

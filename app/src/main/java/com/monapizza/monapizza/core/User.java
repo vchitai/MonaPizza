@@ -1,7 +1,6 @@
 package com.monapizza.monapizza.core;
 
 import com.monapizza.monapizza.database.DbHelper;
-import com.monapizza.monapizza.core.ErrorList;
 
 import java.util.ArrayList;
 
@@ -46,12 +45,13 @@ public class User {
     }
 
     // Kiem tra tinh dung dan cua Username va Password trong database
-    private Boolean checkUserPass(String userName, String password, DbHelper database) {
-        return database.checkPassword(userName, password);
+    private Boolean checkUserPass(String userName, String password) {
+        return Ultility.getDbHelper().checkPassword(userName, password);
     }
 
     // Load thong tin cua user voi ten la userName tu database
-    private void loadUserInfo(String userName, DbHelper database) {
+    private void loadUserInfo(String userName) {
+        DbHelper database = Ultility.getDbHelper();
         m_logined = true;
 
         m_name = userName;
@@ -64,12 +64,13 @@ public class User {
     // Tra ve:
     //      < 0: loi, xem loi tuong ung trong file ErrorList.java
     //      1: login thanh cong, da load data tu database cua user vao cac truong luu tru phia tren.
-    public int signIn(String userName, String password, DbHelper database) {
+    public int signIn(String userName, String password) {
+        DbHelper database = Ultility.getDbHelper();
         if (database.isExistingUser(userName) == false)
             return ErrorList.USERNAME_NOT_EXISTED;
 
-        if (checkUserPass(userName, password, database)) {
-            loadUserInfo(userName, database);
+        if (checkUserPass(userName, password)) {
+            loadUserInfo(userName);
             return 1;
         }
         else
@@ -80,15 +81,17 @@ public class User {
     // Tra ve:
     //      < 0: loi, xem loi tuong ung trong file ErrorList.java
     //      1: login thanh cong, da load data tu database cua user vao cac truong luu tru phia tren.
-    private int signUp(String userName, String password, DbHelper database) {
+    private int signUp(String userName, String password) {
+        DbHelper database = Ultility.getDbHelper();
         int id = database.addUser(userName, password);
         if (id < 1) return id;
-        signIn(userName, password, database);
+        signIn(userName, password);
         return 1;
     }
 
     // Dang xuat
-    private void logOut(DbHelper database) {
+    private void logOut() {
+        DbHelper database = Ultility.getDbHelper();
         m_logined = false;
 
         database.updateAllInfo(m_name, m_level, m_checkList, m_money);
@@ -104,7 +107,8 @@ public class User {
     // Tra ve
     //      false: mua that bai
     //      true: mua thanh cong, tu dong cap nhat database.
-    public Boolean buyItem(int itemId, DbHelper database) {
+    public Boolean buyItem(int itemId) {
+        DbHelper database = Ultility.getDbHelper();
         if (m_logined == false) {
             // chua dang nhap
             return false;
@@ -124,7 +128,8 @@ public class User {
 
     // Cap nhat tien trinh hoc cua user
     // Cai nay con xung doi cho luu level la gi
-    public void updateLearningProcess(int level, int category, int lesson, DbHelper database) {
+    public void updateLearningProcess(int level, int category, int lesson) {
+        DbHelper database = Ultility.getDbHelper();
         m_level = Math.max(m_level, level);
         if (level != -1) {
             for(int i = 0; i < level - 1; ++i)

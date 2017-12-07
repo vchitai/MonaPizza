@@ -1,7 +1,6 @@
 package com.monapizza.monapizza.core;
 
-import android.content.Context;
-
+import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.database.DbHelper;
 
 /**
@@ -13,25 +12,15 @@ public class Ultility {
 
     private static DbHelper mDbHelper;
 
-    private Ultility(Context context) {
-        mDbHelper = new DbHelper(context);
+    private Ultility() {
+        mDbHelper = new DbHelper(MonaPizza.getAppContext());
         mDbHelper.open();
     }
 
-    public  static  void init(Context context) {
-        if (instance == null) {
-            instance = new Ultility(context);
-        }
-    }
-
-    public static Ultility getInstance(Context context) {
-        if (instance == null) {
-            instance = new Ultility(context);
-        }
-        return instance;
-    }
-
     public static DbHelper getDbHelper() {
+        if (instance == null) {
+            instance = new Ultility();
+        }
         return  mDbHelper;
     }
 }

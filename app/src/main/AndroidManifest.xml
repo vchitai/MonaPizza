@@ -3,6 +3,7 @@
           package="com.monapizza.monapizza">
 
     <application
+        android:name=".MonaPizza"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -40,7 +41,7 @@
             android:name=".ui.SignupActivity"
             android:theme="@style/AppTheme_NoActionBar">
         </activity>
-        <activity android:name=".ExamActivity">
+        <activity android:name=".ui.ExamActivity">
         </activity>
     </application>
 
