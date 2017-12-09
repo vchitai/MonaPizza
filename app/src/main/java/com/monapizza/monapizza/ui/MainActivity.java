@@ -6,9 +6,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.monapizza.monapizza.R;
+import com.monapizza.monapizza.ui_adapter.MainPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
-    private ViewPager mMainViewPager;
+    private ViewPager        mMainViewPager;
     private MainPagerAdapter mMainPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

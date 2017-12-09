@@ -3,12 +3,15 @@ package com.monapizza.monapizza.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Exam;
+import com.monapizza.monapizza.core.Question;
+import com.monapizza.monapizza.core.User;
 
 public class QuizActivity extends AppCompatActivity {
     int mCurrentLesson;
@@ -28,6 +31,43 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         assignVariable();
+
+        while (!mCurrentExam.checkPassExam(User.getInstance())) {
+            Question currentQues  =  mCurrentExam.getQuestion();
+            String ques = currentQues.getQuestion();
+            int quesType = currentQues.getQuestionType();
+            switch (quesType) {
+                case Question.QUES_TYPE_STR: {
+                    mTextQuestion.setText(ques);
+                    mTextQuestion.setVisibility(View.VISIBLE);
+                    mImageQuestion.setVisibility(View.GONE);
+                    mSoundQuestion.setVisibility(View.GONE);
+                    break;
+                }
+                case Question.QUES_TYPE_SOU: {
+                    mTextQuestion.setText("Hear and choose answer");
+                    mSoundQuestion.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+                    mTextQuestion.setVisibility(View.VISIBLE);
+                    mImageQuestion.setVisibility(View.GONE);
+                    mSoundQuestion.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case Question.QUES_TYPE_PIC: {
+                    //mImageQuestion.setBackground();
+                    mTextQuestion.setVisibility(View.GONE);
+                    mImageQuestion.setVisibility(View.VISIBLE);
+                    mSoundQuestion.setVisibility(View.GONE);
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
     }
 
     private void assignVariable() {
@@ -39,9 +79,9 @@ public class QuizActivity extends AppCompatActivity {
         mAnswerButton3 = (Button) findViewById(R.id.quiz_answers_button3);
         mAnswerButton4 = (Button) findViewById(R.id.quiz_answers_button4);
         Intent intent = getIntent();
-        mCurrentLesson = intent.getIntExtra("lesson", -1);
-        mCurrentCategory = intent.getIntExtra("category", -1);
-        mCurrentLevel = intent.getIntExtra("level", -1);
-        //mCurrentExam = new Exam(mCurrentCategory,mCurrentLesson,mCurrentLevel);
+        mCurrentLesson = intent.getIntExtra("lessonID", -1);
+        mCurrentCategory = intent.getIntExtra("categoryID", -1);
+        mCurrentLevel = intent.getIntExtra("levelID", -1);
+        mCurrentExam = new Exam(mCurrentCategory,mCurrentLesson,mCurrentLevel);
     }
 }

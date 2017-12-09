@@ -1,12 +1,13 @@
 package com.monapizza.monapizza.core;
 
-import com.monapizza.monapizza.database.DbHelper;
-
 /**
  * Created by chita on 01/11/2017.
  */
 
 public class Category {
+    //id category
+    private int m_id;
+
     // ten category
     private String m_name;
 
@@ -20,13 +21,18 @@ public class Category {
     private Category() {}
 
     // Khoi tao lop Category voi id = category
-    public Category(String name, int level, String icon) {
+    public Category(int id, String name, int level, String icon) {
+        m_id = id;
         m_name = name;
         m_level = level;
         m_icon = icon;
     }
 
     // cac ham get ho tro truy xuat
+
+    public int getId() {
+        return m_id;
+    }
 
     public String getName() {
         return m_name;

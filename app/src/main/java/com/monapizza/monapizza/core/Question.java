@@ -69,9 +69,22 @@ public class Question {
         return m_words.get(wordId);
     }
 
+    public final static int QUES_TYPE_STR = 0;
+    public final static int QUES_TYPE_SOU = 1;
+    public final static int QUES_TYPE_PIC = 2;
     // Loai cau hoi
     public int getQuestionType() {
-        return m_type;
+        switch (m_type) {
+            case 0:
+            case 3:
+                return QUES_TYPE_STR;
+            case 1:
+                return QUES_TYPE_SOU;
+            case 2:
+                return QUES_TYPE_PIC;
+            default:
+                return m_type;
+        }
     }
 
     // Kiem tra ket qua tu nguoi dung
@@ -146,6 +159,8 @@ public class Question {
             0: cau tra loi dang text
             1: cau tra loi dang hinh anh
      */
+    public final static int ANS_TYPE_STR = 0;
+    public final static int ANS_TYPE_PIC = 1;
     public int getAnswerType() {
         switch (m_type) {
             case 0:

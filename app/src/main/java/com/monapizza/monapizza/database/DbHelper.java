@@ -195,7 +195,10 @@ public class DbHelper extends SQLiteOpenHelper {
         c.moveToFirst();
 
         while (!c.isAfterLast()) {
-            Category cat = new Category(c.getString(c.getColumnIndex("CategoryName")), c.getInt(c.getColumnIndex("Level")),
+            Category cat = new Category(
+                    c.getInt(c.getColumnIndex("CategoryID")),
+                    c.getString(c.getColumnIndex("CategoryName")),
+                    c.getInt(c.getColumnIndex("Level")),
                     c.getString(c.getColumnIndex("IconLocation")));
             cats.add(cat);
             c.moveToNext();

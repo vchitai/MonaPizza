@@ -111,7 +111,7 @@ public class Exam {
     }
 
     // tra ve mot question hien thi
-    public Question getQuestion(int index) {
+    public Question getQuestion() {
         int type = ThreadLocalRandom.current().nextInt(0, Question.numberOfTypeQuestion + 1);
 
         if (m_numWords < m_words.size()) {
