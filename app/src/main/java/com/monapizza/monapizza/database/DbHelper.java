@@ -28,7 +28,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private Context context;
     private String DB_PATH = "data/data/com.monapizza.monapizza/";
-    private static String DB_NAME = "database.db";
+    private static String DB_NAME = "databasev2.db";
     private SQLiteDatabase myDatabase;
 
     public DbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -62,7 +62,7 @@ public class DbHelper extends SQLiteOpenHelper {
         AssetManager  dirPath = context.getAssets();
         InputStream myInput = context.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;
-        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/database.db");
+        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/databasev2.db");
         byte[] buffer = new byte[1024];
         int len;
         while ((len = myInput.read(buffer)) > 0) {
