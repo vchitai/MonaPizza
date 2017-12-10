@@ -6,7 +6,7 @@
     density="420dpi"
     format="10"
     plugin-version="3.0.0"
-    timestamp="1512806445562"
+    timestamp="1512917466889"
     token="-6827479214962656466"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -25,7 +25,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1512806021091"
+        timestamp="1512916411898"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -66,7 +66,19 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1512806445562"
+        ir-eligibility="STATIC_INITIALIZER_CHANGE"
+        timestamp="1512917380806"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Codes\Android\MonaPizza\app\build\outputs\apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1512917466889"
         verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

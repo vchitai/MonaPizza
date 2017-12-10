@@ -15,6 +15,7 @@ import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Category;
 import com.monapizza.monapizza.ui.LessonsActivity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -56,7 +57,13 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
         String icon = mCategoryList.get(position).getIcon();
         Context context = MonaPizza.getAppContext();
         int id       = context.getResources().getIdentifier(icon, "drawable",  context.getPackageName());
-        Drawable drawable = context.getDrawable(id);
+        Drawable drawable = null;
+        try {
+            drawable = Drawable.createFromStream(context.getAssets().open(mCategoryList.get(position).getIcon()), null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         holder.mLectureImage.setBackground(drawable);
         holder.mLectureName.setText(mCategoryList.get(position).getName());
         holder.mLectureView.setOnClickListener(new View.OnClickListener() {
