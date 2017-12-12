@@ -173,5 +173,15 @@ public class User {
         return m_level;
     }
 
+    public ArrayList<Friend> getFriendList() {
+        ArrayList<Friend> friends = new ArrayList<Friend>();
+        friends.add(new Friend("friend1","default-avatar.png",50));
+        friends.add(new Friend("friend2","default-avatar.png",50));
+        friends.add(new Friend("friend3","default-avatar.png",50));
+        friends.add(new Friend("friend4","default-avatar.png",50));
+        friends.add(new Friend("friend5","default-avatar.png",50));
+        return friends;
+    }
+
 
 }

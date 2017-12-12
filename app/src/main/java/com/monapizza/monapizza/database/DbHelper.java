@@ -204,8 +204,15 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return cats;
+        /*ArrayList<Category> categories = new ArrayList<Category>();
+        categories.add(new Category(0,"LOL1",1,"ic_shortcut_account_balance.png"));
+        categories.add(new Category(1,"LOL2",1,"ic_shortcut_account_balance.png"));
+        categories.add(new Category(2,"LOL3",1,"ic_shortcut_account_balance.png"));
+        categories.add(new Category(3,"LOL4",1,"ic_shortcut_account_balance.png"));
+        categories.add(new Category(4,"LOL5",1,"ic_shortcut_account_balance.png"));
+        return categories;*/
     }
 
     // Lay danh sach cac lesson (hien thi)

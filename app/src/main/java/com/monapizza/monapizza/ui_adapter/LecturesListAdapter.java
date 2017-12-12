@@ -55,11 +55,10 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
     @Override
     public void onBindViewHolder(LecturesListAdapter.ViewHolder holder, final int position) {
         String icon = mCategoryList.get(position).getIcon();
-        Context context = MonaPizza.getAppContext();
-        int id       = context.getResources().getIdentifier(icon, "drawable",  context.getPackageName());
+        //int id       = context.getResources().getIdentifier(icon, "drawable",  context.getPackageName());
         Drawable drawable = null;
         try {
-            drawable = Drawable.createFromStream(context.getAssets().open(mCategoryList.get(position).getIcon()), null);
+            drawable = Drawable.createFromStream(MonaPizza.getAppContext().getAssets().open(mCategoryList.get(position).getIcon()), null);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -2,8 +2,10 @@ package com.monapizza.monapizza.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +38,8 @@ public class LecturesFragment extends Fragment {
         categories.add(new Category(3,"LOL4",1,"ic_shortcut_account_balance.png"));
         categories.add(new Category(4,"LOL5",1,"ic_shortcut_account_balance.png"));*/
 
+        Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.lecture_toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         LecturesListAdapter lecturesListAdapter = new LecturesListAdapter(categories);
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.lectures_list);
         recyclerView.setAdapter(lecturesListAdapter);

@@ -40,12 +40,12 @@
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar_include.xml.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.0.0.aar\\ca9bac35bef90975cf9f36fe91acec5d\\res\\layout\\design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_text_input_password_icon.xml.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.0.0.aar\\ca9bac35bef90975cf9f36fe91acec5d\\res\\layout\\design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar_include.xml.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.0.0.aar\\ca9bac35bef90975cf9f36fe91acec5d\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_text_material.xml.flat",
@@ -68,28 +68,28 @@
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-mdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-mdpi-v4\\abc_list_focused_holo.9.png"
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-mdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\color_design_tint_password_toggle.xml.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.0.0.aar\\ca9bac35bef90975cf9f36fe91acec5d\\res\\color\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_bar.xml.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\layout\\abc_action_mode_bar.xml"
-    },
-    {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_bar.xml.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_action_bar_item_background_material.xml.flat",
@@ -104,20 +104,20 @@
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_shortcut_account_balance.png.flat",
-        "source": "C:\\Codes\\Android\\MonaPizza\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_shortcut_account_balance.png"
-    },
-    {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_shortcut_account_balance.png.flat",
+        "source": "C:\\Codes\\Android\\MonaPizza\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_shortcut_account_balance.png"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_view_list_nav_layout.xml.flat",
@@ -340,12 +340,12 @@
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu.xml.flat",
@@ -372,12 +372,12 @@
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_menu_layout.xml.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\layout\\abc_action_menu_layout.xml"
-    },
-    {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_menu_layout.xml.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -416,12 +416,12 @@
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_welcome.xml.flat",
         "source": "C:\\Codes\\Android\\MonaPizza\\app\\src\\main\\res\\layout\\activity_welcome.xml"
+    },
+    {
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -452,12 +452,12 @@
         "source": "C:\\Codes\\Android\\MonaPizza\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
-    },
-    {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11_notification_media_action.xml.flat",
@@ -528,12 +528,12 @@
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple.xml.flat",
-        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\layout\\abc_screen_simple.xml"
-    },
-    {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Codes\\Android\\MonaPizza\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple.xml.flat",
+        "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\layout\\abc_screen_simple.xml"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
