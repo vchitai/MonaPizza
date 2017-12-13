@@ -242,7 +242,15 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // Lay so lesson trong mot category
     public int getNumberOfLesson(int category) {
-        return 0;
+        SQLiteDatabase db = getDatabase();
+        String query = "select COUNT(w.Lesson) as lessonNum" +
+                " from Word w join Category c on w.CategoryID = c.CategoryID where c.CategoryID = " + String.valueOf(category);
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        int lessonNum = c.getInt(c.getColumnIndex("lessonNum"));
+        c.close();
+        db.close();
+        return lessonNum;
     }
 
 
