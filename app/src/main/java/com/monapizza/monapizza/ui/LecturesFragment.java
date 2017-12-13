@@ -2,8 +2,10 @@ package com.monapizza.monapizza.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,14 +29,17 @@ public class LecturesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_lectures, container, false);
         DbHelper dbHelper = Ultility.getDbHelper();
-        //ArrayList<Category> categories = dbHelper.getCategoryList();
+        ArrayList<Category> categories = dbHelper.getCategoryList();
+        /*
         ArrayList<Category> categories = new ArrayList<Category>();
-        categories.add(new Category(0,"LOL1",1,"ic_shortcut_account_balance"));
-        categories.add(new Category(1,"LOL2",1,"ic_shortcut_account_balance"));
-        categories.add(new Category(2,"LOL3",1,"ic_shortcut_account_balance"));
-        categories.add(new Category(3,"LOL4",1,"ic_shortcut_account_balance"));
-        categories.add(new Category(4,"LOL5",1,"ic_shortcut_account_balance"));
+        categories.add(new Category(0,"LOL1",1,"ic_shortcut_account_balance.png"));
+        categories.add(new Category(1,"LOL2",1,"ic_shortcut_account_balance.png"));
+        categories.add(new Category(2,"LOL3",1,"ic_shortcut_account_balance.png"));
+        categories.add(new Category(3,"LOL4",1,"ic_shortcut_account_balance.png"));
+        categories.add(new Category(4,"LOL5",1,"ic_shortcut_account_balance.png"));*/
 
+        Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.lecture_toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         LecturesListAdapter lecturesListAdapter = new LecturesListAdapter(categories);
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.lectures_list);
         recyclerView.setAdapter(lecturesListAdapter);
@@ -51,7 +56,7 @@ public class LecturesFragment extends Fragment {
                     default:
                         return -1;
                 }*/
-                if (position == 0)
+                if (position % 3 == 0)
                     return 4;
                 else
                 return 2;
