@@ -180,8 +180,24 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     // Lay danh sach cac tu trong lesson cua mot category (dung de hien thi tren man hinh)
-    public ArrayList<String> getWordEngWordsInLesson(int category, int level) {
-        return new ArrayList<String>();
+    public ArrayList<String> getWordEngWordsInLesson(int category, int lesson) {
+        ArrayList<String> engWords = new ArrayList<String>();
+        SQLiteDatabase db = getDatabase();
+        String query = "select w.Eng as engWords" +
+                " from Word w join Category c on w.CategoryID = c.CategoryID" +
+                " where c.CategoryID = " + String.valueOf(category) + " and " + "w.Lesson = " + String.valueOf(lesson);
+
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+
+        while (!c.isAfterLast()) {
+            String engWord = c.getString(c.getColumnIndex("engWords"));
+            engWords.add(engWord);
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
+        return engWords;
     }
 
     // Lay danh sach cac loai category (hien thi)
