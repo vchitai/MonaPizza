@@ -129,7 +129,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return words;
     }
 
@@ -152,7 +152,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return words;
     }
 
@@ -161,7 +161,7 @@ public class DbHelper extends SQLiteOpenHelper {
         ArrayList<Word> words = new ArrayList<Word>();
         SQLiteDatabase db = getDatabase();
         String query = "select w.WordID, w.CategoryID, w.Lesson, w.Eng, w.Vi, w.ImageLocation, w.SoundLocation" +
-                " from Word w where w.Lesson = " + String.valueOf(lesson);
+                " from Word w where w.Lesson = " + String.valueOf(lesson) + " and w.CategoryID = " + String.valueOf(category);
 
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -175,7 +175,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return words;
     }
 
@@ -196,7 +196,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return engWords;
     }
 
@@ -246,7 +246,7 @@ public class DbHelper extends SQLiteOpenHelper {
         c.moveToFirst();
         int maxLevel = c.getInt(c.getColumnIndex("Level"));
         c.close();
-        db.close();
+        //db.close();
         return maxLevel;
     }
 
@@ -259,20 +259,20 @@ public class DbHelper extends SQLiteOpenHelper {
         c.moveToFirst();
         int catNum = c.getInt(c.getColumnIndex("catNum"));
         c.close();
-        db.close();
+        //db.close();
         return catNum;
     }
 
     // Lay so lesson trong mot category
     public int getNumberOfLesson(int category) {
         SQLiteDatabase db = getDatabase();
-        String query = "select COUNT(w.Lesson) as lessonNum" +
+        String query = "select COUNT(distinct w.Lesson) as lessonNum" +
                 " from Word w join Category c on w.CategoryID = c.CategoryID where c.CategoryID = " + String.valueOf(category);
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         int lessonNum = c.getInt(c.getColumnIndex("lessonNum"));
         c.close();
-        db.close();
+        //db.close();
         return lessonNum;
     }
 
@@ -363,7 +363,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return false;
     }
 
@@ -384,7 +384,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return password;
     }
 
@@ -400,7 +400,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put("Password", password);
         SQLiteDatabase db = getDatabase();
         db.insert("UserAccount", null, values);
-        db.close();
+        //db.close();
     }
 
     public Boolean checkPassword(String username, String password) {
@@ -454,7 +454,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return 1;
     }
 
@@ -482,7 +482,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return 1;
     }
 
@@ -509,7 +509,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return 1;
     }
 
@@ -536,7 +536,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return 1;
     }
 
@@ -567,7 +567,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return level;
     }
 
@@ -587,7 +587,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
 
         //convert tu string checkList -> ArrayList<ArrayList<Boolean>
 
@@ -610,7 +610,7 @@ public class DbHelper extends SQLiteOpenHelper {
             c.moveToNext();
         }
         c.close();
-        db.close();
+        //db.close();
         return money;
     }
 }

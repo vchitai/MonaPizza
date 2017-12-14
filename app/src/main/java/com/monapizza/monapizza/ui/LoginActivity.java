@@ -19,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.login_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         final Context context     = this;
         Button        loginButton = (Button)findViewById(R.id.login_login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {

@@ -56,11 +56,16 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
 
     @Override
     public void onBindViewHolder(LessonsListAdapter.ViewHolder holder, final int position) {
-        holder.mLessonTitleTextView.setText("Lesson " + (position + 1) + "/" + mNumberOfLessons);
-        ArrayList<Word> lessonWords = Ultility.getDbHelper().getWordInLesson(mCategoryID,position);
-        String wordsList = "";
+        StringBuilder stringBuilder1 = new StringBuilder("Lesson " + (position + 1) + "/" + mNumberOfLessons);
+        holder.mLessonTitleTextView.setText(stringBuilder1.toString());
+        ArrayList<Word> lessonWords = Ultility.getDbHelper().getWordInLesson(mCategoryID,position+1);
+        StringBuilder stringBuilder2 = new StringBuilder();
         for (int i = 0; i<lessonWords.size(); i++)
-            wordsList += lessonWords.get(i).getEnglish() + ",";
+            stringBuilder2.append(lessonWords.get(i).getEnglish() + ", ");
+        if (stringBuilder2.length() > 2) {
+            stringBuilder2.setLength(stringBuilder2.length()-2);
+        }
+        String wordsList = stringBuilder2.toString();
         holder.mLessonWordsTextView.setText(wordsList);
         holder.mLessonStartButton.setOnClickListener(new View.OnClickListener() {
             @Override

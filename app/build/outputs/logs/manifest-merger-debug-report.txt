@@ -1,14 +1,15 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-48:12
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-49:12
 MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:transition:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\4b44f6cd7a186ec6fd7d4a6ddca1b187\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\01225522d5775297acd2e0f3bf2971c8\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\e3d2255bf671e0fd8c4d0877553950df\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\40cd5c8e1d89b4b3561588c3eb7ace5b\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.0.0.aar\a52e94fab8d41500c3fbf9417fd90dd5\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\a2802cd4b3a776cc066f36f1efc2ce01\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\d32d94d6377cca1b8d8b81a10ca272cc\AndroidManifest.xml:17:1-31:12
@@ -17,25 +18,25 @@ MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\chita
 MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\fbf7329a05bbcadeede594ff936376f3\AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\8f75422395f527849c9e02ebe0b42ac6\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\c729bb8fc65a9c9289bbbafb52911b84\AndroidManifest.xml:17:1-31:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-49:12
 	package
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:3:11-44
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-49:12
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-49:12
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:5:5-46:19
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:5:5-47:19
 MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:transition:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\4b44f6cd7a186ec6fd7d4a6ddca1b187\AndroidManifest.xml:22:5-20
@@ -89,45 +90,47 @@ ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:17:17-76
 	android:name
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:17:27-74
 activity#com.monapizza.monapizza.ui.LessonsActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:20:9-23:20
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:20:9-24:20
+	android:parentActivityName
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:23:13-81
 	android:theme
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:22:13-56
 	android:name
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:21:13-47
 activity#com.monapizza.monapizza.ui.QuizActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:24:9-27:20
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:25:9-28:20
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:26:13-56
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:27:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:25:13-44
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:26:13-44
 activity#com.monapizza.monapizza.ui.WelcomeActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:28:9-31:20
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:29:9-32:20
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:30:13-56
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:31:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:29:13-47
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:30:13-47
 activity#com.monapizza.monapizza.ui.GuestLoginActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:32:9-35:20
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:33:9-36:20
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:34:13-56
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:35:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:33:13-50
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:34:13-50
 activity#com.monapizza.monapizza.ui.LoginActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:36:9-39:20
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:37:9-40:20
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:38:13-56
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:39:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:37:13-45
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:38:13-45
 activity#com.monapizza.monapizza.ui.SignupActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:40:9-43:20
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:41:9-44:20
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:42:13-56
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:43:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:41:13-46
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:42:13-46
 activity#com.monapizza.monapizza.ui.ExamActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:44:9-45:20
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:45:9-46:20
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:44:19-50
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:45:19-50
 uses-sdk
 INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
@@ -142,6 +145,8 @@ MERGED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\cache
 MERGED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\e3d2255bf671e0fd8c4d0877553950df\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\e3d2255bf671e0fd8c4d0877553950df\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\40cd5c8e1d89b4b3561588c3eb7ace5b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\40cd5c8e1d89b4b3561588c3eb7ace5b\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.0.0.aar\a52e94fab8d41500c3fbf9417fd90dd5\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.0.0.aar\a52e94fab8d41500c3fbf9417fd90dd5\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\a2802cd4b3a776cc066f36f1efc2ce01\AndroidManifest.xml:21:5-23:60
