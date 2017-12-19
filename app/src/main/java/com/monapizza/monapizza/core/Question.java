@@ -164,13 +164,13 @@ public class Question {
     public int getAnswerType() {
         switch (m_type) {
             case 0:
-                return 0;
+                return ANS_TYPE_STR;
             case 1:
-                return 0;
+                return ANS_TYPE_STR;
             case 2:
-                return 0;
+                return ANS_TYPE_STR;
             case 3:
-                return 0;
+                return ANS_TYPE_STR;
 
             default:
                 return -1;

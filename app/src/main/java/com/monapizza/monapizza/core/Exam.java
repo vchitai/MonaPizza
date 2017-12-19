@@ -1,5 +1,7 @@
 package com.monapizza.monapizza.core;
 
+import android.util.Log;
+
 import com.monapizza.monapizza.database.DbHelper;
 
 import java.util.ArrayList;
@@ -91,6 +93,8 @@ public class Exam {
         m_lesson = lesson;
         m_numWords = 0;
 
+        //Log.d("myTag", "level: " + level + " cat " + category + " lesson " + lesson);
+
         // checkpoint
         if (m_level != -1 && m_category == -1 && m_lesson == -1) {
             m_words = database.getWordInLevel(m_level);
@@ -106,6 +110,7 @@ public class Exam {
         // bai hoc
         if (m_level == -1 && m_category != -1 && m_lesson != -1) {
             m_words = database.getWordInLesson(category, lesson);
+            //Log.d("kichThuocWord", "Kich thuoc m_words: " + m_words.size());
             return;
         }
     }
