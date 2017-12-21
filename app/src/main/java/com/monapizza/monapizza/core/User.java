@@ -31,7 +31,7 @@ public class User {
     private int m_money;
 
     // Danh sach ban be
-    //private ArrayList<> friends;
+    private ArrayList<Friend> m_friends;
 
     private User() {}
 
@@ -58,6 +58,7 @@ public class User {
         m_money = database.loadMoney(userName);
         m_checkList = database.loadCheckList(userName);
         m_level = database.loadLevel(userName);
+        m_friends = database.loadFriend(userName);
     }
 
     // kiem tra dang nhap nguoi dung
@@ -100,30 +101,7 @@ public class User {
         m_checkList.clear();
         m_name = "";
         m_money = 0;
-
-    }
-
-    // Mua vat pham
-    // Tra ve
-    //      false: mua that bai
-    //      true: mua thanh cong, tu dong cap nhat database.
-    public Boolean buyItem(int itemId) {
-        DbHelper database = Ultility.getDbHelper();
-        if (m_logined == false) {
-            // chua dang nhap
-            return false;
-        }
-        // Kiem tra viec mua item
-        // Mua thanh cong, cap nhat database
-        return true;
-    }
-
-    // Them ban be
-    // Tra ve
-    //      false: them thanh cong
-    //      true: them thanh cong, tu dong cap nhat database.
-    public Boolean addFriend(String friendName, DbHelper database) {
-        return false;
+        m_friends.clear();
     }
 
     // Cap nhat tien trinh hoc cua user
@@ -155,6 +133,13 @@ public class User {
         }
     }
 
+    //ham cap nhat password cho user
+    // Tra ve 1: thanh cong
+    // Tra ve < 0: loi tuong ung trong file ErrorList.java
+    public int updatePass(String username, String new_password) {
+        DbHelper database = Ultility.getDbHelper();
+        return database.updateUserPass(username, new_password);
+    }
 
     // Cac ham get user info
     public String getUserName() {
@@ -173,6 +158,8 @@ public class User {
         return m_level;
     }
 
+    // Ham lay danh sach ban be
+    // Ham tam thoi, database chua ton tai nen van load friend tam
     public ArrayList<Friend> getFriendList() {
         ArrayList<Friend> friends = new ArrayList<Friend>();
         friends.add(new Friend("friend1","default-avatar.png",50));
@@ -181,7 +168,32 @@ public class User {
         friends.add(new Friend("friend4","default-avatar.png",50));
         friends.add(new Friend("friend5","default-avatar.png",50));
         return friends;
+
+        //return m_friends;
     }
 
+    // Them ban be
+    // Tra ve
+    //      1: them thanh cong
+    //      < 0: loi, loi xem trong file ErrorList.java
+    public int addFriend(String currentUserName, String friendUsername) {
+        DbHelper database = Ultility.getDbHelper();
+        return database.addFriend(currentUserName, friendUsername);
+    }
+
+    // Mua vat pham
+    // Tra ve
+    //      false: mua that bai
+    //      true: mua thanh cong, tu dong cap nhat database.
+    public Boolean buyItem(int itemId) {
+        DbHelper database = Ultility.getDbHelper();
+        if (m_logined == false) {
+            // chua dang nhap
+            return false;
+        }
+        // Kiem tra viec mua item
+        // Mua thanh cong, cap nhat database
+        return true;
+    }
 
 }

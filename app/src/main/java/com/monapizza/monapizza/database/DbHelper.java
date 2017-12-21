@@ -7,9 +7,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.monapizza.monapizza.core.Category;
 import com.monapizza.monapizza.core.ErrorList;
+import com.monapizza.monapizza.core.Friend;
 import com.monapizza.monapizza.core.Lesson;
 import com.monapizza.monapizza.core.Word;
 
@@ -166,7 +168,9 @@ public class DbHelper extends SQLiteOpenHelper {
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
 
+        //Log.d("check0", "0 cat: " + category + " les " + lesson);
         while (!c.isAfterLast()) {
+            //Log.d("check1", "1");
             Word word = new Word(c.getInt(c.getColumnIndex("WordID")), c.getString(c.getColumnIndex("Eng")),
                     c.getString(c.getColumnIndex("Vi")), c.getString(c.getColumnIndex("ImageLocation")),
                     c.getString(c.getColumnIndex("SoundLocation")), c.getInt(c.getColumnIndex("CategoryID")),
@@ -281,12 +285,28 @@ public class DbHelper extends SQLiteOpenHelper {
         Các hàm hỗ trợ lớp User.
      */
 
-    // Kiểm tra password có thỏa điều kiện là các chữ cái latin A, B, C... hoặc là số 0, 1, 2, 3...
+    // Kiểm tra password có thỏa điều kiện độ dài >= 6 không
     private Boolean isValidPassword(String pass) {
+        int cntNum = 0;
+        int cntChr = 0;
+
+        for(char ch: pass.toCharArray()) {
+            if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) cntChr = cntChr + 1;
+            if (ch >= '0' && ch <= '9') cntNum = cntNum + 1;
+        }
+
+        if (cntNum == 0 || cntChr == 0) return false;
+
+        if (pass.length() >= 6) return true;
+        else return false;
+    }
+
+    //Kiểm tra username có thỏa điều kiện
+    private Boolean isValidUsername(String username) {
         int nValid = 0;
-        for(char ch: pass.toCharArray())
-            if ((ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9')) nValid = nValid + 1;
-        if (nValid == pass.length()) return true;
+        for(char ch: username.toCharArray())
+            if ((ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')) nValid = nValid + 1;
+        if (nValid == username.length()) return true;
         else return false;
     }
 
@@ -413,6 +433,9 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve 1: thanh cong
     // Tra ve so am: That bai, loi tuong ung trong file ErrorList.java
     public int addUser(String userName, String password) {
+        if (!isValidUsername(userName))
+            return ErrorList.USERNAME_ERROR_FORMAT;
+
         if (!isValidPassword(password))
             return ErrorList.PASSWORD_ERROR_FORMAT;
 
@@ -590,8 +613,7 @@ public class DbHelper extends SQLiteOpenHelper {
         //db.close();
 
         //convert tu string checkList -> ArrayList<ArrayList<Boolean>
-
-        return new ArrayList<ArrayList<Boolean>>();
+        return convertString2CheckList(checkList);
     }
 
     // Lay thong tin tien cua user trong database
@@ -613,4 +635,50 @@ public class DbHelper extends SQLiteOpenHelper {
         //db.close();
         return money;
     }
+
+
+    // Ham lay danh sach ban be cua username tuong ung
+    public ArrayList<Friend> loadFriend(String username) {
+        return getFriend(username);
+    }
+
+
+    // Cac ham moi them
+
+
+    // Ham lay danh sach ban be cua username tuong ung
+    // Cau truc của Frine xem ở class Friend.java
+    // Lớp này lưu trữ 3 thông tin:
+    // String mName;
+    // String mAvatar; (Nếu ko có thuộc tính này thì có thể gán "default-avatar.png")
+    // int mProgress;
+    public ArrayList<Friend> getFriend(String username) {
+        return new ArrayList<Friend>();
+    }
+
+    // Kiem tra xem 2 username co phai la ban be hay khong
+    // Tra ve true: 2 username la ban be
+    // Tra ve false: 2 username khong la ban be
+    // 2 username nay chac chan nam trong database nen chi can kiem tra xem co phai ban be hay khong
+    public Boolean checkFriend(String username1, String username2) {
+        return false;
+    }
+
+    // Ham them ban be
+    // Tra ve 1: thanh cong
+    // Tra ve < 0: loi, tuong ung trong file ErrorList.java
+    // Add friend nay la add friend mot chieu
+    // Chi them friendUsername vao danh sach currentUserName.
+    public int addFriend(String currentUserName, String friendUsername) {
+        if (isExistingUser(friendUsername) == false)
+            return ErrorList.FRIEND_NOT_EXIST;
+        if (checkFriend(currentUserName, friendUsername))
+            return ErrorList.ALREADY_FRIEND;
+
+        // them ban be vao database
+
+        return 1;
+    }
+
+
 }

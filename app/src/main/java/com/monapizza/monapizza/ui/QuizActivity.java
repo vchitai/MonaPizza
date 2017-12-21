@@ -82,6 +82,10 @@ public class QuizActivity extends AppCompatActivity {
         mCurrentLesson = intent.getIntExtra("lessonID", -1);
         mCurrentCategory = intent.getIntExtra("categoryID", -1);
         mCurrentLevel = intent.getIntExtra("levelID", -1);
+<<<<<<< HEAD
         mCurrentExam = new Exam(mCurrentLevel,mCurrentCategory,mCurrentLesson);
+=======
+        mCurrentExam = new Exam(mCurrentLevel, mCurrentCategory,mCurrentLesson + 1);
+>>>>>>> 71221d5c38b7974d7426e45d541fde8ed4e8de0d
     }
 }
