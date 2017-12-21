@@ -62,7 +62,7 @@
         android:id="@+id/guest_login_guest_login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:theme="@style/ButtonStyle"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:text="@string/welcome_guest_login_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

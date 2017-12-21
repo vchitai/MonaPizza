@@ -87,6 +87,20 @@ public class Question {
         }
     }
 
+    public String getQuestionDesc() {
+        switch (m_type) {
+            case 0:
+                return "Tìm từ tiếng Việt đồng nghĩa với ";
+            case 1:
+                return "Nghe và chọn từ chính xác";
+            case 2:
+                return "Xem hình và chọn từ chính xác";
+            case 3:
+                return "Tìm từ tiếng Anh đồng nghĩa với ";
+            default:
+                return "";
+        }
+    }
     // Kiem tra ket qua tu nguoi dung
     // id: Id cua tu ma nguoi dung chon
     public Boolean checkAnswer(int id) {
@@ -107,22 +121,30 @@ public class Question {
         3: Cho tu tieng viet, chon 4 dap an tieng anh.
     */
     public String getQuestion() {
+        String result;
         switch (m_type) {
-            case 0:
-                return m_words.get(m_idAnswer).getEnglish();
-
-            case 1:
-                return m_words.get(m_idAnswer).getSound();
-
-            case 2:
-                return m_words.get(m_idAnswer).getPicture();
-
-            case 3:
-                return m_words.get(m_idAnswer).getVietnamese();
-
-            default:
-                return "";
+            case 0: {
+                result =  m_words.get(m_idAnswer).getEnglish();
+                break;
+            }
+            case 1: {
+                result =  m_words.get(m_idAnswer).getSound();
+                break;
+            }
+            case 2: {
+                result =  m_words.get(m_idAnswer).getPicture();
+                break;
+            }
+            case 3: {
+                result =  m_words.get(m_idAnswer).getVietnamese();
+                break;
+            }
+            default: {
+                result =  "";
+                break;
+            }
         }
+        return result;
     }
 
     // Lay chi tiet cau tra loi tuong ung voi tung loai cau hoi m_type

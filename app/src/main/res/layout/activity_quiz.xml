@@ -7,41 +7,80 @@
     android:layout_height="match_parent"
     tools:context="com.monapizza.monapizza.ui.QuizActivity">
     <ImageView
-        android:id="@+id/quiz_image_question"
+        android:id="@+id/quiz_close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/quiz_progress_bar"
+        app:layout_constraintBottom_toTopOf="@id/quiz_guideline0"/>
+    <ProgressBar
+        android:id="@+id/quiz_progress_bar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/quiz_guideline0"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/quiz_guideline0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <ImageView
+        android:id="@+id/quiz_image_question"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toBottomOf="@id/quiz_text_question"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/quiz_guideline"
         android:visibility="gone"/>
     <TextView
         android:id="@+id/quiz_text_question"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:padding="@dimen/padding_small"
+        android:layout_margin="@dimen/padding_small"
+        android:textSize="@dimen/text_size_subheading"
+        app:layout_constraintHorizontal_weight="8"
         app:layout_constraintVertical_weight="1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quiz_guideline0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/quiz_sound_player"
-        app:layout_constraintBottom_toTopOf="@id/quiz_guideline"/>
+        app:layout_constraintBottom_toTopOf="@id/quiz_image_question"/>
     <ImageView
         android:id="@+id/quiz_sound_player"
-        android:layout_width="wrap_content"
+        android:src="@drawable/ic_shortcut_play_arrow"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintTop_toBottomOf="@id/quiz_guideline0"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/quiz_text_question"
-        app:layout_constraintBottom_toTopOf="@id/quiz_guideline"/>
+        app:layout_constraintLeft_toRightOf="@id/quiz_text_question"/>
+
     <android.support.constraint.Guideline
         android:id="@+id/quiz_guideline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"/>
+        app:layout_constraintGuide_percent="0.6"/>
+
+
     <Button
         android:id="@+id/quiz_answers_button1"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="@dimen/padding_small"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/textColorAccent"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -52,16 +91,24 @@
         android:id="@+id/quiz_answers_button3"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="@dimen/padding_small"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/textColorAccent"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/quiz_answers_button4"
         app:layout_constraintTop_toBottomOf="@id/quiz_answers_button1"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@id/quiz_next_button"/>
     <Button
         android:id="@+id/quiz_answers_button2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="@dimen/padding_small"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/textColorAccent"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintRight_toRightOf="parent"
@@ -72,10 +119,25 @@
         android:id="@+id/quiz_answers_button4"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="@dimen/padding_small"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/textColorAccent"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/quiz_answers_button3"
         app:layout_constraintTop_toBottomOf="@id/quiz_answers_button2"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@+id/quiz_next_button"/>
+    <Button
+        android:id="@+id/quiz_next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_small"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 </android.support.constraint.ConstraintLayout>

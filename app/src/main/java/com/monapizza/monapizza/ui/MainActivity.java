@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         mMainViewPager = (ViewPager) findViewById(R.id.main_view_pager);
         mMainViewPager.setAdapter(mMainPagerAdapter);
-
+        
         TabLayout tabLayout = (TabLayout) findViewById(R.id.main_tab_layout);
         tabLayout.setupWithViewPager(mMainViewPager);
     }

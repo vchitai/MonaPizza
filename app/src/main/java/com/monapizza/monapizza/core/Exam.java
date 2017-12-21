@@ -1,7 +1,5 @@
 package com.monapizza.monapizza.core;
 
-import android.util.Log;
-
 import com.monapizza.monapizza.database.DbHelper;
 
 import java.util.ArrayList;
@@ -117,7 +115,7 @@ public class Exam {
 
     // tra ve mot question hien thi
     public Question getQuestion() {
-        int type = ThreadLocalRandom.current().nextInt(0, Question.numberOfTypeQuestion + 1);
+        int type = ThreadLocalRandom.current().nextInt(0, Question.numberOfTypeQuestion);
 
         if (m_numWords < m_words.size()) {
             ArrayList<Word> new_list = new ArrayList<Word>();
@@ -168,6 +166,10 @@ public class Exam {
             return true;
         }
         return false;
+    }
+
+    public int getNumberQuestionNeedToPass() {
+        return numberQuestionHaveToPass;
     }
 }
 

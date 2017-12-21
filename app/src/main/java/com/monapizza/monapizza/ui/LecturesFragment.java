@@ -40,23 +40,15 @@ public class LecturesFragment extends Fragment {
 
         Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.lecture_toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        LecturesListAdapter lecturesListAdapter = new LecturesListAdapter(categories);
-        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.lectures_list);
+        final LecturesListAdapter lecturesListAdapter = new LecturesListAdapter(categories);
+        RecyclerView              recyclerView        = (RecyclerView) rootView.findViewById(R.id.lectures_list);
         recyclerView.setAdapter(lecturesListAdapter);
         final GridLayoutManager mng_layout = new GridLayoutManager(this.getActivity(), 4/*In your case 4*/);
+        int lol = lecturesListAdapter.getItemCount();
         mng_layout.setSpanSizeLookup( new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                /*
-                switch( adapterSubtype.getItemViewType(position) ) {
-                    case FilterSubtypesAdapter.TYPE_LOW:
-                        return TOTAL_CELLS_PER_ROW;
-                    case FilterSubtypesAdapter.TYPE_HIGH:
-                        return 2;
-                    default:
-                        return -1;
-                }*/
-                if (position % 3 == 0)
+                if (position % 3 == 0 || lecturesListAdapter.getItemViewType(position) <= lecturesListAdapter.TYPE_SEPARATOR)
                     return 4;
                 else
                 return 2;

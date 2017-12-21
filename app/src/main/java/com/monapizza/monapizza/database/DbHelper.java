@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import com.monapizza.monapizza.core.Category;
 import com.monapizza.monapizza.core.ErrorList;
@@ -210,7 +209,7 @@ public class DbHelper extends SQLiteOpenHelper {
         ArrayList<Category> cats = new ArrayList<Category>();
         SQLiteDatabase db = getDatabase();
         String query = "select c.CategoryID, c.CategoryName, c.Level, c.IconLocation" +
-                " from Category c";
+                " from Category c order by c.Level ASC";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
 
@@ -245,7 +244,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public int getMaxLevel() {
         SQLiteDatabase db = getDatabase();
         String query = "select c.Level" +
-                " from Category c Order by DESC";
+                " from Category c Order by c.Level DESC";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         int maxLevel = c.getInt(c.getColumnIndex("Level"));
