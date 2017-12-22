@@ -31,6 +31,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Exam {
     private static final int numberQuestionHaveToPass = 10;
+    private static final int numberAcceptedWrongAnswer = 3;
 
     // Danh sach cac tu trong bai hoc lesson cua category
     private ArrayList<Word> m_words;
@@ -47,6 +48,9 @@ public class Exam {
     // so cau da tra loi dung (bien nay de chon ra tu tiep theo de hoc
     // chon tu chua hoc hoac random chon mot tu khi da hoc het
     private int m_numWords;
+
+    // So cua tra loi sai
+    private int m_falseAns;
 
     // cau hoi hien tai dang duoc tao ra
     private Question currentQuestion;
@@ -70,7 +74,7 @@ public class Exam {
 
         int pos = ThreadLocalRandom.current().nextInt(0, m_words.size());
         if (m_words.get(pos).getId() == id) pos = nextPos(pos);
-        Log.d("checkOther", "vo day roi");
+        //Log.d("checkOther", "vo day roi");
         int cnt = 0;
         while (cnt < 3) {
             if (m_words.get(pos).getId() == id) {
@@ -92,6 +96,7 @@ public class Exam {
         m_category = category;
         m_lesson = lesson;
         m_numWords = 0;
+        m_falseAns = 0;
 
         //Log.d("myTag", "level: " + level + " cat " + category + " lesson " + lesson);
 
@@ -119,6 +124,13 @@ public class Exam {
     public Question getQuestion() {
         int type = ThreadLocalRandom.current().nextInt(0, Question.numberOfTypeQuestion);
 
+        if (m_lesson == -1) {
+            if (m_falseAns > numberAcceptedWrongAnswer) {
+                ErrorList.setExitCode(ErrorList.TOO_MANY_WRONGS);
+                return null;
+            }
+        }
+
         if (m_numWords < m_words.size()) {
             ArrayList<Word> new_list = new ArrayList<Word>();
             new_list.add(m_words.get(m_numWords));
@@ -131,6 +143,7 @@ public class Exam {
 
             currentQuestion = q;
 
+            ErrorList.setExitCode(0);
             return q;
         }
         else {
@@ -146,6 +159,7 @@ public class Exam {
 
             currentQuestion = q;
 
+            ErrorList.setExitCode(0);
             return q;
         }
     }
@@ -157,6 +171,8 @@ public class Exam {
         if (pass) {
             m_numWords = m_numWords + 1;
         }
+        else
+            m_falseAns = m_falseAns + 1;
         return pass;
     }
 

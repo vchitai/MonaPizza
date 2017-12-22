@@ -5,7 +5,12 @@ package com.monapizza.monapizza.core;
  */
 
 public class ErrorList {
-    ErrorList() {}
+
+    private static int m_exitcode;
+
+    ErrorList() {
+        m_exitcode = 0;
+    }
 
     public static final int PASSWORD_ERROR_FORMAT   =   -1;
     public static final int USERNAME_EXISTED        =   -2;
@@ -17,6 +22,7 @@ public class ErrorList {
     public static final int FRIEND_NOT_EXIST        =   -8;
     public static final int NOT_SIGN_IN             =   -9;
     public static final int NOT_ENOUGH_MONEY        =   -10;
+    public static final int TOO_MANY_WRONGS         =   -11;
 
     public static String getMessage(int idError) {
         switch (idError) {
@@ -40,9 +46,19 @@ public class ErrorList {
                 return "Bạn phải đăng nhập để dùng chức năng này.";
             case -10:
                 return "Bạn không đủ tiền. Học thêm nhé!!!";
+            case -11:
+                return "Bạn đã trả lời sai quá số câu cho phép. Hãy học lại từ đầu hoặc thử lại lần sau nhé!";
 
             default:
                 return "Lỗi chưa biết.";
         }
+    }
+
+    public static void setExitCode(int e) {
+        m_exitcode = e;
+    }
+
+    public static int getExitCode() {
+        return m_exitcode;
     }
 }
