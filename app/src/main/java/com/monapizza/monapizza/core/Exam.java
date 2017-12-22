@@ -1,5 +1,7 @@
 package com.monapizza.monapizza.core;
 
+import android.util.Log;
+
 import com.monapizza.monapizza.database.DbHelper;
 
 import java.util.ArrayList;
@@ -68,7 +70,7 @@ public class Exam {
 
         int pos = ThreadLocalRandom.current().nextInt(0, m_words.size());
         if (m_words.get(pos).getId() == id) pos = nextPos(pos);
-
+        Log.d("checkOther", "vo day roi");
         int cnt = 0;
         while (cnt < 3) {
             if (m_words.get(pos).getId() == id) {
@@ -136,7 +138,9 @@ public class Exam {
             ArrayList<Word> new_list = new ArrayList<Word>();
             new_list.add(m_words.get(pos));
 
-            ArrayList<Word> otherThreeWords = getOtherThreeWords(m_words.get(m_numWords).getId());
+            //Log.d("myTag", "type " + type + " m_numWords: " + m_numWords);
+            ArrayList<Word> otherThreeWords = getOtherThreeWords(m_words.get(pos).getId());
+            //Log.d("myTag", "type " + type + " m_numWords: " + m_numWords);
 
             new_list.addAll(otherThreeWords);
 
