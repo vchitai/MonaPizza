@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.monapizza.monapizza.core.Category;
 import com.monapizza.monapizza.core.ErrorList;
@@ -312,6 +313,7 @@ public class DbHelper extends SQLiteOpenHelper {
     // Chuyen tu checkList thanh String de luu tru trong database.
     private String convertCheckList2String(ArrayList<ArrayList<Boolean>> checkList) {
         String res = "";
+        //Log.d("myTag", "checkList's length " + checkList.size());
 
         for(ArrayList<Boolean> l: checkList)
             for(Boolean b: l)

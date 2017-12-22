@@ -138,9 +138,7 @@ public class Exam {
             ArrayList<Word> new_list = new ArrayList<Word>();
             new_list.add(m_words.get(pos));
 
-            //Log.d("myTag", "type " + type + " m_numWords: " + m_numWords);
             ArrayList<Word> otherThreeWords = getOtherThreeWords(m_words.get(pos).getId());
-            //Log.d("myTag", "type " + type + " m_numWords: " + m_numWords);
 
             new_list.addAll(otherThreeWords);
 

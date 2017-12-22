@@ -61,6 +61,32 @@ public class User {
         m_friends = database.loadFriend(userName);
     }
 
+    // Cho level, dem xem co bao nhieu cat duoc hoan thanh
+    private int getNumCatFromLevel(int level) {
+        if (level == 1) return 3;
+        if (level == 2) return 5;
+        if (level == 3) return 8;
+        return 12;
+    }
+
+    // Cap nhat level tu checkList
+    private int getNewLevelFromCheckList(ArrayList<ArrayList<Boolean>> checkList) {
+        int numCat = 0;
+        for(numCat = 0; numCat < checkList.size(); ++numCat) {
+            ArrayList<Boolean> temp = checkList.get(numCat);
+            int cnt = 0;
+            for(int i = 0; i < temp.size(); ++i)
+                if (temp.get(i) == true) cnt = cnt + 1;
+            if (cnt != temp.size()) break;
+        }
+
+        if (numCat >= 11) return 4;
+        if (numCat >= 7) return 3;
+        if (numCat >= 4) return 2;
+        if (numCat >= 2) return 1;
+        return 0;
+    }
+
     // kiem tra dang nhap nguoi dung
     // Tra ve:
     //      < 0: loi, xem loi tuong ung trong file ErrorList.java
@@ -110,25 +136,38 @@ public class User {
         DbHelper database = Ultility.getDbHelper();
         m_level = Math.max(m_level, level);
         if (level != -1) {
-            for(int i = 0; i < level - 1; ++i)
+            int new_cat = getNumCatFromLevel(level);
+            for(int i = 0; i < new_cat; ++i)
                 for(int j = 0; j < m_checkList.get(i).size(); ++j)
                     m_checkList.get(i).set(j, true);
 
+            m_level = level;
             database.updateLearningProcess(m_name, m_checkList);
-
+            database.updateLevel(m_name, m_level);
             return;
         }
         if (level == -1 && category != -1 && lesson == -1) {
+            category = category - 1;
+
             for(int i = 0; i < m_checkList.get(category).size(); ++i)
                 m_checkList.get(category).set(i, true);
 
+            m_level = getNewLevelFromCheckList(m_checkList);
+
             database.updateLearningProcess(m_name, m_checkList);
+            database.updateLevel(m_name, m_level);
             return;
         }
         if (level == -1 && category != -1 && lesson != -1) {
+            category = category - 1;
+            lesson = lesson - 1;
+
             m_checkList.get(category).set(lesson, true);
 
+            m_level = getNewLevelFromCheckList(m_checkList);
+
             database.updateLearningProcess(m_name, m_checkList);
+            database.updateLevel(m_name, m_level);
             return;
         }
     }
