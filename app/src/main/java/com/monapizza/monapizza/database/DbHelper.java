@@ -681,5 +681,21 @@ public class DbHelper extends SQLiteOpenHelper {
         return 1;
     }
 
+    // Ham cap nhat Username vao bang SkipSignIn
+    public void updateSkipSignIn(String username) {
 
+    }
+
+    // Ham kiem tra xem co username da dang nhap truoc do hay chua
+    // Thong tin luu trong bang SkipSignIn
+    // Tra ve: String: ten username da dang nhap truoc do
+    // Tra ve: null: neu chua tung co username dang nhap
+    public String checkSkipSignIn() {
+        return null;
+    }
+
+    // Ham nay xoa userName trong bang SkipSignIn khi username logout ra khoi he thong
+    public void deleteRecentSignIn() {
+
+    }
 }

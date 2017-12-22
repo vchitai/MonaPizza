@@ -59,6 +59,8 @@ public class User {
         m_checkList = database.loadCheckList(userName);
         m_level = database.loadLevel(userName);
         m_friends = database.loadFriend(userName);
+
+        database.updateSkipSignIn(userName);
     }
 
     // Cho level, dem xem co bao nhieu cat duoc hoan thanh
@@ -85,6 +87,21 @@ public class User {
         if (numCat >= 4) return 2;
         if (numCat >= 2) return 1;
         return 0;
+    }
+
+
+    // Ham cho phep bo qua dang nhap vi da dang nhap truoc do
+    // Tra ve 1: Neu da dang nhap
+    // Tra ve -1: Neu truoc do chua tung dang nhap
+    public int skipSignIn() {
+        DbHelper database = Ultility.getDbHelper();
+
+        String usName = database.checkSkipSignIn();
+        if (usName != null) {
+            loadUserInfo(usName);
+            return 1;
+        }
+        return -1;
     }
 
     // kiem tra dang nhap nguoi dung
@@ -122,6 +139,7 @@ public class User {
         m_logined = false;
 
         database.updateAllInfo(m_name, m_level, m_checkList, m_money);
+        database.deleteRecentSignIn();
 
         m_level = 0;
         m_checkList.clear();
