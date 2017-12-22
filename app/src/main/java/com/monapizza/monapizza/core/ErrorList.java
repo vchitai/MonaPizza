@@ -15,6 +15,8 @@ public class ErrorList {
     public static final int USERNAME_ERROR_FORMAT   =   -6;
     public static final int ALREADY_FRIEND          =   -7;
     public static final int FRIEND_NOT_EXIST        =   -8;
+    public static final int NOT_SIGN_IN             =   -9;
+    public static final int NOT_ENOUGH_MONEY        =   -10;
 
     public static String getMessage(int idError) {
         switch (idError) {
@@ -34,6 +36,10 @@ public class ErrorList {
                 return "Đã là bạn bè.";
             case -8:
                 return "Người bạn thêm vào danh sách bạn bè không tồn tại.";
+            case -9:
+                return "Bạn phải đăng nhập để dùng chức năng này.";
+            case -10:
+                return "Bạn không đủ tiền. Học thêm nhé!!!";
 
             default:
                 return "Lỗi chưa biết.";

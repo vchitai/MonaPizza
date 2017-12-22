@@ -12,6 +12,7 @@ import android.util.Log;
 import com.monapizza.monapizza.core.Category;
 import com.monapizza.monapizza.core.ErrorList;
 import com.monapizza.monapizza.core.Friend;
+import com.monapizza.monapizza.core.Item;
 import com.monapizza.monapizza.core.Lesson;
 import com.monapizza.monapizza.core.Word;
 
@@ -350,6 +351,42 @@ public class DbHelper extends SQLiteOpenHelper {
         return result;
     }
 
+    // ham chuyen doi ItemList thanh string
+    private String convertItemList2String(ArrayList<Integer> item) {
+        String res = "";
+        res = item.get(0).toString();
+        for(int i = 1; i < item.size(); ++i)
+            res = res + ',' + item.get(i).toString();
+        return res;
+    }
+
+    // ham chuyen doi string thanh ItemList
+    private ArrayList<Integer> convertString2ItemList(String s) {
+        ArrayList<Integer> res = new ArrayList<Integer>();
+
+        int num = 0;
+        for(int i = 0; i < s.length(); ++i) {
+            if (s.charAt(i) == ',') {
+                res.add(num);
+                num = 0;
+                continue;
+            }
+            num = num * 10 + s.charAt(i) - '0';
+        }
+        res.add(num);
+
+        return res;
+    }
+
+    private String getEmptyItemList() {
+        String res = "";
+        int numItem = getNumberItem();
+        res = "0";
+        for(int i = 1; i < numItem; ++i)
+            res = res + "," + "0";
+        return res;
+    }
+
     // Hàm khởi tạo checkList rỗng, dùng cho user mới khởi tạo
     private String getEmptyCheckList() {
         String result = "";
@@ -412,8 +449,9 @@ public class DbHelper extends SQLiteOpenHelper {
     // Ham private: them mot userName moi vao db
     private void addNewUser(String userName, String password) {
         int level = 0;
-        int money = 0;
+        int money = 100;
         String checkLists = getEmptyCheckList();
+        String itemLists = getEmptyItemList();
         // them user vao database
 
         ContentValues values = new ContentValues();
@@ -424,6 +462,7 @@ public class DbHelper extends SQLiteOpenHelper {
         //db.close();
     }
 
+    // Ham kiem tra password nhap vao co trung voi password trong database hay khong
     public Boolean checkPassword(String username, String password) {
         return (password.equals(getPassword(username)));
     }
@@ -568,10 +607,11 @@ public class DbHelper extends SQLiteOpenHelper {
     // userName: là tên user (khóa chính).
     // Tra ve 1: thanh cong
     // Tra ve so am: That bai, loi tuong ung trong file ErrorList.java
-    public int updateAllInfo(String userName, int level, ArrayList<ArrayList<Boolean>> checkList, int money) {
+    public int updateAllInfo(String userName, int level, ArrayList<ArrayList<Boolean>> checkList, int money, ArrayList<Integer> itemList) {
         updateLearningProcess(userName, checkList);
         updateLevel(userName, level);
         updateMoney(userName, money);
+        updateItemList(userName, itemList);
         return 1;
     }
 
@@ -697,5 +737,43 @@ public class DbHelper extends SQLiteOpenHelper {
     // Ham nay xoa userName trong bang SkipSignIn khi username logout ra khoi he thong
     public void deleteRecentSignIn() {
 
+    }
+
+    // ham lay so luong item trong bang Item
+    public int getNumberItem() {
+        return 0;
+    }
+
+    // ham tra ve danh sach Item trong database
+    // cau truc Item xem class Item.java
+    // Thuc hien tren bang Item
+    public ArrayList<Item> getItemList() {
+
+
+        return new ArrayList<Item>();
+    }
+
+    // Ham load thong tin itemList cua User
+    // Luu thong tin ItemList trong database vao String s
+    public ArrayList<Integer> loadItemList(String username) {
+        String s = "";
+
+        // Lay thong tin trong database
+
+        return convertString2ItemList(s);
+    }
+
+    // Ham cap nhat danh sach ItemList cua User vao bang User
+    // bien s da duoc bien doi dung format
+    // chi can cap nhat vao database
+    public void updateItemList(String userName, ArrayList<Integer> itemList) {
+        String s = convertItemList2String(itemList);
+
+        // cap nhat s vao database
+    }
+
+    // Ham lay item co id la ind trong bang Item
+    public Item getItem(int ind) {
+        return null;
     }
 }

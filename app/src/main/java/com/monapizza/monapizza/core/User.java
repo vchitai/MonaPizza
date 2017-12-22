@@ -30,6 +30,9 @@ public class User {
     // Tien
     private int m_money;
 
+    // Danh sach vat pham so huu
+    private ArrayList<Integer> m_itemList;
+
     // Danh sach ban be
     private ArrayList<Friend> m_friends;
 
@@ -59,6 +62,7 @@ public class User {
         m_checkList = database.loadCheckList(userName);
         m_level = database.loadLevel(userName);
         m_friends = database.loadFriend(userName);
+        m_itemList = database.loadItemList(userName);
 
         database.updateSkipSignIn(userName);
     }
@@ -138,7 +142,7 @@ public class User {
         DbHelper database = Ultility.getDbHelper();
         m_logined = false;
 
-        database.updateAllInfo(m_name, m_level, m_checkList, m_money);
+        database.updateAllInfo(m_name, m_level, m_checkList, m_money, m_itemList);
         database.deleteRecentSignIn();
 
         m_level = 0;
@@ -146,6 +150,7 @@ public class User {
         m_name = "";
         m_money = 0;
         m_friends.clear();
+        m_itemList.clear();
     }
 
     // Cap nhat tien trinh hoc cua user
@@ -215,6 +220,10 @@ public class User {
         return m_level;
     }
 
+    public ArrayList<Integer> getItemList() {
+        return m_itemList;
+    }
+
     // Ham lay danh sach ban be
     // Ham tam thoi, database chua ton tai nen van load friend tam
     public ArrayList<Friend> getFriendList() {
@@ -242,15 +251,26 @@ public class User {
     // Tra ve
     //      false: mua that bai
     //      true: mua thanh cong, tu dong cap nhat database.
-    public Boolean buyItem(int itemId) {
+    public int buyItem(int itemId) {
         DbHelper database = Ultility.getDbHelper();
         if (m_logined == false) {
             // chua dang nhap
-            return false;
+            return ErrorList.NOT_SIGN_IN;
         }
-        // Kiem tra viec mua item
-        // Mua thanh cong, cap nhat database
-        return true;
+        Item t_item = database.getItem(itemId);
+
+        // khong du tien
+        if (m_money < t_item.getPrice()) {
+            return ErrorList.NOT_ENOUGH_MONEY;
+        }
+
+        m_money = m_money - t_item.getPrice();
+        m_itemList.set(itemId - 1, m_itemList.get(itemId - 1) + 1);
+
+        database.updateMoney(m_name, m_money);
+        database.updateItemList(m_name, m_itemList);
+
+        return 1;
     }
 
 }
