@@ -273,4 +273,25 @@ public class User {
         return 1;
     }
 
+    // Kiem tra tien trinh nguoi hoc
+    // Tra ve true: neu nguoi do da hoan thanh
+    // Tra ve false: neu nguoi do chua hoan thanh
+    public Boolean checkProcess(int level, int category, int lesson) {
+        if (level >= 0) {
+            return m_level >= level;
+        }
+        if (lesson == -1) {
+            category = category - 1;
+
+            ArrayList<Boolean> temp = m_checkList.get(category);
+            int numFinish = 0;
+            for(int i = 0; i < temp.size(); ++i)
+                if (temp.get(i) == true) numFinish = numFinish + 1;
+
+            if (numFinish == temp.size())
+                return true;
+            return false;
+        }
+        return m_checkList.get(category - 1).get(lesson - 1);
+    }
 }
