@@ -90,7 +90,7 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), LessonsActivity.class);
-                    intent.putExtra("categoryID", mCategoryList.get(realPos).getId());
+                    intent.putExtra(MonaPizza.getAppContext().getResources().getString(R.string.EA_CategoryID), mCategoryList.get(realPos).getId());
 
                     v.getContext().startActivity(intent);
                 }
@@ -100,7 +100,7 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), QuizActivity.class);
-                    intent.putExtra("levelID", -realPos);
+                    intent.putExtra(MonaPizza.getAppContext().getResources().getString(R.string.EA_LevelID), -realPos);
 
                     v.getContext().startActivity(intent);
                 }

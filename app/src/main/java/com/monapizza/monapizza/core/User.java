@@ -129,7 +129,7 @@ public class User {
     // Tra ve:
     //      < 0: loi, xem loi tuong ung trong file ErrorList.java
     //      1: login thanh cong, da load data tu database cua user vao cac truong luu tru phia tren.
-    private int signUp(String userName, String password) {
+    public int signUp(String userName, String password) {
         DbHelper database = Ultility.getDbHelper();
         int id = database.addUser(userName, password);
         if (id < 1) return id;
@@ -138,7 +138,7 @@ public class User {
     }
 
     // Dang xuat
-    private void logOut() {
+    public void logOut() {
         DbHelper database = Ultility.getDbHelper();
         m_logined = false;
 

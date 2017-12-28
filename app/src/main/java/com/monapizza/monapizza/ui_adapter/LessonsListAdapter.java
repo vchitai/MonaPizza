@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Ultility;
 import com.monapizza.monapizza.core.Word;
@@ -71,8 +72,8 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), QuizActivity.class);
-                intent.putExtra("categoryID", mCategoryID);
-                intent.putExtra("lessonID", position);
+                intent.putExtra(MonaPizza.getAppContext().getResources().getString(R.string.EA_CategoryID), mCategoryID);
+                intent.putExtra(MonaPizza.getAppContext().getResources().getString(R.string.EA_LessonID), position);
                 
                 v.getContext().startActivity(intent);
             }

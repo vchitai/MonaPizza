@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.monapizza.monapizza.R;
+import com.monapizza.monapizza.core.User;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -16,6 +17,11 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         final Context context          = this;
+
+        if (User.getInstance().skipSignIn() == 1) {
+            Intent intent = new Intent(context,MainActivity.class);
+            startActivity(intent);
+        }
 
         Button        guestLoginButton = (Button)findViewById(R.id.welcome_guest_login_button);
         guestLoginButton.setOnClickListener(new View.OnClickListener() {

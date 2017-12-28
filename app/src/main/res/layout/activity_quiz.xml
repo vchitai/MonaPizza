@@ -135,7 +135,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding_small"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:text="Next"
+        android:text="@string/QS_CheckAsnwer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

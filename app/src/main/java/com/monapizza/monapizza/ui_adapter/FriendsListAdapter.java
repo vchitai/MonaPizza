@@ -62,7 +62,7 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
         }
         holder.mFriendImage.setBackground(drawable);
         holder.mFriendName.setText(currentFriend.getName());
-        String progress = "Progress : "+currentFriend.getProgress()+"%";
+        String progress = "Progress : " + currentFriend.getProgress() + "%";
         holder.mFriendSummary.setText(progress);
     }
 

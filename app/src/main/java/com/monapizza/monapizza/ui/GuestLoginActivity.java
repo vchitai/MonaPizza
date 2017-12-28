@@ -7,8 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.monapizza.monapizza.R;
+import com.monapizza.monapizza.core.ErrorList;
 import com.monapizza.monapizza.core.User;
 
 public class GuestLoginActivity extends AppCompatActivity {
@@ -19,16 +22,26 @@ public class GuestLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_guest_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.guest_login_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        final Context context     = this;
-        Button        guestLoginButton = (Button)findViewById(R.id.guest_login_guest_login_button);
-        guestLoginButton.setOnClickListener(new View.OnClickListener() {
+        try {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
+        final EditText usernameIET = (EditText) findViewById(R.id.guest_login_username_textInputLayout);
+
+        final Context           context     = this;
+        Button                  loginButton = (Button)findViewById(R.id.guest_login_guest_login_button);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User usr = User.getInstance();
-
-                Intent intent = new Intent(context,MainActivity.class);
-                startActivity(intent);
+                if (User.getInstance().signUp(usernameIET.getText().toString(), getResources().getString(R.string.default_guest_password)) == 1) {
+                    Intent intent = new Intent(context, MainActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(context, ErrorList.getMessage(ErrorList.getExitCode()), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

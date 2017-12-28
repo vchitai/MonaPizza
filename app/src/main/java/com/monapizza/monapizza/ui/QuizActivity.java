@@ -50,15 +50,15 @@ public class QuizActivity extends AppCompatActivity {
         mImageQuestion = (ImageView) findViewById(R.id.quiz_image_question);
         mTextQuestion = (TextView) findViewById(R.id.quiz_text_question);
         mSoundQuestion = (ImageView) findViewById(R.id.quiz_sound_player);
-        mAnswerButton = new ArrayList<Button>();
+        mAnswerButton = new ArrayList<>();
         mAnswerButton.add((Button) findViewById(R.id.quiz_answers_button1));
         mAnswerButton.add((Button) findViewById(R.id.quiz_answers_button2));
         mAnswerButton.add((Button) findViewById(R.id.quiz_answers_button3));
         mAnswerButton.add((Button) findViewById(R.id.quiz_answers_button4));
         Intent intent = getIntent();
-        mCurrentLesson = intent.getIntExtra("lessonID", -2);
-        mCurrentCategory = intent.getIntExtra("categoryID", -1);
-        mCurrentLevel = intent.getIntExtra("levelID", -1);
+        mCurrentLesson = intent.getIntExtra(getResources().getString(R.string.EA_LessonID), -2);
+        mCurrentCategory = intent.getIntExtra(getResources().getString(R.string.EA_CategoryID), -1);
+        mCurrentLevel = intent.getIntExtra(getResources().getString(R.string.EA_LevelID), -1);
         mCurrentExam = new Exam(mCurrentLevel, mCurrentCategory,mCurrentLesson + 1);
         for (int i = 0; i<NUMBER_OF_ANSWERS; i++) {
             final int ans = i;
@@ -91,7 +91,8 @@ public class QuizActivity extends AppCompatActivity {
         int quesType = mCurrentQuestion.getQuestionType();
         switch (quesType) {
             case Question.QUES_TYPE_STR: {
-                mTextQuestion.setText(mCurrentQuestion.getQuestionDesc() + ques);
+                String textQues = mCurrentQuestion.getQuestionDesc() + ques;
+                mTextQuestion.setText(textQues);
                 mImageQuestion.setVisibility(View.GONE);
                 mSoundQuestion.setVisibility(View.GONE);
                 break;
@@ -103,8 +104,15 @@ public class QuizActivity extends AppCompatActivity {
                     AssetFileDescriptor afd = getAssets().openFd(ques);
                     mp = new MediaPlayer();
                     mp.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+                    mSoundQuestion.setClickable(false);
                     mp.prepare();
                     mp.start();
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
+                            mSoundQuestion.setClickable(true);
+                        }
+                    });
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -113,9 +121,12 @@ public class QuizActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try {
-                            mpp.stop();
-                            mpp.prepare();
-                            mpp.start();
+                            if (mpp != null) {
+                                mSoundQuestion.setClickable(false);
+                                mpp.stop();
+                                mpp.prepare();
+                                mpp.start();
+                            }
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -176,14 +187,14 @@ public class QuizActivity extends AppCompatActivity {
 
     private void processAnswer() {
         if (mCurrentAns == -1) {
-            Toast.makeText(this,"Question Unanswered!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getResources().getString(R.string.QS_QuestionUnanswered),Toast.LENGTH_SHORT).show();
         } else {
             boolean res = mCurrentExam.setAnswer(mCurrentAns);
             if (res) {
-                Toast.makeText(this, "Right!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.QS_RightAnswer), Toast.LENGTH_SHORT).show();
                 mProgressBar.incrementProgressBy(1);
             } else {
-                Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.QS_WrongAnswer), Toast.LENGTH_SHORT).show();
             }
             if (mCurrentExam.checkPassExam(User.getInstance())) {
                 finish();
@@ -192,7 +203,7 @@ public class QuizActivity extends AppCompatActivity {
                     mAnswerButton.get(i).setClickable(false);
                 }
                 mNextButton.setOnClickListener(null);
-                mNextButton.setText("Next");
+                mNextButton.setText(getResources().getString(R.string.QS_NextQuestion));
                 mNextButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -212,7 +223,7 @@ public class QuizActivity extends AppCompatActivity {
         if (mCurrentAns != -1)
             mAnswerButton.get(mCurrentAns).setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
         mCurrentAns = -1;
-        mNextButton.setText("Check");
+        mNextButton.setText(getResources().getString(R.string.QS_CheckAsnwer));
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,5 +1,8 @@
 package com.monapizza.monapizza.core;
 
+import com.monapizza.monapizza.MonaPizza;
+import com.monapizza.monapizza.R;
+
 /**
  * Created by Vinh Ton That on 12/2/2017.
  */
@@ -26,31 +29,31 @@ public class ErrorList {
 
     public static String getMessage(int idError) {
         switch (idError) {
-            case -1:
-                return "Format password sai. Đề nghị dùng ít nhât mội kí tự Alphabet và chữ số, độ dài lớn hơn bằng 6";
-            case -2:
-                return "Username đã tồn tại.";
-            case -3:
-                return "Password sai.";
-            case -4:
-                return "Password mới giống password cũ, đề nghị bạn nhập password mới.";
-            case -5:
-                return "Username không tồn tại.";
-            case -6:
-                return "Tên username lỗi. Chỉ sử dụng các kí tự a..z và các kí tự số 0..9.";
-            case -7:
-                return "Đã là bạn bè.";
-            case -8:
-                return "Người bạn thêm vào danh sách bạn bè không tồn tại.";
-            case -9:
-                return "Bạn phải đăng nhập để dùng chức năng này.";
-            case -10:
-                return "Bạn không đủ tiền. Học thêm nhé!!!";
-            case -11:
-                return "Bạn đã trả lời sai quá số câu cho phép. Hãy học lại từ đầu hoặc thử lại lần sau nhé!";
+            case PASSWORD_ERROR_FORMAT:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_PasswordErrorFormat);
+            case USERNAME_EXISTED:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_UsernameExisted);
+            case WRONG_PASSWORD:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_WrongPassword);
+            case SAME_PASSWORD:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_SamePassword);
+            case USERNAME_NOT_EXISTED:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_UsernameNotExisted);
+            case USERNAME_ERROR_FORMAT:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_UsernameErrorFormat);
+            case ALREADY_FRIEND:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_AlreadyFriend);
+            case FRIEND_NOT_EXIST:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_FriendNotExist);
+            case NOT_SIGN_IN:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_NotSignedIn);
+            case NOT_ENOUGH_MONEY:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_NotEnoughMoney);
+            case TOO_MANY_WRONGS:
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_TooManyWrongs);
 
             default:
-                return "Lỗi chưa biết.";
+                return MonaPizza.getAppContext().getResources().getString(R.string.EM_NotKnowingError);
         }
     }
 

@@ -19,25 +19,29 @@ public class LessonsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
+        final int          categoryID         = getIntent().getIntExtra(getResources().getString(R.string.EA_CategoryID), -1);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.lessons_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        final int          categoryID         = getIntent().getIntExtra("categoryID", -1);
+
         LessonsListAdapter lessonsListAdapter = new LessonsListAdapter(categoryID);
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         RecyclerView lessonList = (RecyclerView) findViewById(R.id.lessons_list);
-        LinearSnapHelper snapHelper = new LinearSnapHelper();
         lessonList.setLayoutManager(layoutManager);
         lessonList.setAdapter(lessonsListAdapter);
+
+        LinearSnapHelper snapHelper = new LinearSnapHelper();
         snapHelper.attachToRecyclerView(lessonList);
+
+
         Button lessonTestButton = (Button)findViewById(R.id.lessons_test_button);
         lessonTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), QuizActivity.class);
-                intent.putExtra("categoryID", categoryID);
+                intent.putExtra(getResources().getString(R.string.EA_CategoryID), categoryID);
                 startActivity(intent);
             }
         });

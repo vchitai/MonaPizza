@@ -10,12 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar">
-        <activity android:name=".ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/AppTheme_NoActionBar">
         </activity>
         <activity
             android:name=".ui.LessonsActivity"
@@ -29,18 +26,26 @@
         <activity
             android:name=".ui.WelcomeActivity"
             android:theme="@style/AppTheme_NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.GuestLoginActivity"
-            android:theme="@style/AppTheme_NoActionBar">
+            android:theme="@style/AppTheme_NoActionBar"
+            android:parentActivityName="com.monapizza.monapizza.ui.WelcomeActivity">
         </activity>
         <activity
             android:name=".ui.LoginActivity"
-            android:theme="@style/AppTheme_NoActionBar">
+            android:theme="@style/AppTheme_NoActionBar"
+            android:parentActivityName="com.monapizza.monapizza.ui.WelcomeActivity">
         </activity>
         <activity
             android:name=".ui.SignupActivity"
-            android:theme="@style/AppTheme_NoActionBar">
+            android:theme="@style/AppTheme_NoActionBar"
+            android:parentActivityName="com.monapizza.monapizza.ui.WelcomeActivity">
         </activity>
         <activity android:name=".ui.ExamActivity">
         </activity>

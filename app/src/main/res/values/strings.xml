@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MonaPizza</string>
+    <string name="default_guest_password">mona123</string>
 
     <string name="welcome_logo">MonaPizza</string>
     <string name="welcome_login_button">Login</string>
@@ -20,13 +21,45 @@
     <string name="guest_login_welcome">Hello! \nPlease enter your name to enter</string>
     <string name="signup_username">Username</string>
     <string name="signup_password">Password</string>
+    <string name="signup_repassword">Reenter Password</string>
 
     <string name="friend_avatar">Avatar</string>
     <string name="friend_name">Name</string>
     <string name="friend_summary">Summary</string>
 
+    <string name="shopping_buy">Buy</string>
+
     <string name="lecture_icon">Icon</string>
     <string name="lecture_name">Name</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Quiz Context String-->
+    <string name="QS_QuestionUnanswered">Câu hỏi chưa được trả lời</string>
+    <string name="QS_CheckAsnwer">Kiểm tra câu trả lời</string>
+    <string name="QS_RightAnswer">Trả lời đúng</string>
+    <string name="QS_WrongAnswer">Trả lời sai</string>
+    <string name="QS_NextQuestion">Câu kế tiếp</string>
+
+    <!-- Constant Application Intext Extra Access String-->
+    <string name="EA_CategoryID">CategoryID</string>
+    <string name="EA_LessonID">LessonID</string>
+    <string name="EA_LevelID">LevelID</string>
+
+    <!-- Error Message List -->
+    <string name="EM_PasswordErrorFormat">
+        Format password sai. Đề nghị dùng ít nhât mội kí tự Alphabet và chữ số, độ dài lớn hơn bằng 6</string>
+    <string name="EM_TooManyWrongs">
+        Bạn đã trả lời sai quá số câu cho phép. Hãy học lại từ đầu hoặc thử lại lần sau nhé!</string>
+    <string name="EM_UsernameExisted">Username đã tồn tại.</string>
+    <string name="EM_WrongPassword">Password sai.</string>
+    <string name="EM_SamePassword">Password mới giống password cũ, đề nghị bạn nhập password mới.</string>
+    <string name="EM_UsernameNotExisted">Username không tồn tại.</string>
+    <string name="EM_UsernameErrorFormat">Tên username lỗi. Chỉ sử dụng các kí tự a..z và các kí tự số 0..9.</string>
+    <string name="EM_AlreadyFriend">Đã là bạn bè.</string>
+    <string name="EM_FriendNotExist">Người bạn thêm vào danh sách bạn bè không tồn tại.</string>
+    <string name="EM_NotSignedIn">Bạn phải đăng nhập để dùng chức năng này.</string>
+    <string name="EM_NotEnoughMoney">Bạn không đủ tiền. Học thêm nhé!!!</string>
+    <string name="EM_NotKnowingError">Lỗi chưa biết</string>
+    <string name="EM_PasswordConfirmNotMatch">Mật khẩu và xác nhận mật khẩu khác nhau!</string>
 </resources>

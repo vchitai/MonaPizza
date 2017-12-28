@@ -41,5 +41,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Buy"/>
+        android:text="@string/shopping_buy"/>
 </android.support.constraint.ConstraintLayout>
