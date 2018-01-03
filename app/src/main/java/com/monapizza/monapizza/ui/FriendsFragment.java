@@ -3,6 +3,7 @@ package com.monapizza.monapizza.ui;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,8 +25,9 @@ import com.monapizza.monapizza.ui_adapter.FriendsListAdapter;
  * A simple {@link Fragment} subclass.
  */
 public class FriendsFragment extends Fragment {
-    RecyclerView mFriendList;
+    RecyclerView       mFriendList;
     FriendsListAdapter mFriendsListAdapter;
+    ConstraintLayout   mFriendEmptyView;
 
     public FriendsFragment() {
         // Required empty public constructor
@@ -37,7 +39,7 @@ public class FriendsFragment extends Fragment {
                              Bundle savedInstanceState) {
         User usr = User.getInstance();
         View rootView = inflater.inflate(R.layout.fragment_friends, container, false);
-
+        mFriendEmptyView = (ConstraintLayout)rootView.findViewById(R.id.friend_empty_view);
         mFriendsListAdapter = new FriendsListAdapter(usr.getFriendList());
         mFriendList        = (RecyclerView) rootView.findViewById(R.id.friend_list);
         mFriendList.setAdapter(mFriendsListAdapter);
@@ -49,8 +51,19 @@ public class FriendsFragment extends Fragment {
                 addFriend();
             }
         });
+        notifyChange();
         // Inflate the layout for this fragment
         return rootView;
+    }
+
+    public void notifyChange() {
+        if (User.getInstance().getFriendList().size() == 0) {
+            mFriendEmptyView.setVisibility(View.VISIBLE);
+            mFriendList.setVisibility(View.GONE);
+        } else {
+            mFriendEmptyView.setVisibility(View.GONE);
+            mFriendList.setVisibility(View.VISIBLE);
+        }
     }
 
     public void addFriend() {
@@ -65,6 +78,7 @@ public class FriendsFragment extends Fragment {
             public void onClick(View v) {
                 if (User.getInstance().addFriend(User.getInstance().getUserName(), friendNameInput.getText().toString()) == 1) {
                     Toast.makeText(getContext(), getResources().getString(R.string.IS_AddFriendSuccess), Toast.LENGTH_SHORT).show();
+                    notifyChange();
                     mFriendsListAdapter.reload();
                     mFriendList.getAdapter().notifyDataSetChanged();
                 } else {

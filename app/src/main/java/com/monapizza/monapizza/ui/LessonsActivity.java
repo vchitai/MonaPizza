@@ -29,12 +29,12 @@ public class LessonsActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         RecyclerView lessonList = (RecyclerView) findViewById(R.id.lessons_list);
+
         lessonList.setLayoutManager(layoutManager);
         lessonList.setAdapter(lessonsListAdapter);
 
         LinearSnapHelper snapHelper = new LinearSnapHelper();
         snapHelper.attachToRecyclerView(lessonList);
-
 
         Button lessonTestButton = (Button)findViewById(R.id.lessons_test_button);
         lessonTestButton.setOnClickListener(new View.OnClickListener() {

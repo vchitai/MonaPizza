@@ -1,6 +1,7 @@
 package com.monapizza.monapizza.ui;
 
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,8 +23,8 @@ public class ShoppingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View      rootView =  inflater.inflate(R.layout.fragment_shopping, container, false);
+
         ArrayList<Item> itemList = Ultility.getDbHelper().getItemList();
         ShoppingListAdapter shoppingListAdapter = new ShoppingListAdapter(itemList);
         RecyclerView shoppingItemListView = (RecyclerView) rootView.findViewById(R.id.shopping_list);
@@ -31,7 +32,14 @@ public class ShoppingFragment extends Fragment {
         shoppingItemListView.setLayoutManager(new LinearLayoutManager(getContext()));
         shoppingItemListView.setAdapter(shoppingListAdapter);
 
+        ConstraintLayout emptyView = (ConstraintLayout) rootView.findViewById(R.id.shopping_empty_view);
+        if (itemList.isEmpty()) {
+            emptyView.setVisibility(View.VISIBLE);
+            shoppingItemListView.setVisibility(View.GONE);
+        } else {
+            emptyView.setVisibility(View.GONE);
+            shoppingItemListView.setVisibility(View.VISIBLE);
+        }
         return rootView;
     }
-
 }

@@ -49,7 +49,6 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
 
         // Inflate the custom layout
         View lessonView = inflater.inflate(R.layout.lesson, parent, false);
-
         // Return a new holder instance
         LessonsListAdapter.ViewHolder viewHolder = new LessonsListAdapter.ViewHolder(lessonView);
         return viewHolder;

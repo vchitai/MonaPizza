@@ -2,7 +2,7 @@ package com.monapizza.monapizza.ui_adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +18,6 @@ import com.monapizza.monapizza.core.Ultility;
 import com.monapizza.monapizza.ui.LessonsActivity;
 import com.monapizza.monapizza.ui.QuizActivity;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -118,14 +117,16 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
         if (realPos > TYPE_SEPARATOR) {
             String icon = mCategoryList.get(realPos).getIcon();
             //int id       = context.getResources().getIdentifier(icon, "drawable",  context.getPackageName());
+            /*
             Drawable drawable = null;
             try {
                 drawable = Drawable.createFromStream(MonaPizza.getAppContext().getAssets().open(mCategoryList.get(realPos).getIcon()), null);
             } catch (IOException e) {
                 e.printStackTrace();
-            }
+            }*/
+            RoundedBitmapDrawable drawable = MonaPizza.getRoundedBitmapDrawable(icon);
+            holder.mLectureImage.setImageDrawable(drawable);
 
-            holder.mLectureImage.setBackground(drawable);
             holder.mLectureName.setText(mCategoryList.get(realPos).getName());
             holder.mLectureView.setOnClickListener(new View.OnClickListener() {
                 @Override

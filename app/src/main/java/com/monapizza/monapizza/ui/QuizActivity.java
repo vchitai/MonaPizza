@@ -1,12 +1,15 @@
 package com.monapizza.monapizza.ui;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -66,9 +69,9 @@ public class QuizActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (mCurrentAns != -1)
-                        mAnswerButton.get(mCurrentAns).setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                        mAnswerButton.get(mCurrentAns).setBackground(getResources().getDrawable(R.drawable.round_corner_button));
                     mCurrentAns = ans;
-                    mAnswerButton.get(mCurrentAns).setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    mAnswerButton.get(mCurrentAns).setBackground(getResources().getDrawable(R.drawable.round_corner_button_2));
                 }
             });
         }
@@ -81,7 +84,7 @@ public class QuizActivity extends AppCompatActivity {
         });
         mNextButton = (Button) findViewById(R.id.quiz_next_button);
         mProgressBar = (ProgressBar) findViewById(R.id.quiz_progress_bar);
-        mProgressBar.setMax(mCurrentExam.getNumberQuestionNeedToPass());
+        mProgressBar.setMax(mCurrentExam.getNumberQuestionNeedToPass()*100);
         mProgressBar.setProgress(0);
     }
 
@@ -91,8 +94,9 @@ public class QuizActivity extends AppCompatActivity {
         int quesType = mCurrentQuestion.getQuestionType();
         switch (quesType) {
             case Question.QUES_TYPE_STR: {
-                String textQues = mCurrentQuestion.getQuestionDesc() + ques;
-                mTextQuestion.setText(textQues);
+                String tmp = ques.substring(0, 1).toUpperCase() + ques.substring(1);
+                String textQues = mCurrentQuestion.getQuestionDesc() + "<b>" + tmp + "</b>";
+                mTextQuestion.setText(Html.fromHtml(textQues));
                 mImageQuestion.setVisibility(View.GONE);
                 mSoundQuestion.setVisibility(View.GONE);
                 break;
@@ -192,7 +196,7 @@ public class QuizActivity extends AppCompatActivity {
             boolean res = mCurrentExam.setAnswer(mCurrentAns);
             if (res) {
                 Toast.makeText(this, getResources().getString(R.string.QS_RightAnswer), Toast.LENGTH_SHORT).show();
-                mProgressBar.incrementProgressBy(1);
+                updateProgressBar();
             } else {
                 Toast.makeText(this, getResources().getString(R.string.QS_WrongAnswer), Toast.LENGTH_SHORT).show();
             }
@@ -221,7 +225,7 @@ public class QuizActivity extends AppCompatActivity {
             mAnswerButton.get(i).setClickable(true);
         }
         if (mCurrentAns != -1)
-            mAnswerButton.get(mCurrentAns).setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+            mAnswerButton.get(mCurrentAns).setBackground(getResources().getDrawable(R.drawable.round_corner_button));
         mCurrentAns = -1;
         mNextButton.setText(getResources().getString(R.string.QS_CheckAsnwer));
         mNextButton.setOnClickListener(new View.OnClickListener() {
@@ -230,5 +234,15 @@ public class QuizActivity extends AppCompatActivity {
                 processAnswer();
             }
         });
+    }
+
+    private void updateProgressBar()
+    {
+        ObjectAnimator animation = ObjectAnimator.ofInt(mProgressBar, "progress", mProgressBar.getProgress(), mProgressBar.getProgress()+100);
+        animation.setDuration(500);
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.start();
+
+        mProgressBar.incrementProgressBy(100);
     }
 }

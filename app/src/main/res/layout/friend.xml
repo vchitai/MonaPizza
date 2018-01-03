@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:text="@string/friend_name"
         style="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/friend_avatar"
         app:layout_constraintBottom_toTopOf="@id/friend_summary"

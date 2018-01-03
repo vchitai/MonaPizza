@@ -1,7 +1,7 @@
 package com.monapizza.monapizza.ui_adapter;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +14,6 @@ import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Friend;
 import com.monapizza.monapizza.core.User;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -55,15 +54,12 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
     @Override
     public void onBindViewHolder(FriendsListAdapter.ViewHolder holder, final int position) {
         Friend   currentFriend = mFriends.get(position);
-        Drawable drawable      = null;
-        try {
-            drawable = Drawable.createFromStream(MonaPizza.getAppContext().getAssets().open(currentFriend.getAvatar()), null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        RoundedBitmapDrawable drawable = MonaPizza.getRoundedBitmapDrawable(currentFriend.getAvatar());
         holder.mFriendImage.setBackground(drawable);
         holder.mFriendName.setText(currentFriend.getName());
-        String progress = "Progress : " + currentFriend.getProgress() + "%";
+        String progress = MonaPizza.getAppContext().getResources().getString(R.string.progress) + ' ' +
+                                currentFriend.getProgress() + " % ";
         holder.mFriendSummary.setText(progress);
     }
 

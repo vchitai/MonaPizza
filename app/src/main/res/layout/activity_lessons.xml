@@ -8,29 +8,40 @@
     tools:context="com.monapizza.monapizza.ui.LessonsActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/lessons_toolbar"
-        android:minHeight="?android:attr/actionBarSize"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="10"
         android:layout_width="match_parent">
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lessons_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="80"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/lessons_toolbar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/lessons_test_button"/>
+        app:layout_constraintBottom_toTopOf="@id/lessons_test_button_bound"/>
 
-    <Button
-        android:id="@+id/lessons_test_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pass checkpoint"
-        style="@style/Widget.AppCompat.Button.Colored"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/lessons_test_button_bound"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="10"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lessons_list"/>
+        app:layout_constraintTop_toBottomOf="@id/lessons_list">
+        <Button
+            android:id="@+id/lessons_test_button"
+            android:text="@string/pass_checkpoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:minWidth="200dp"
+            android:background="@drawable/round_corner_button_2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
