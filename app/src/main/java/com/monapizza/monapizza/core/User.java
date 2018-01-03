@@ -233,6 +233,7 @@ public class User {
         friends.add(new Friend("friend3","default-avatar.png",50));
         friends.add(new Friend("friend4","default-avatar.png",50));
         friends.add(new Friend("friend5","default-avatar.png",50));
+        friends.add(new Friend("friend6","default-avatar.png",50));
         return friends;
 
         //return m_friends;

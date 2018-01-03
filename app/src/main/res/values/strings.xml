@@ -15,6 +15,14 @@
     <string name="lessons_words">Words in this lesson</string>
     <string name="lessons_start_button">Start</string>
 
+    <string name="account_username">Username</string>
+    <string name="account_email">Email</string>
+    <string name="account_password">Password</string>
+    <string name="account_repassword">Reenter Password</string>
+    <string name="account_manager_button">Save</string>
+    <string name="account_manager_edit_button">Edit</string>
+    <string name="account_manager_finish_button">Finish edit</string>
+
     <string name="login_username">Username</string>
     <string name="login_password">Password</string>
     <string name="guest_login_username">Username</string>
@@ -28,6 +36,13 @@
     <string name="friend_summary">Summary</string>
 
     <string name="shopping_buy">Buy</string>
+    <string name="shopping_icon">Icon</string>
+    <string name="shopping_name">Name</string>
+    <string name="shopping_price">Price</string>
+
+    <string name="add_friend_dialog_title">Add Friend </string>
+    <string name="add_friend_dialog_ok">OK</string>
+    <string name="add_friend_dialog_cancel">Cancel</string>
 
     <string name="lecture_icon">Icon</string>
     <string name="lecture_name">Name</string>
@@ -62,4 +77,8 @@
     <string name="EM_NotEnoughMoney">Bạn không đủ tiền. Học thêm nhé!!!</string>
     <string name="EM_NotKnowingError">Lỗi chưa biết</string>
     <string name="EM_PasswordConfirmNotMatch">Mật khẩu và xác nhận mật khẩu khác nhau!</string>
+
+    <!-- Inform Success -->
+    <string name="IS_UpdatePassSuccess">Thay đổi mật khẩu thành công</string>
+    <string name="IS_AddFriendSuccess">Thêm bạn thành công</string>
 </resources>

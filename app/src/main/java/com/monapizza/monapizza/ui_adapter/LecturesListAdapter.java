@@ -27,7 +27,8 @@ import java.util.ArrayList;
 
 public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapter.ViewHolder>  {
     private ArrayList<Category> mCategoryList;
-    private ArrayList<Integer>       mRealPos;
+    private ArrayList<Integer>  mRealPos;
+    private ArrayList<Integer>  mSpanSize;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView mLectureImage;
@@ -45,9 +46,49 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
     public LecturesListAdapter(ArrayList<Category> categories) {
         mCategoryList = categories;
         mRealPos = new ArrayList<>();
+        mSpanSize = new ArrayList<>();
+        ArrayList<Integer> categoryLocation = new ArrayList<>();
+        int prev = 0;
         for (int i = 0; i<mCategoryList.size(); i++) {
-            mRealPos.add(i + mCategoryList.get(i).getLevel()-1);
+            int now = i + mCategoryList.get(i).getLevel()-1;
+            if (now - prev == 2) {
+                categoryLocation.add(now-1);
+            }
+            mRealPos.add(now);
+            prev = now;
         }
+
+        categoryLocation.add(mRealPos.get(mRealPos.size()-1)+1);
+        int j = 0;
+        int k = 0;
+        int l = 0;
+        for (int i = 0; i<mRealPos.size(); i++) {
+            if (categoryLocation.get(k) == mRealPos.get(i) - 1) {
+                int x = l-1;
+                int y = l-2;
+                if (x > 0) {
+                    if (y < 0 || mSpanSize.get(y) == 6)
+                        mSpanSize.set(x, 4);
+                    else if (mSpanSize.get(x) == 2 && mSpanSize.get(y) == 4) {
+                        mSpanSize.set(x,2);
+                        mSpanSize.set(y,2);
+                    }
+                }
+                mSpanSize.add(6);
+                j = 0;
+                l++;
+                k++;
+            }
+            if (j % 3 == 0) {
+                mSpanSize.add(4);
+            } else {
+                mSpanSize.add(2);
+            }
+            j++;
+            l++;
+        }
+        mSpanSize.add(6);
+        j = 0;
     }
     @Override
     public LecturesListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -126,5 +167,9 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
             return i;
         else
             return -mCategoryList.get(i-1).getLevel();
+    }
+
+    public int getSpanSize(int position) {
+       return mSpanSize.get(position);
     }
 }

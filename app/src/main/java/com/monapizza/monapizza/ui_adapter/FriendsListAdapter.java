@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Friend;
+import com.monapizza.monapizza.core.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -69,5 +70,9 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
     @Override
     public int getItemCount() {
         return mFriends.size();
+    }
+
+    public void reload() {
+        mFriends = User.getInstance().getFriendList();
     }
 }

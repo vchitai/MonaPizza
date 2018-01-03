@@ -14,7 +14,7 @@
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="elevator_button">3px</dimen>
 
-    <dimen name="avatar_size">200px</dimen>
+    <dimen name="avatar_size">100dp</dimen>
     <dimen name="item_width">300dp</dimen>
     <dimen name="padding_item_width">300dp</dimen>
 </resources>

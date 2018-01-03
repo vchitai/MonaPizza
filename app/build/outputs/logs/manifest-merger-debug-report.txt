@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-54:12
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
 MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:transition:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\4b44f6cd7a186ec6fd7d4a6ddca1b187\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\01225522d5775297acd2e0f3bf2971c8\AndroidManifest.xml:17:1-27:12
@@ -18,25 +18,25 @@ MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\chita
 MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\fbf7329a05bbcadeede594ff936376f3\AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\8f75422395f527849c9e02ebe0b42ac6\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\c729bb8fc65a9c9289bbbafb52911b84\AndroidManifest.xml:17:1-31:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
 	package
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:3:11-44
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-54:12
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-54:12
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
 		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:5:5-52:19
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:5:5-55:19
 MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:transition:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\4b44f6cd7a186ec6fd7d4a6ddca1b187\AndroidManifest.xml:22:5-20
@@ -76,69 +76,75 @@ MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\c
 	android:name
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:6:9-34
 activity#com.monapizza.monapizza.ui.MainActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:13:9-16:20
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:13:9-21:20
 	android:theme
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:15:13-56
 	android:name
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:14:13-44
-activity#com.monapizza.monapizza.ui.LessonsActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:17:9-21:20
-	android:parentActivityName
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:20:13-81
-	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:19:13-56
-	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:18:13-47
-activity#com.monapizza.monapizza.ui.QuizActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:22:9-25:20
-	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:24:13-56
-	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:23:13-44
-activity#com.monapizza.monapizza.ui.WelcomeActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:26:9-34:20
-	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:28:13-56
-	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:27:13-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:29:13-33:29
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:30:17-68
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:17:17-68
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:32:17-76
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:19:17-76
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:32:27-74
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:19:27-74
+activity#com.monapizza.monapizza.ui.LessonsActivity
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:22:9-26:20
+	android:parentActivityName
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:24:13-58
+	android:theme
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:25:13-56
+	android:name
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:23:13-47
+activity#com.monapizza.monapizza.ui.QuizActivity
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:27:9-30:20
+	android:theme
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:29:13-56
+	android:name
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:28:13-44
+activity#com.monapizza.monapizza.ui.WelcomeActivity
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:31:9-34:20
+	android:theme
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:33:13-56
+	android:name
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:32:13-47
 activity#com.monapizza.monapizza.ui.GuestLoginActivity
 ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:35:9-39:20
 	android:parentActivityName
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:38:13-84
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:37:13-61
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:37:13-56
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:38:13-56
 	android:name
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:36:13-50
 activity#com.monapizza.monapizza.ui.LoginActivity
 ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:40:9-44:20
 	android:parentActivityName
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:43:13-84
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:42:13-61
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:42:13-56
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:43:13-56
 	android:name
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:41:13-45
 activity#com.monapizza.monapizza.ui.SignupActivity
 ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:45:9-49:20
 	android:parentActivityName
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:48:13-84
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:47:13-61
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:47:13-56
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:48:13-56
 	android:name
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:46:13-46
 activity#com.monapizza.monapizza.ui.ExamActivity
 ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:50:9-51:20
 	android:name
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:50:19-50
+activity#com.monapizza.monapizza.ui.AccountManagerActivity
+ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:52:9-54:20
+	android:parentActivityName
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:53:19-64
+	android:name
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:52:19-60
 uses-sdk
 INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml

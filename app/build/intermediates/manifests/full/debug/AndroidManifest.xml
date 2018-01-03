@@ -21,6 +21,11 @@
         <activity
             android:name="com.monapizza.monapizza.ui.MainActivity"
             android:theme="@style/AppTheme_NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.monapizza.monapizza.ui.LessonsActivity"
@@ -34,11 +39,6 @@
         <activity
             android:name="com.monapizza.monapizza.ui.WelcomeActivity"
             android:theme="@style/AppTheme_NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.monapizza.monapizza.ui.GuestLoginActivity"
@@ -56,6 +56,10 @@
             android:theme="@style/AppTheme_NoActionBar" >
         </activity>
         <activity android:name="com.monapizza.monapizza.ui.ExamActivity" >
+        </activity>
+        <activity
+            android:name="com.monapizza.monapizza.ui.AccountManagerActivity"
+            android:parentActivityName="com.monapizza.monapizza.ui.MainActivity" >
         </activity>
 
         <meta-data

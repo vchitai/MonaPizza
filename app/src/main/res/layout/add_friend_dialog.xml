@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:layout_margin="@dimen/padding_small"
+                                             android:padding="@dimen/padding_small"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/add_friend_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:text="@string/add_friend_dialog_title"/>
+
+    <EditText
+        android:id="@+id/add_friend_dialog_friend_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minEms="20"
+        style="@style/Base.V7.Widget.AppCompat.EditText"
+        android:maxLength="20"
+        app:layout_constraintTop_toBottomOf="@id/add_friend_dialog_title"/>
+
+    <Button
+        android:id="@+id/add_friend_dialog_ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_friend_dialog_ok"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        app:layout_constraintTop_toBottomOf="@id/add_friend_dialog_friend_name"
+        app:layout_constraintRight_toLeftOf="@id/add_friend_dialog_cancel_button"/>
+    <Button
+        android:id="@+id/add_friend_dialog_cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_friend_dialog_cancel"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        app:layout_constraintTop_toBottomOf="@id/add_friend_dialog_friend_name"
+        app:layout_constraintRight_toRightOf="parent"/>
+</android.support.constraint.ConstraintLayout>
