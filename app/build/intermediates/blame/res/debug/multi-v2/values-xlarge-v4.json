@@ -4,22 +4,7 @@
             "outputFile": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,126,197,267,337,405",
-                        "endColumns": "70,70,69,69,67,67",
-                        "endOffsets": "121,192,262,332,400,468"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\TRUONG-DESKTOP\\ONGOING_PROJECT\\MonaPizza\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\TRUONG-DESKTOP\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\aa3143b1c40e1c2dab5f31c2b2fa7404\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\7723298be797960bc38179e74c107291\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

@@ -31,14 +31,14 @@
     <string name="signup_password">Mật khẩu</string>
     <string name="signup_repassword">Nhập lại mật khẩu</string>
 
-    <string name="friend_avatar">Avatar</string>
-    <string name="friend_name">Name</string>
-    <string name="friend_summary">Summary</string>
+    <string name="friend_avatar">Ảnh đại diện</string>
+    <string name="friend_name">Tên</string>
+    <string name="friend_summary">Thông tin</string>
 
     <string name="shopping_buy">Mua</string>
-    <string name="shopping_icon">Icon</string>
-    <string name="shopping_name">Name</string>
-    <string name="shopping_price">Price</string>
+    <string name="shopping_icon">Ảnh</string>
+    <string name="shopping_name">Tên</string>
+    <string name="shopping_price">Giá</string>
 
     <string name="add_friend_dialog_title">Kết bạn</string>
     <string name="add_friend_dialog_ok">Đồng ý</string>
@@ -82,4 +82,8 @@
     <!-- Inform Success -->
     <string name="IS_UpdatePassSuccess">Thay đổi mật khẩu thành công</string>
     <string name="IS_AddFriendSuccess">Thêm bạn thành công</string>
+
+    <!-- New -->
+    <string name="account_manager_logout_button">Đăng xuất</string>
+    <string name="default_email">/@monapizza.com</string>
 </resources>

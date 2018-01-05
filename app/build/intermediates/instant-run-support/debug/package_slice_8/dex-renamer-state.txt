@@ -1,4 +1,4 @@
-#Thu Dec 21 11:19:55 ICT 2017
-base.0=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\27
+#Fri Jan 05 16:48:32 ICT 2018
+base.0=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
 renamed.0=classes.dex
-file.0=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\27\\classes.dex

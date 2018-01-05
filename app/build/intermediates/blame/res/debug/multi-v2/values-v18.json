@@ -4,22 +4,7 @@
             "outputFile": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\01225522d5775297acd2e0f3bf2971c8\\res\\values-v18\\values-v18.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "48",
-                        "endOffsets": "99"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\TRUONG-DESKTOP\\ONGOING_PROJECT\\MonaPizza\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\TRUONG-DESKTOP\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\aa3143b1c40e1c2dab5f31c2b2fa7404\\res\\values-v18\\values-v18.xml",
+                    "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\7723298be797960bc38179e74c107291\\res\\values-v18\\values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

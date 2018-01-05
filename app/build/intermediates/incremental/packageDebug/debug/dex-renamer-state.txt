@@ -1,13 +1,19 @@
-<<<<<<< HEAD
-#Fri Jan 05 16:32:02 ICT 2018
+#Fri Jan 05 17:13:27 ICT 2018
+path.1=classes.dex
+path.0=classes.dex
 renamed.5=classes6.dex
 renamed.4=classes5.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
-=======
-#Fri Jan 05 14:33:43 ICT 2018
-base.0=C\:\\Users\\TRUONG-DESKTOP\\ONGOING_PROJECT\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\37
-path.0=classes.dex
->>>>>>> 3e7a5bcfeb443fee0e313d64bcdff197623c7ce8
 renamed.0=classes.dex
+base.5=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
+base.4=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
+base.3=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\15
+base.2=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14
+base.1=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\16
+base.0=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+path.5=classes.dex
+path.4=classes.dex
+path.3=classes.dex
+path.2=classes.dex
