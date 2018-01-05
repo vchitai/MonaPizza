@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jan 05 17:19:07 ICT 2018
+#Fri Jan 05 18:52:13 ICT 2018
 20.base=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\assets\\debug
 143.base=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\assets\\debug
 237.path=pictures/chin.jpg

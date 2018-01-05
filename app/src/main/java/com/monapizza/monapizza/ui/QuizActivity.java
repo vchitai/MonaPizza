@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.R;
@@ -191,14 +190,16 @@ public class QuizActivity extends AppCompatActivity {
 
     private void processAnswer() {
         if (mCurrentAns == -1) {
-            Toast.makeText(this,getResources().getString(R.string.QS_QuestionUnanswered),Toast.LENGTH_SHORT).show();
+            MonaPizza.toastShowText(getResources().getString(R.string.QS_QuestionUnanswered));
         } else {
             boolean res = mCurrentExam.setAnswer(mCurrentAns);
+            mAnswerButton.get(mCurrentQuestion.getAnswerId()).setBackground(getResources().getDrawable(R.drawable.answer_right));
             if (res) {
-                Toast.makeText(this, getResources().getString(R.string.QS_RightAnswer), Toast.LENGTH_SHORT).show();
+                MonaPizza.toastShowText(getResources().getString(R.string.QS_RightAnswer));
                 updateProgressBar();
             } else {
-                Toast.makeText(this, getResources().getString(R.string.QS_WrongAnswer), Toast.LENGTH_SHORT).show();
+                MonaPizza.toastShowText(getResources().getString(R.string.QS_WrongAnswer));
+                mAnswerButton.get(mCurrentAns).setBackground(getResources().getDrawable(R.drawable.answer_wrong));
             }
             if (mCurrentExam.checkPassExam(User.getInstance())) {
                 finish();
@@ -223,9 +224,8 @@ public class QuizActivity extends AppCompatActivity {
         loadAnswer();
         for (int i = 0; i<NUMBER_OF_ANSWERS; i++) {
             mAnswerButton.get(i).setClickable(true);
+            mAnswerButton.get(i).setBackground(getResources().getDrawable(R.drawable.round_corner_button));
         }
-        if (mCurrentAns != -1)
-            mAnswerButton.get(mCurrentAns).setBackground(getResources().getDrawable(R.drawable.round_corner_button));
         mCurrentAns = -1;
         mNextButton.setText(getResources().getString(R.string.QS_CheckAsnwer));
         mNextButton.setOnClickListener(new View.OnClickListener() {

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.monapizza.monapizza.R;
+import com.monapizza.monapizza.core.Ultility;
 import com.monapizza.monapizza.ui_adapter.LessonsListAdapter;
 
 public class LessonsActivity extends AppCompatActivity {
@@ -25,6 +26,7 @@ public class LessonsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        getSupportActionBar().setTitle(Ultility.getDbHelper().getCategoryList().get(categoryID-1).getName());
         LessonsListAdapter lessonsListAdapter = new LessonsListAdapter(categoryID);
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);

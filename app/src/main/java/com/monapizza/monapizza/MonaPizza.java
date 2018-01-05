@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,6 +18,7 @@ import java.io.InputStream;
 
 public class MonaPizza extends Application {
     private static Context context;
+    private static Toast mToast;
 
     public void onCreate() {
         super.onCreate();
@@ -49,5 +51,16 @@ public class MonaPizza extends Application {
             res.setCornerRadius(Math.max(bitmap.getWidth(), bitmap.getHeight()) / 2.0f);
 
         return res;
+    }
+
+    public static void toastShowText(String text) {
+        if (mToast==null) {
+            mToast = Toast.makeText(context,text,Toast.LENGTH_SHORT);
+            mToast.show();
+        } else {
+            mToast.cancel();
+            mToast = Toast.makeText(context,text,Toast.LENGTH_SHORT);
+            mToast.show();
+        }
     }
 }

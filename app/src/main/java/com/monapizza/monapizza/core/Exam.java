@@ -1,7 +1,5 @@
 package com.monapizza.monapizza.core;
 
-import android.util.Log;
-
 import com.monapizza.monapizza.database.DbHelper;
 
 import java.util.ArrayList;
@@ -180,7 +178,7 @@ public class Exam {
     public Boolean checkPassExam(User user) {
         if (m_numWords >= Exam.numberQuestionHaveToPass) {
             // cap nhat tien do hoc cua nguoi dung
-            user.updateLearningProcess(m_lesson, m_category, m_lesson);
+            user.updateLearningProcess(m_level, m_category, m_lesson);
             return true;
         }
         return false;

@@ -81,6 +81,7 @@
         android:layout_height="wrap_content"
         style="@style/ButtonStyle2"
         android:text="@string/account_manager_edit_button"
+        android:minWidth="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/account_manager_info"/>
@@ -90,6 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/ButtonStyle2"
+        android:minWidth="100dp"
         android:text="@string/account_manager_logout_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -140,6 +142,7 @@
             android:layout_height="wrap_content"
             style="@style/ButtonStyle2"
             android:text="@string/account_manager_button"
+            android:minWidth="100dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/account_manager_finish_edit_button"
             app:layout_constraintTop_toBottomOf="@id/account_manager_repass_textInputLayout"/>
@@ -150,6 +153,7 @@
             android:layout_height="wrap_content"
             style="@style/ButtonStyle2"
             android:text="@string/account_manager_finish_button"
+            android:minWidth="100dp"
             app:layout_constraintLeft_toRightOf="@id/account_manager_button"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/account_manager_repass_textInputLayout"/>

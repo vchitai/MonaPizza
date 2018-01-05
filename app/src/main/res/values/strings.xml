@@ -86,4 +86,6 @@
     <!-- New -->
     <string name="account_manager_logout_button">Đăng xuất</string>
     <string name="default_email">/@monapizza.com</string>
+    <string name="lesson_restudy">Học lại bài này</string>
+    <string name="lesson_title">Bài</string>
 </resources>

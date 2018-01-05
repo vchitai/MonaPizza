@@ -511,7 +511,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         // cap nhat password vao database
         SQLiteDatabase db = getDatabase();
-        String query = "select u.Username" +
+        String query = "select u.Username, u.UserID" +
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -520,8 +520,8 @@ public class DbHelper extends SQLiteOpenHelper {
             if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
                 ContentValues v = new ContentValues();
                 v.put("Password", password);
-                int id = c.getPosition();
-                db.update("UserAccount", v, "_id=" + id, null);
+                int id = c.getInt(c.getColumnIndex("UserID"));
+                db.update("UserAccount", v, "UserID=" + id, null);
                 break;
             }
             c.moveToNext();
@@ -539,7 +539,7 @@ public class DbHelper extends SQLiteOpenHelper {
         String s = convertCheckList2String(checkList);
         //cap nhat checkList database
         SQLiteDatabase db = getDatabase();
-        String query = "select u.Username" +
+        String query = "select u.Username, u.UserID" +
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -548,8 +548,8 @@ public class DbHelper extends SQLiteOpenHelper {
             if (username.equals(c.getString(c.getColumnIndex("Username")))) {
                 ContentValues v = new ContentValues();
                 v.put("CheckList", s);
-                int id = c.getPosition();
-                db.update("UserAccount", v, "_id=" + id, null);
+                int id = c.getInt(c.getColumnIndex("UserID"));
+                db.update("UserAccount", v, "UserID=" + id, null);
                 break;
             }
             c.moveToNext();
@@ -566,7 +566,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public int updateMoney(String userName, int newMoney) {
         // cap nhat money trong database
         SQLiteDatabase db = getDatabase();
-        String query = "select u.Username" +
+        String query = "select u.Username, u.UserID" +
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -575,8 +575,8 @@ public class DbHelper extends SQLiteOpenHelper {
             if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
                 ContentValues v = new ContentValues();
                 v.put("Money", newMoney);
-                int id = c.getPosition();
-                db.update("UserAccount", v, "_id=" + id, null);
+                int id = c.getInt(c.getColumnIndex("UserID"));
+                db.update("UserAccount", v, "UserID=" + id, null);
                 break;
             }
             c.moveToNext();
@@ -593,7 +593,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public int updateLevel(String userName, int level) {
         // cap nhat level trong database
         SQLiteDatabase db = getDatabase();
-        String query = "select u.Username" +
+        String query = "select u.Username, u.UserID" +
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -602,8 +602,8 @@ public class DbHelper extends SQLiteOpenHelper {
             if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
                 ContentValues v = new ContentValues();
                 v.put("Level", level);
-                int id = c.getPosition();
-                db.update("UserAccount", v, "_id=" + id, null);
+                int id = c.getInt(c.getColumnIndex("UserID"));
+                db.update("UserAccount", v, "UserID=" + id, null);
                 break;
             }
             c.moveToNext();

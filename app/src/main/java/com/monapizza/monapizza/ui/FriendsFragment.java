@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.ErrorList;
 import com.monapizza.monapizza.core.User;
@@ -77,12 +77,12 @@ public class FriendsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (User.getInstance().addFriend(User.getInstance().getUserName(), friendNameInput.getText().toString()) == 1) {
-                    Toast.makeText(getContext(), getResources().getString(R.string.IS_AddFriendSuccess), Toast.LENGTH_SHORT).show();
+                    MonaPizza.toastShowText(getResources().getString(R.string.IS_AddFriendSuccess));
                     notifyChange();
                     mFriendsListAdapter.reload();
                     mFriendList.getAdapter().notifyDataSetChanged();
                 } else {
-                    Toast.makeText(getContext(), ErrorList.getMessage(ErrorList.getExitCode()), Toast.LENGTH_SHORT).show();
+                    MonaPizza.toastShowText(ErrorList.getMessage(ErrorList.getExitCode()));
                 }
                 addFriendDialog.dismiss();
             }

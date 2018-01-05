@@ -8,8 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
+import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.ErrorList;
 import com.monapizza.monapizza.core.User;
@@ -47,10 +47,10 @@ public class SignupActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(context, ErrorList.getMessage(ErrorList.getExitCode()), Toast.LENGTH_SHORT).show();
+                        MonaPizza.toastShowText(ErrorList.getMessage(ErrorList.getExitCode()));
                     }
                 } else {
-                    Toast.makeText(context, getResources().getString(R.string.EM_PasswordConfirmNotMatch), Toast.LENGTH_SHORT).show();
+                    MonaPizza.toastShowText(getResources().getString(R.string.EM_PasswordConfirmNotMatch));
                 }
             }
         });

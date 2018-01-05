@@ -57,7 +57,8 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
 
     @Override
     public void onBindViewHolder(LessonsListAdapter.ViewHolder holder, final int position) {
-        StringBuilder stringBuilder1 = new StringBuilder("Lesson " + (position + 1) + "/" + mNumberOfLessons);
+        StringBuilder stringBuilder1 = new StringBuilder(MonaPizza.getAppContext().getString(R.string.lesson_title) + " "
+                            + (position + 1) + "/" + mNumberOfLessons);
         holder.mLessonTitleTextView.setText(stringBuilder1.toString());
         ArrayList<Word> lessonWords = Ultility.getDbHelper().getWordInLesson(mCategoryID,position+1);
         StringBuilder stringBuilder2 = new StringBuilder();
@@ -81,7 +82,7 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
         int flag = 0;
         flag = User.getInstance().getStatus(-1,mCategoryID+1,position+1);
         if  (flag == User.getInstance().STT_PASS) {
-            holder.mLessonStartButton.setText("Học lại bài này");
+            holder.mLessonStartButton.setText(MonaPizza.getAppContext().getResources().getString(R.string.lesson_restudy));
         }
     }
 
