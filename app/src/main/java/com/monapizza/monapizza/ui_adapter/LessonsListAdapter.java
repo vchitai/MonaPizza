@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Ultility;
+import com.monapizza.monapizza.core.User;
 import com.monapizza.monapizza.core.Word;
 import com.monapizza.monapizza.ui.QuizActivity;
 
@@ -77,6 +78,11 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
                 v.getContext().startActivity(intent);
             }
         });
+        int flag = 0;
+        flag = User.getInstance().getStatus(-1,mCategoryID+1,position+1);
+        if  (flag == User.getInstance().STT_PASS) {
+            holder.mLessonStartButton.setText("Học lại bài này");
+        }
     }
 
     @Override

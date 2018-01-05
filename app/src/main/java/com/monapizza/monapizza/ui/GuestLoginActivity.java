@@ -27,7 +27,7 @@ public class GuestLoginActivity extends AppCompatActivity {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-
+        getSupportActionBar().setTitle(null);
         final EditText usernameIET = (EditText) findViewById(R.id.guest_login_username_textInputLayout);
 
         final Context           context     = this;

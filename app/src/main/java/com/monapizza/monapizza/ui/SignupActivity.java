@@ -27,6 +27,7 @@ public class SignupActivity extends AppCompatActivity {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
+        getSupportActionBar().setTitle(null);
 
         final TextInputEditText usernameIET = (TextInputEditText) findViewById(R.id.signup_username_textInputEditText);
         final TextInputEditText passwordIET = (TextInputEditText) findViewById(R.id.signup_password_textInputEditText);

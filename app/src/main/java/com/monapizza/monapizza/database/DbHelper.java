@@ -333,7 +333,7 @@ public class DbHelper extends SQLiteOpenHelper {
         int numCat = getNumberOfCategory();
         int j = 0;
         for(int i = 0; i < numCat; ++i) {
-            int numLess = getNumberOfLesson(i);
+            int numLess = getNumberOfLesson(i+1);
             ArrayList<Boolean> curCat = new ArrayList<Boolean>();
             curCat.clear();
             while (numLess > 0) {
@@ -391,7 +391,7 @@ public class DbHelper extends SQLiteOpenHelper {
         String result = "";
         int numCat = getNumberOfCategory();
         for(int i = 0; i < numCat; ++i) {
-            int numLess = getNumberOfLesson(i);
+            int numLess = getNumberOfLesson(i+1);
             while (numLess > 0) {
                 result += '0';
                 numLess--;

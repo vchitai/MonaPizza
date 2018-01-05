@@ -16,7 +16,8 @@ import com.monapizza.monapizza.core.ErrorList;
 import com.monapizza.monapizza.core.User;
 
 public class AccountManagerActivity extends AppCompatActivity {
-    Button mAccounManagerEditButton;
+    Button mAccountManagerEditButton;
+    Button mAccountManagerLogoutButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,19 +33,22 @@ public class AccountManagerActivity extends AppCompatActivity {
         TextView AccountManagerEmail = (TextView) findViewById(R.id.account_manager_email);
 
         AccountManagerUsername.setText(User.getInstance().getUserName());
-        AccountManagerEmail.setText(User.getInstance().getUserName() + "@monapizza.com");
-        mAccounManagerEditButton = (Button) findViewById(R.id.account_manager_edit_button);
+        String defaultEmail = User.getInstance().getUserName() + getResources().getString(R.string.default_email);
+        AccountManagerEmail.setText(defaultEmail);
+        mAccountManagerEditButton = (Button) findViewById(R.id.account_manager_edit_button);
+        mAccountManagerLogoutButton = (Button) findViewById(R.id.account_manager_logout_button);
 
         final ConstraintLayout AccountManagerEditFrame = (ConstraintLayout) findViewById(R.id.account_manager_edit);
 
         final TableLayout AccountMangerInfo = (TableLayout)findViewById(R.id.account_manager_info);
 
-        mAccounManagerEditButton.setOnClickListener(new View.OnClickListener() {
+        mAccountManagerEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AccountMangerInfo.setVisibility(View.GONE);
-                mAccounManagerEditButton.setVisibility(View.GONE);
+                mAccountManagerEditButton.setVisibility(View.GONE);
                 AccountManagerEditFrame.setVisibility(View.VISIBLE);
+                mAccountManagerLogoutButton.setVisibility(View.GONE);
             }
         });
 
@@ -72,7 +76,8 @@ public class AccountManagerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AccountManagerEditFrame.setVisibility(View.GONE);
                 AccountMangerInfo.setVisibility(View.VISIBLE);
-                mAccounManagerEditButton.setVisibility(View.VISIBLE);
+                mAccountManagerEditButton.setVisibility(View.VISIBLE);
+                mAccountManagerLogoutButton.setVisibility(View.VISIBLE);
             }
         });
     }

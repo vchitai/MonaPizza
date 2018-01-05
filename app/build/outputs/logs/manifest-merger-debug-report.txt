@@ -66,7 +66,7 @@ MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\c
 	android:label
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:9:9-41
 	android:roundIcon
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:10:9-54
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:10:9-48
 	android:icon
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:8:9-43
 	android:allowBackup

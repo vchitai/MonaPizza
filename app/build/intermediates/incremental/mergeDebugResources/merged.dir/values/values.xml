@@ -754,6 +754,7 @@
     <string name="account_manager_button">Save</string>
     <string name="account_manager_edit_button">Edit</string>
     <string name="account_manager_finish_button">Finish edit</string>
+    <string name="account_manager_logout_button">Edit</string>
     <string name="account_password">Password</string>
     <string name="account_repassword">Reenter Password</string>
     <string name="account_username">Username</string>
