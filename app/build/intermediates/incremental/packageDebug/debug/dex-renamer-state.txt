@@ -1,19 +1,4 @@
-#Fri Jan 05 11:21:59 ICT 2018
-renamed.5=classes6.dex
-renamed.4=classes5.dex
-renamed.3=classes4.dex
-renamed.2=classes3.dex
-renamed.1=classes2.dex
+#Fri Jan 05 14:11:17 ICT 2018
+base.0=C\:\\Users\\TRUONG-DESKTOP\\ONGOING_PROJECT\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\37
+path.0=classes.dex
 renamed.0=classes.dex
-base.5=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\32
-base.4=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\31
-base.3=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\34
-base.2=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\30
-base.1=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\35
-base.0=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\33
-file.5=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\32\\classes.dex
-file.4=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\31\\classes.dex
-file.3=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\34\\classes.dex
-file.2=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\30\\classes.dex
-file.1=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\35\\classes.dex
-file.0=C\:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\33\\classes.dex
