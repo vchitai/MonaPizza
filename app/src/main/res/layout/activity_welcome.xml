@@ -33,7 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_guest_login_button"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/ButtonStyle2"
+        android:minWidth="200dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome_guideline"/>
@@ -43,7 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_login_button"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/ButtonStyle2"
+        android:minWidth="200dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome_guest_login_button"/>
@@ -53,7 +55,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_signup_button"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/ButtonStyle2"
+        android:minWidth="200dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome_login_button"/>

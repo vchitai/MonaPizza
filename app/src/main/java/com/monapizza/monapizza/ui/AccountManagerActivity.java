@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.monapizza.monapizza.R;
@@ -27,7 +28,11 @@ public class AccountManagerActivity extends AppCompatActivity {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
+        TextView AccountManagerUsername = (TextView) findViewById(R.id.account_manager_username);
+        TextView AccountManagerEmail = (TextView) findViewById(R.id.account_manager_email);
 
+        AccountManagerUsername.setText(User.getInstance().getUserName());
+        AccountManagerEmail.setText(User.getInstance().getUserName() + "@monapizza.com");
         mAccounManagerEditButton = (Button) findViewById(R.id.account_manager_edit_button);
 
         final ConstraintLayout AccountManagerEditFrame = (ConstraintLayout) findViewById(R.id.account_manager_edit);

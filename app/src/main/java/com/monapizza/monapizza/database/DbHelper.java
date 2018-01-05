@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import com.monapizza.monapizza.core.Category;
 import com.monapizza.monapizza.core.ErrorList;
@@ -422,14 +421,14 @@ public class DbHelper extends SQLiteOpenHelper {
         }
         c.close();
         //db.close();
-        return false;
+        return exist;
     }
 
     // Lay mat khau nguoi dung (private)
     private String getPassword(String userName) {
         // lay password cua userName tu database
         SQLiteDatabase db = getDatabase();
-        String query = "select u.Username" +
+        String query = "select u.Username, u.Password" +
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -457,6 +456,7 @@ public class DbHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put("Username", userName);
         values.put("Password", password);
+        values.put("CheckList", checkLists);
         SQLiteDatabase db = getDatabase();
         db.insert("UserAccount", null, values);
         //db.close();
@@ -473,14 +473,20 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve 1: thanh cong
     // Tra ve so am: That bai, loi tuong ung trong file ErrorList.java
     public int addUser(String userName, String password) {
-        if (!isValidUsername(userName))
+        if (!isValidUsername(userName)) {
+            ErrorList.setExitCode(ErrorList.USERNAME_ERROR_FORMAT);
             return ErrorList.USERNAME_ERROR_FORMAT;
+        }
 
-        if (!isValidPassword(password))
+        if (!isValidPassword(password)) {
+            ErrorList.setExitCode(ErrorList.PASSWORD_ERROR_FORMAT);
             return ErrorList.PASSWORD_ERROR_FORMAT;
+        }
 
-        if (!isExistingUser(userName))
+        if (isExistingUser(userName)) {
+            ErrorList.setExitCode(ErrorList.USERNAME_EXISTED);
             return ErrorList.USERNAME_EXISTED;
+        }
 
         addNewUser(userName, password);
 
@@ -493,11 +499,15 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve 1: thanh cong
     // Tra ve so am: That bai, loi tuong ung trong file ErrorList.java
     public int updateUserPass(String userName, String newPassword) {
-        if (!isValidPassword(newPassword))
+        if (!isValidPassword(newPassword)) {
+            ErrorList.setExitCode(ErrorList.PASSWORD_ERROR_FORMAT);
             return ErrorList.PASSWORD_ERROR_FORMAT;
+        }
 
-        if (newPassword.equals(getPassword(userName)))
+        if (newPassword.equals(getPassword(userName))) {
+            ErrorList.setExitCode(ErrorList.SAME_PASSWORD);
             return ErrorList.SAME_PASSWORD;
+        }
 
         // cap nhat password vao database
         SQLiteDatabase db = getDatabase();
@@ -618,7 +628,7 @@ public class DbHelper extends SQLiteOpenHelper {
     // Lay level nguoi dung trong database
     public int loadLevel(String username) {
         SQLiteDatabase db = getDatabase();
-        String query = "select u.Username" +
+        String query = "select u.Username, u.Level" +
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -638,7 +648,7 @@ public class DbHelper extends SQLiteOpenHelper {
     // Lay thong tin checklist cua user trong database
     public ArrayList<ArrayList<Boolean>> loadCheckList(String username) {
         SQLiteDatabase db = getDatabase();
-        String query = "select u.Username" +
+        String query = "select u.Username, u.CheckList" +
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -660,7 +670,7 @@ public class DbHelper extends SQLiteOpenHelper {
     // Lay thong tin tien cua user trong database
     public int loadMoney(String username) {
         SQLiteDatabase db = getDatabase();
-        String query = "select u.Username" +
+        String query = "select u.Username, u.UserMoney" +
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -711,10 +721,14 @@ public class DbHelper extends SQLiteOpenHelper {
     // Add friend nay la add friend mot chieu
     // Chi them friendUsername vao danh sach currentUserName.
     public int addFriend(String currentUserName, String friendUsername) {
-        if (isExistingUser(friendUsername) == false)
+        if (isExistingUser(friendUsername) == false) {
+            ErrorList.setExitCode(ErrorList.FRIEND_NOT_EXIST);
             return ErrorList.FRIEND_NOT_EXIST;
-        if (checkFriend(currentUserName, friendUsername))
+        }
+        if (checkFriend(currentUserName, friendUsername)) {
+            ErrorList.setExitCode(ErrorList.ALREADY_FRIEND);
             return ErrorList.ALREADY_FRIEND;
+        }
 
         // them ban be vao database
 

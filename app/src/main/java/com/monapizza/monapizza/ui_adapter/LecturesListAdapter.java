@@ -15,6 +15,7 @@ import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Category;
 import com.monapizza.monapizza.core.Ultility;
+import com.monapizza.monapizza.core.User;
 import com.monapizza.monapizza.ui.LessonsActivity;
 import com.monapizza.monapizza.ui.QuizActivity;
 
@@ -115,15 +116,15 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
     public void onBindViewHolder(LecturesListAdapter.ViewHolder holder, int position) {
         final int realPos = getItemViewType(position);
         if (realPos > TYPE_SEPARATOR) {
+            int flag = 0;
+            flag = User.getInstance().getStatus(-1,realPos+1,-1);
             String icon = mCategoryList.get(realPos).getIcon();
-            //int id       = context.getResources().getIdentifier(icon, "drawable",  context.getPackageName());
-            /*
-            Drawable drawable = null;
-            try {
-                drawable = Drawable.createFromStream(MonaPizza.getAppContext().getAssets().open(mCategoryList.get(realPos).getIcon()), null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }*/
+            if (flag == User.getInstance().STT_PASS)
+                icon = "pictures/default.png";
+            else if (flag == User.getInstance().STT_LOCK) {
+                icon = "pictures/default_lock.png";
+                holder.mLectureView.setEnabled(false);
+            }
             RoundedBitmapDrawable drawable = MonaPizza.getRoundedBitmapDrawable(icon);
             holder.mLectureImage.setImageDrawable(drawable);
 
@@ -137,7 +138,17 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
                     v.getContext().startActivity(intent);
                 }
             });
+
         } else {
+            int flag = 0;
+            flag = User.getInstance().getStatus(-realPos,-1,-1);
+            if (flag == User.getInstance().STT_PASS) {
+                holder.mCheckpointButton.setText("Đã hoàn thành Checkpoint");
+            }
+            else if (flag == User.getInstance().STT_LOCK) {
+                holder.mCheckpointButton.setBackground(MonaPizza.getAppContext().getDrawable(R.drawable.round_corner_button_l));
+                holder.mCheckpointButton.setEnabled(false);
+            }
             holder.mCheckpointButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

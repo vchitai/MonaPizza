@@ -40,7 +40,11 @@ public class SignupActivity extends AppCompatActivity {
                 if (passwordIET.getText().toString().equals(repasswordIET.getText().toString())) {
                     if (User.getInstance().signUp(usernameIET.getText().toString(), passwordIET.getText().toString()) == 1) {
                         Intent intent = new Intent(context, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
+                        finish();
                     } else {
                         Toast.makeText(context, ErrorList.getMessage(ErrorList.getExitCode()), Toast.LENGTH_SHORT).show();
                     }

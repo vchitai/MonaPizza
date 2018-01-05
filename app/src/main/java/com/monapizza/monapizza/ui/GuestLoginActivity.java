@@ -38,7 +38,11 @@ public class GuestLoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (User.getInstance().signUp(usernameIET.getText().toString(), getResources().getString(R.string.default_guest_password)) == 1) {
                     Intent intent = new Intent(context, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(context, ErrorList.getMessage(ErrorList.getExitCode()), Toast.LENGTH_SHORT).show();
                 }

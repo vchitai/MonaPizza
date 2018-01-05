@@ -114,15 +114,18 @@ public class User {
     //      1: login thanh cong, da load data tu database cua user vao cac truong luu tru phia tren.
     public int signIn(String userName, String password) {
         DbHelper database = Ultility.getDbHelper();
-        if (database.isExistingUser(userName) == false)
+        if (database.isExistingUser(userName) == false) {
+            ErrorList.setExitCode(ErrorList.USERNAME_NOT_EXISTED);
             return ErrorList.USERNAME_NOT_EXISTED;
-
+        }
         if (checkUserPass(userName, password)) {
             loadUserInfo(userName);
             return 1;
         }
-        else
+        else {
+            ErrorList.setExitCode(ErrorList.WRONG_PASSWORD);
             return ErrorList.WRONG_PASSWORD;
+        }
     }
 
     // Dang ky nguoi dung moi
@@ -200,7 +203,8 @@ public class User {
     // Tra ve < 0: loi tuong ung trong file ErrorList.java
     public int updatePass(String username, String new_password) {
         DbHelper database = Ultility.getDbHelper();
-        return database.updateUserPass(username, new_password);
+        int res = database.updateUserPass(username, new_password);
+        return res;
     }
 
     // Cac ham get user info
@@ -256,12 +260,14 @@ public class User {
         DbHelper database = Ultility.getDbHelper();
         if (m_logined == false) {
             // chua dang nhap
+            ErrorList.setExitCode(ErrorList.NOT_SIGN_IN);
             return ErrorList.NOT_SIGN_IN;
         }
         Item t_item = database.getItem(itemId);
 
         // khong du tien
         if (m_money < t_item.getPrice()) {
+            ErrorList.setExitCode(ErrorList.NOT_ENOUGH_MONEY);
             return ErrorList.NOT_ENOUGH_MONEY;
         }
 
@@ -294,5 +300,53 @@ public class User {
             return false;
         }
         return m_checkList.get(category - 1).get(lesson - 1);
+    }
+
+    //-1 = Passed
+    //0 = Current Unlock
+    //1 = Lock
+    public final int STT_LOCK = 1;
+    public final int STT_CURR = 0;
+    public final int STT_PASS = -1;
+
+    public int getStatus(int level, int category, int lesson) {
+        if (level >= 0) {
+            if (level < m_level+1)
+                return STT_PASS;
+            else if (level == m_level+1)
+                return STT_CURR;
+            else
+                return STT_LOCK;
+        }
+        if (level == -1) {
+            if (lesson >= 0) {
+                if (m_checkList.get(category-1).get(lesson-1))
+                    return STT_PASS;
+                else
+                    return STT_CURR;
+            }
+            if (lesson == -1) {
+                ArrayList<Category> categories = Ultility.getDbHelper().getCategoryList();
+                if (categories.get(category-1).getLevel() < m_level+1) {
+                    return STT_PASS;
+                } else if (categories.get(category-1).getLevel() == m_level+1) {
+                    boolean passed = true;
+                    for (int i = 0; i<m_checkList.get(category-1).size(); i++) {
+                        if (!m_checkList.get(category-1).get(i)) {
+                            passed = false;
+                            break;
+                        }
+                    }
+                    if (passed)
+                        return STT_PASS;
+                    else
+                        return STT_CURR;
+                } else {
+                    return STT_LOCK;
+                }
+            }
+        }
+
+        return STT_LOCK;
     }
 }

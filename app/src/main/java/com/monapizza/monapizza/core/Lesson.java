@@ -1,5 +1,8 @@
 package com.monapizza.monapizza.core;
 
+import com.monapizza.monapizza.MonaPizza;
+import com.monapizza.monapizza.R;
+
 import java.util.ArrayList;
 
 /**
@@ -26,7 +29,7 @@ public class Lesson {
     public Lesson(int category, int lesson, ArrayList<String> wordsList) {
         m_category = category;
         m_lesson = lesson;
-        m_name = "Lesson" + Integer.toString(lesson);
+        m_name = MonaPizza.getAppContext().getResources().getString(R.string.lessons_title) + Integer.toString(lesson);
         m_wordsList = wordsList;
     }
 
