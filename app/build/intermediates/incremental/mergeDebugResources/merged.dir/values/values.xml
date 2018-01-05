@@ -697,21 +697,21 @@
     <string name="EA_CategoryID">CategoryID</string>
     <string name="EA_LessonID">LessonID</string>
     <string name="EA_LevelID">LevelID</string>
-    <string name="EM_AlreadyFriend">Đã là bạn bè.</string>
+    <string name="EM_AlreadyFriend">Hai bạn đã là bạn bè.</string>
     <string name="EM_FriendNotExist">Người bạn thêm vào danh sách bạn bè không tồn tại.</string>
     <string name="EM_NotEnoughMoney">Bạn không đủ tiền. Học thêm nhé!!!</string>
     <string name="EM_NotKnowingError">Lỗi chưa biết</string>
     <string name="EM_NotSignedIn">Bạn phải đăng nhập để dùng chức năng này.</string>
     <string name="EM_PasswordConfirmNotMatch">Mật khẩu và xác nhận mật khẩu khác nhau!</string>
     <string name="EM_PasswordErrorFormat">
-        Format password sai. Đề nghị dùng ít nhât mội kí tự Alphabet và chữ số, độ dài lớn hơn bằng 6</string>
-    <string name="EM_SamePassword">Password mới giống password cũ, đề nghị bạn nhập password mới.</string>
+        Mật khẩu phải chứa ít nhất mội kí tự chữ cái và chữ số, độ dài lớn hơn bằng 6</string>
+    <string name="EM_SamePassword">Mật khẩu mới phải khác mật khẩu đã đặt trước đây!</string>
     <string name="EM_TooManyWrongs">
         Bạn đã trả lời sai quá số câu cho phép. Hãy học lại từ đầu hoặc thử lại lần sau nhé!</string>
-    <string name="EM_UsernameErrorFormat">Tên username lỗi. Chỉ sử dụng các kí tự a..z và các kí tự số 0..9.</string>
-    <string name="EM_UsernameExisted">Username đã tồn tại.</string>
-    <string name="EM_UsernameNotExisted">Username không tồn tại.</string>
-    <string name="EM_WrongPassword">Password sai.</string>
+    <string name="EM_UsernameErrorFormat">Tên tài khoản chỉ sử dụng các kí tự a..z và các kí tự số 0..9.</string>
+    <string name="EM_UsernameExisted">Tên tài khoản đã tồn tại.</string>
+    <string name="EM_UsernameNotExisted">Tên tài khoản không tồn tại.</string>
+    <string name="EM_WrongPassword">Sai mật khẩu.</string>
     <string name="IS_AddFriendSuccess">Thêm bạn thành công</string>
     <string name="IS_UpdatePassSuccess">Thay đổi mật khẩu thành công</string>
     <string name="QS_CheckAsnwer">Kiểm tra câu trả lời</string>
@@ -751,6 +751,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="account_email">Email</string>
+<<<<<<< HEAD
     <string name="account_manager_button">Save</string>
     <string name="account_manager_edit_button">Edit</string>
     <string name="account_manager_finish_button">Finish edit</string>
@@ -761,6 +762,17 @@
     <string name="add_friend_dialog_cancel">Cancel</string>
     <string name="add_friend_dialog_ok">OK</string>
     <string name="add_friend_dialog_title">Add Friend </string>
+=======
+    <string name="account_manager_button">Lưu thay đổi</string>
+    <string name="account_manager_edit_button">Chỉnh sửa</string>
+    <string name="account_manager_finish_button">Hoàn tất</string>
+    <string name="account_password">Mật khẩu</string>
+    <string name="account_repassword">Nhập lại mật khẩu</string>
+    <string name="account_username">Tên tài khoản</string>
+    <string name="add_friend_dialog_cancel">Hủy</string>
+    <string name="add_friend_dialog_ok">Đồng ý</string>
+    <string name="add_friend_dialog_title">Kết bạn</string>
+>>>>>>> 3e7a5bcfeb443fee0e313d64bcdff197623c7ce8
     <string name="app_name">MonaPizza</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
@@ -770,35 +782,35 @@
     <string name="friend_name">Name</string>
     <string name="friend_summary">Summary</string>
     <string name="friends_fragment_title">Bạn bè</string>
-    <string name="guest_login_username">Username</string>
-    <string name="guest_login_welcome">Hello! \nPlease enter your name to enter</string>
+    <string name="guest_login_username">Tên tài khoản</string>
+    <string name="guest_login_welcome">Xin chào! \nNhập tên của bạn để bắt đầu</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lecture_icon">Icon</string>
     <string name="lecture_name">Name</string>
     <string name="lectures_fragment_title">Bài học</string>
-    <string name="lessons_start_button">Start</string>
-    <string name="lessons_title">Lesson Title</string>
-    <string name="lessons_words">Words in this lesson</string>
-    <string name="login_password">Password</string>
-    <string name="login_username">Username</string>
+    <string name="lessons_start_button">Vào học</string>
+    <string name="lessons_title">Tiêu đề bài học</string>
+    <string name="lessons_words">Các từ được học trong bài này</string>
+    <string name="login_password">Mật khẩu</string>
+    <string name="login_username">Tên tài khoản</string>
     <string name="no_friend">Bạn chưa có bạn bè. Hãy thêm nhiều bạn vào nhé.</string>
     <string name="no_items">Cửa hàng chưa mở cửa. Hãy chờ nhé.</string>
     <string name="pass_checkpoint">Kiểm tra Checkpoint</string>
     <string name="progress">Tiến độ học tập: </string>
     <string name="search_menu_title">Search</string>
-    <string name="shopping_buy">Buy</string>
+    <string name="shopping_buy">Mua</string>
     <string name="shopping_fragment_title">Cửa hàng</string>
     <string name="shopping_icon">Icon</string>
     <string name="shopping_name">Name</string>
     <string name="shopping_price">Price</string>
-    <string name="signup_password">Password</string>
-    <string name="signup_repassword">Reenter Password</string>
-    <string name="signup_username">Username</string>
+    <string name="signup_password">Mật khẩu</string>
+    <string name="signup_repassword">Nhập lại mật khẩu</string>
+    <string name="signup_username">Tên tài khoản</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="welcome_guest_login_button">Try It</string>
-    <string name="welcome_login_button">Login</string>
+    <string name="welcome_guest_login_button">Học thử</string>
+    <string name="welcome_login_button">Đăng nhập</string>
     <string name="welcome_logo">MonaPizza</string>
-    <string name="welcome_signup_button">Register</string>
+    <string name="welcome_signup_button">Đăng ký</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

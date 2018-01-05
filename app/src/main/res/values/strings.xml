@@ -1,0 +1,85 @@
+    <resources>
+    <string name="app_name">MonaPizza</string>
+    <string name="default_guest_password">mona123</string>
+
+    <string name="welcome_logo">MonaPizza</string>
+    <string name="welcome_login_button">Đăng nhập</string>
+    <string name="welcome_signup_button">Đăng ký</string>
+    <string name="welcome_guest_login_button">Học thử</string>
+
+    <string name="lectures_fragment_title">Bài học</string>
+    <string name="friends_fragment_title">Bạn bè</string>
+    <string name="shopping_fragment_title">Cửa hàng</string>
+
+    <string name="lessons_title">Tiêu đề bài học</string>
+    <string name="lessons_words">Các từ được học trong bài này</string>
+    <string name="lessons_start_button">Vào học</string>
+
+    <string name="account_username">Tên tài khoản</string>
+    <string name="account_email">Email</string>
+    <string name="account_password">Mật khẩu</string>
+    <string name="account_repassword">Nhập lại mật khẩu</string>
+    <string name="account_manager_button">Lưu thay đổi</string>
+    <string name="account_manager_edit_button">Chỉnh sửa</string>
+    <string name="account_manager_finish_button">Hoàn tất</string>
+
+    <string name="login_username">Tên tài khoản</string>
+    <string name="login_password">Mật khẩu</string>
+    <string name="guest_login_username">Tên tài khoản</string>
+    <string name="guest_login_welcome">Xin chào! \nNhập tên của bạn để bắt đầu</string>
+    <string name="signup_username">Tên tài khoản</string>
+    <string name="signup_password">Mật khẩu</string>
+    <string name="signup_repassword">Nhập lại mật khẩu</string>
+
+    <string name="friend_avatar">Avatar</string>
+    <string name="friend_name">Name</string>
+    <string name="friend_summary">Summary</string>
+
+    <string name="shopping_buy">Mua</string>
+    <string name="shopping_icon">Icon</string>
+    <string name="shopping_name">Name</string>
+    <string name="shopping_price">Price</string>
+
+    <string name="add_friend_dialog_title">Kết bạn</string>
+    <string name="add_friend_dialog_ok">Đồng ý</string>
+    <string name="add_friend_dialog_cancel">Hủy</string>
+    <string name="pass_checkpoint">Kiểm tra Checkpoint</string>
+    <string name="lecture_icon">Icon</string>
+    <string name="lecture_name">Name</string>
+    <string name="progress">Tiến độ học tập: </string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_friend">Bạn chưa có bạn bè. Hãy thêm nhiều bạn vào nhé.</string>
+    <string name="no_items">Cửa hàng chưa mở cửa. Hãy chờ nhé.</string>
+    <!-- Quiz Context String -->
+    <string name="QS_QuestionUnanswered">Câu hỏi chưa được trả lời</string>
+    <string name="QS_CheckAsnwer">Kiểm tra câu trả lời</string>
+    <string name="QS_RightAnswer">Trả lời đúng</string>
+    <string name="QS_WrongAnswer">Trả lời sai</string>
+    <string name="QS_NextQuestion">Câu kế tiếp</string>
+
+    <!-- Constant Application Intext Extra Access String-->
+    <string name="EA_CategoryID">CategoryID</string>
+    <string name="EA_LessonID">LessonID</string>
+    <string name="EA_LevelID">LevelID</string>
+
+    <!-- Error Message List -->
+    <string name="EM_PasswordErrorFormat">
+        Mật khẩu phải chứa ít nhất mội kí tự chữ cái và chữ số, độ dài lớn hơn bằng 6</string>
+    <string name="EM_TooManyWrongs">
+        Bạn đã trả lời sai quá số câu cho phép. Hãy học lại từ đầu hoặc thử lại lần sau nhé!</string>
+    <string name="EM_UsernameExisted">Tên tài khoản đã tồn tại.</string>
+    <string name="EM_WrongPassword">Sai mật khẩu.</string>
+    <string name="EM_SamePassword">Mật khẩu mới phải khác mật khẩu đã đặt trước đây!</string>
+    <string name="EM_UsernameNotExisted">Tên tài khoản không tồn tại.</string>
+    <string name="EM_UsernameErrorFormat">Tên tài khoản chỉ sử dụng các kí tự a..z và các kí tự số 0..9.</string>
+    <string name="EM_AlreadyFriend">Hai bạn đã là bạn bè.</string>
+    <string name="EM_FriendNotExist">Người bạn thêm vào danh sách bạn bè không tồn tại.</string>
+    <string name="EM_NotSignedIn">Bạn phải đăng nhập để dùng chức năng này.</string>
+    <string name="EM_NotEnoughMoney">Bạn không đủ tiền. Học thêm nhé!!!</string>
+    <string name="EM_NotKnowingError">Lỗi chưa biết</string>
+    <string name="EM_PasswordConfirmNotMatch">Mật khẩu và xác nhận mật khẩu khác nhau!</string>
+
+    <!-- Inform Success -->
+    <string name="IS_UpdatePassSuccess">Thay đổi mật khẩu thành công</string>
+    <string name="IS_AddFriendSuccess">Thêm bạn thành công</string>
+</resources>

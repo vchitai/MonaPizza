@@ -1,207 +1,211 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
-MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:transition:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\4b44f6cd7a186ec6fd7d4a6ddca1b187\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\01225522d5775297acd2e0f3bf2971c8\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\4ab993b4dfc0d06aa8b407986fc876c0\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\40cd5c8e1d89b4b3561588c3eb7ace5b\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.0.0.aar\a52e94fab8d41500c3fbf9417fd90dd5\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\a2802cd4b3a776cc066f36f1efc2ce01\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\d32d94d6377cca1b8d8b81a10ca272cc\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\39adb683b00731e517f4de2dd007b768\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\247c27ef72754ea41a0f54fbe1aaf06d\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\fbf7329a05bbcadeede594ff936376f3\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\8f75422395f527849c9e02ebe0b42ac6\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\c729bb8fc65a9c9289bbbafb52911b84\AndroidManifest.xml:17:1-31:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+MERGED from [com.android.support:design:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\968b0fe3d2fdd86392cba78b57d55f33\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:transition:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\07efcb5ec87abb5f0cfe44d7e06778d2\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\aa3143b1c40e1c2dab5f31c2b2fa7404\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\6cd43fdf9b405e9f45a4527a9c31e5dc\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\72bee9f4c937d229319783a82492c924\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\66223fc84892f3c4f14e19de4d361e03\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.0.0.aar\8dcc4b6c9ca8c114b32621593b0e6f6f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\6e874d3754e300036a8780a48ce1ef18\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\c7b7ad16441bfeb8dd79b3e8336b285f\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\556290a11284685c0e7ee8fd8490e303\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\d606ef824f5fa6aa8cda9ef6e27d7b4c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\e0de485a1a89c7ce5958c1590cff12b9\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\e3cf004b92fc1b91f494a394ebb18692\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\1dec801f318c99d09f5211ce207b4edc\AndroidManifest.xml:17:1-31:12
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
 	package
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:3:11-44
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:3:11-44
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:1-57:12
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:5:5-55:19
-MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:transition:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\4b44f6cd7a186ec6fd7d4a6ddca1b187\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:transition:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\4b44f6cd7a186ec6fd7d4a6ddca1b187\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\01225522d5775297acd2e0f3bf2971c8\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\01225522d5775297acd2e0f3bf2971c8\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\4ab993b4dfc0d06aa8b407986fc876c0\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\4ab993b4dfc0d06aa8b407986fc876c0\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\a2802cd4b3a776cc066f36f1efc2ce01\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\a2802cd4b3a776cc066f36f1efc2ce01\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\d32d94d6377cca1b8d8b81a10ca272cc\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\d32d94d6377cca1b8d8b81a10ca272cc\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\39adb683b00731e517f4de2dd007b768\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\39adb683b00731e517f4de2dd007b768\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\247c27ef72754ea41a0f54fbe1aaf06d\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\247c27ef72754ea41a0f54fbe1aaf06d\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\fbf7329a05bbcadeede594ff936376f3\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\fbf7329a05bbcadeede594ff936376f3\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\8f75422395f527849c9e02ebe0b42ac6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\8f75422395f527849c9e02ebe0b42ac6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\c729bb8fc65a9c9289bbbafb52911b84\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\c729bb8fc65a9c9289bbbafb52911b84\AndroidManifest.xml:25:5-29:19
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:5:5-55:19
+MERGED from [com.android.support:design:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\968b0fe3d2fdd86392cba78b57d55f33\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:design:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\968b0fe3d2fdd86392cba78b57d55f33\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:transition:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\07efcb5ec87abb5f0cfe44d7e06778d2\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:transition:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\07efcb5ec87abb5f0cfe44d7e06778d2\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\aa3143b1c40e1c2dab5f31c2b2fa7404\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\aa3143b1c40e1c2dab5f31c2b2fa7404\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\6cd43fdf9b405e9f45a4527a9c31e5dc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\6cd43fdf9b405e9f45a4527a9c31e5dc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\72bee9f4c937d229319783a82492c924\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\72bee9f4c937d229319783a82492c924\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\6e874d3754e300036a8780a48ce1ef18\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\6e874d3754e300036a8780a48ce1ef18\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\c7b7ad16441bfeb8dd79b3e8336b285f\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\c7b7ad16441bfeb8dd79b3e8336b285f\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\556290a11284685c0e7ee8fd8490e303\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\556290a11284685c0e7ee8fd8490e303\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\d606ef824f5fa6aa8cda9ef6e27d7b4c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\d606ef824f5fa6aa8cda9ef6e27d7b4c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\e0de485a1a89c7ce5958c1590cff12b9\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\e0de485a1a89c7ce5958c1590cff12b9\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\e3cf004b92fc1b91f494a394ebb18692\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\e3cf004b92fc1b91f494a394ebb18692\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\1dec801f318c99d09f5211ce207b4edc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\1dec801f318c99d09f5211ce207b4edc\AndroidManifest.xml:25:5-29:19
 	android:supportsRtl
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:11:9-35
 	android:label
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:9:9-41
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:9:9-41
 	android:roundIcon
+<<<<<<< HEAD
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:10:9-48
+=======
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:10:9-54
+>>>>>>> 3e7a5bcfeb443fee0e313d64bcdff197623c7ce8
 	android:icon
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:8:9-43
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:8:9-43
 	android:allowBackup
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:7:9-35
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:7:9-35
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:12:9-52
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:12:9-52
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:6:9-34
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:6:9-34
 activity#com.monapizza.monapizza.ui.MainActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:13:9-16:20
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:13:9-16:20
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:15:13-56
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:15:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:14:13-44
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:14:13-44
 activity#com.monapizza.monapizza.ui.LessonsActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:17:9-21:20
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:17:9-21:20
 	android:parentActivityName
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:19:13-58
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:19:13-58
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:20:13-56
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:20:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:18:13-47
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:18:13-47
 activity#com.monapizza.monapizza.ui.QuizActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:22:9-25:20
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:22:9-25:20
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:24:13-56
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:24:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:23:13-44
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:23:13-44
 activity#com.monapizza.monapizza.ui.WelcomeActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:26:9-34:20
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:26:9-34:20
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:28:13-56
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:28:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:27:13-47
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:27:13-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:29:13-33:29
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:29:13-33:29
 action#android.intent.action.MAIN
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:30:17-68
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:30:17-68
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:30:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:32:17-76
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:32:17-76
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:32:27-74
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:32:27-74
 activity#com.monapizza.monapizza.ui.GuestLoginActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:35:9-39:20
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:35:9-39:20
 	android:parentActivityName
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:37:13-61
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:37:13-61
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:38:13-56
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:38:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:36:13-50
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:36:13-50
 activity#com.monapizza.monapizza.ui.LoginActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:40:9-44:20
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:40:9-44:20
 	android:parentActivityName
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:42:13-61
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:42:13-61
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:43:13-56
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:43:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:41:13-45
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:41:13-45
 activity#com.monapizza.monapizza.ui.SignupActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:45:9-49:20
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:45:9-49:20
 	android:parentActivityName
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:47:13-61
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:47:13-61
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:48:13-56
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:48:13-56
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:46:13-46
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:46:13-46
 activity#com.monapizza.monapizza.ui.ExamActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:50:9-51:20
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:50:9-51:20
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:50:19-50
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:50:19-50
 activity#com.monapizza.monapizza.ui.AccountManagerActivity
-ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:52:9-54:20
+ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:52:9-54:20
 	android:parentActivityName
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:53:19-64
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:53:19-64
 	android:name
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:52:19-60
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml:52:19-60
 uses-sdk
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:transition:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\4b44f6cd7a186ec6fd7d4a6ddca1b187\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\4b44f6cd7a186ec6fd7d4a6ddca1b187\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\01225522d5775297acd2e0f3bf2971c8\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\01225522d5775297acd2e0f3bf2971c8\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\4ab993b4dfc0d06aa8b407986fc876c0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\4ab993b4dfc0d06aa8b407986fc876c0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\40cd5c8e1d89b4b3561588c3eb7ace5b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\40cd5c8e1d89b4b3561588c3eb7ace5b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.0.0.aar\a52e94fab8d41500c3fbf9417fd90dd5\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.0.0.aar\a52e94fab8d41500c3fbf9417fd90dd5\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\a2802cd4b3a776cc066f36f1efc2ce01\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\a2802cd4b3a776cc066f36f1efc2ce01\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\d32d94d6377cca1b8d8b81a10ca272cc\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\d32d94d6377cca1b8d8b81a10ca272cc\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\39adb683b00731e517f4de2dd007b768\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\39adb683b00731e517f4de2dd007b768\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\247c27ef72754ea41a0f54fbe1aaf06d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\247c27ef72754ea41a0f54fbe1aaf06d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\fbf7329a05bbcadeede594ff936376f3\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\fbf7329a05bbcadeede594ff936376f3\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\8f75422395f527849c9e02ebe0b42ac6\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\8f75422395f527849c9e02ebe0b42ac6\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\c729bb8fc65a9c9289bbbafb52911b84\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\c729bb8fc65a9c9289bbbafb52911b84\AndroidManifest.xml:21:5-23:58
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\968b0fe3d2fdd86392cba78b57d55f33\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\968b0fe3d2fdd86392cba78b57d55f33\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:transition:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\07efcb5ec87abb5f0cfe44d7e06778d2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\transition-25.0.0.aar\07efcb5ec87abb5f0cfe44d7e06778d2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\aa3143b1c40e1c2dab5f31c2b2fa7404\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\aa3143b1c40e1c2dab5f31c2b2fa7404\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\6cd43fdf9b405e9f45a4527a9c31e5dc\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\6cd43fdf9b405e9f45a4527a9c31e5dc\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\72bee9f4c937d229319783a82492c924\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta3] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta3.aar\72bee9f4c937d229319783a82492c924\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\66223fc84892f3c4f14e19de4d361e03\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\66223fc84892f3c4f14e19de4d361e03\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.0.0.aar\8dcc4b6c9ca8c114b32621593b0e6f6f\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.0.0.aar\8dcc4b6c9ca8c114b32621593b0e6f6f\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\6e874d3754e300036a8780a48ce1ef18\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\6e874d3754e300036a8780a48ce1ef18\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\c7b7ad16441bfeb8dd79b3e8336b285f\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\c7b7ad16441bfeb8dd79b3e8336b285f\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\556290a11284685c0e7ee8fd8490e303\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\556290a11284685c0e7ee8fd8490e303\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\d606ef824f5fa6aa8cda9ef6e27d7b4c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\d606ef824f5fa6aa8cda9ef6e27d7b4c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\e0de485a1a89c7ce5958c1590cff12b9\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\e0de485a1a89c7ce5958c1590cff12b9\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\e3cf004b92fc1b91f494a394ebb18692\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\e3cf004b92fc1b91f494a394ebb18692\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\1dec801f318c99d09f5211ce207b4edc\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\1dec801f318c99d09f5211ce207b4edc\AndroidManifest.xml:21:5-23:58
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.0.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\ca9bac35bef90975cf9f36fe91acec5d\AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.0.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\design-25.0.0.aar\968b0fe3d2fdd86392cba78b57d55f33\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\TRUONG-DESKTOP\ONGOING_PROJECT\MonaPizza\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\a2802cd4b3a776cc066f36f1efc2ce01\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\a2802cd4b3a776cc066f36f1efc2ce01\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\d32d94d6377cca1b8d8b81a10ca272cc\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\d32d94d6377cca1b8d8b81a10ca272cc\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\39adb683b00731e517f4de2dd007b768\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\39adb683b00731e517f4de2dd007b768\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\8f75422395f527849c9e02ebe0b42ac6\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\8f75422395f527849c9e02ebe0b42ac6\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\c729bb8fc65a9c9289bbbafb52911b84\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\c729bb8fc65a9c9289bbbafb52911b84\AndroidManifest.xml:26:9-28:38
+ADDED from [com.android.support:support-v4:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\6cd43fdf9b405e9f45a4527a9c31e5dc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\6e874d3754e300036a8780a48ce1ef18\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\6e874d3754e300036a8780a48ce1ef18\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\c7b7ad16441bfeb8dd79b3e8336b285f\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\c7b7ad16441bfeb8dd79b3e8336b285f\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\556290a11284685c0e7ee8fd8490e303\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\556290a11284685c0e7ee8fd8490e303\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\e3cf004b92fc1b91f494a394ebb18692\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\e3cf004b92fc1b91f494a394ebb18692\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\1dec801f318c99d09f5211ce207b4edc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\1dec801f318c99d09f5211ce207b4edc\AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:28:13-35
+		ADDED from [com.android.support:support-v4:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\6cd43fdf9b405e9f45a4527a9c31e5dc\AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:support-v4:25.4.0] C:\Users\chita\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\a890706dadb19b298f281be51f10b877\AndroidManifest.xml:27:13-51
+		ADDED from [com.android.support:support-v4:25.4.0] C:\Users\TRUONG-DESKTOP\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\6cd43fdf9b405e9f45a4527a9c31e5dc\AndroidManifest.xml:27:13-51
