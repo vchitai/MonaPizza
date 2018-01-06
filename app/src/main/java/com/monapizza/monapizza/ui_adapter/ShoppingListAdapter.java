@@ -15,7 +15,6 @@ import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Item;
 import com.monapizza.monapizza.core.User;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -29,14 +28,12 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         public TextView  mItemName;
         public TextView  mItemSummary;
         public View      mItemView;
-        public TextView  mItemPrice;
         public Button    mItemBuy;
         public ViewHolder(View view) {
             super(view);
             mItemImage = (ImageView) view.findViewById(R.id.shop_item_icon);
             mItemName = (TextView) view.findViewById(R.id.shop_item_name);
             mItemSummary = (TextView) view.findViewById(R.id.shop_item_summary);
-            mItemPrice = (TextView) view.findViewById(R.id.shop_item_price);
             mItemBuy = (Button) view.findViewById(R.id.shop_item_buy_btn);
             mItemView = view;
         }
@@ -61,15 +58,14 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     public void onBindViewHolder(ShoppingListAdapter.ViewHolder holder, final int position) {
         //Initialize View
         final Item currentItem = mItemList.get(position);
-        Drawable   drawable    = null;
-        try {
-            drawable = Drawable.createFromStream(MonaPizza.getAppContext().getAssets().open(currentItem.getImage()), null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Drawable   drawable    = MonaPizza.getRoundedBitmapDrawable(currentItem.getImage());
+
+        holder.mItemImage.setBackground(drawable);
         holder.mItemName.setText(currentItem.getName());
         holder.mItemSummary.setText(currentItem.getEffect());
-        holder.mItemPrice.setText(currentItem.getPrice());
+        String price = currentItem.getPrice()
+                            +" " +MonaPizza.getAppContext().getResources().getString(R.string.currency);
+        holder.mItemBuy.setText(price);
         holder.mItemBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +76,6 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mItemList.size();
     }
 }

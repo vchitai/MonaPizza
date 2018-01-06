@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v13\\values-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\7723298be797960bc38179e74c107291\\res\\values-v13\\values-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    }
+                }
+            ]
+        }
+    ]
+}

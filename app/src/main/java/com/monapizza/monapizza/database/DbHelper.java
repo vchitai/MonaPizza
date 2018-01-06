@@ -30,7 +30,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private Context context;
     private String DB_PATH = "data/data/com.monapizza.monapizza/";
-    private static String DB_NAME = "databasev2.db";
+    private static String DB_NAME = "databasev3.db";
     private SQLiteDatabase myDatabase;
 
     public DbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -64,7 +64,7 @@ public class DbHelper extends SQLiteOpenHelper {
         AssetManager  dirPath = context.getAssets();
         InputStream myInput = context.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;
-        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/databasev2.db");
+        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/databasev3.db");
         byte[] buffer = new byte[1024];
         int len;
         while ((len = myInput.read(buffer)) > 0) {
@@ -574,7 +574,7 @@ public class DbHelper extends SQLiteOpenHelper {
         while (!c.isAfterLast()) {
             if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
                 ContentValues v = new ContentValues();
-                v.put("Money", newMoney);
+                v.put("UserMoney", newMoney);
                 int id = c.getInt(c.getColumnIndex("UserID"));
                 db.update("UserAccount", v, "UserID=" + id, null);
                 break;
@@ -621,7 +621,7 @@ public class DbHelper extends SQLiteOpenHelper {
         updateLearningProcess(userName, checkList);
         updateLevel(userName, level);
         updateMoney(userName, money);
-        updateItemList(userName, itemList);
+        //updateItemList(userName, itemList);
         return 1;
     }
 
@@ -688,6 +688,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
+
     // Ham lay danh sach ban be cua username tuong ung
     public ArrayList<Friend> loadFriend(String username) {
         return getFriend(username);
@@ -704,7 +705,19 @@ public class DbHelper extends SQLiteOpenHelper {
     // String mAvatar; (Nếu ko có thuộc tính này thì có thể gán "default-avatar.png")
     // int mProgress;
     public ArrayList<Friend> getFriend(String username) {
-        return new ArrayList<Friend>();
+        ArrayList<Friend> friends = new ArrayList<Friend>();
+        SQLiteDatabase db = getDatabase();
+        String query = "select f.Friendname" +
+                " from Friend f where f.Username = '" + username + "'";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            Friend friend = new Friend(c.getString(c.getColumnIndex("Friendname")), "default-avatar.png", 0);
+            friends.add(friend);
+            c.moveToNext();
+        }
+        c.close();
+        return friends;
     }
 
     // Kiem tra xem 2 username co phai la ban be hay khong
@@ -712,6 +725,32 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve false: 2 username khong la ban be
     // 2 username nay chac chan nam trong database nen chi can kiem tra xem co phai ban be hay khong
     public Boolean checkFriend(String username1, String username2) {
+        SQLiteDatabase db = getDatabase();
+        String query = "select f.Friendname" +
+                " from Friend f where f.Username = '" + username1 + "'";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            if (username2 == c.getString(c.getColumnIndex("Friendname"))) {
+                c.close();
+                return true;
+            }
+            c.moveToNext();
+        }
+        c.close();
+
+        query = "select f.Friendname" +
+                " from Friend f where f.Username = '" + username2 + "'";
+        c = db.rawQuery(query, null);
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            if (username1 == c.getString(c.getColumnIndex("Friendname"))) {
+                c.close();
+                return true;
+            }
+            c.moveToNext();
+        }
+        c.close();
         return false;
     }
 
@@ -721,14 +760,10 @@ public class DbHelper extends SQLiteOpenHelper {
     // Add friend nay la add friend mot chieu
     // Chi them friendUsername vao danh sach currentUserName.
     public int addFriend(String currentUserName, String friendUsername) {
-        if (isExistingUser(friendUsername) == false) {
-            ErrorList.setExitCode(ErrorList.FRIEND_NOT_EXIST);
+        if (isExistingUser(friendUsername) == false)
             return ErrorList.FRIEND_NOT_EXIST;
-        }
-        if (checkFriend(currentUserName, friendUsername)) {
-            ErrorList.setExitCode(ErrorList.ALREADY_FRIEND);
+        if (checkFriend(currentUserName, friendUsername))
             return ErrorList.ALREADY_FRIEND;
-        }
 
         // them ban be vao database
 
@@ -737,7 +772,10 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // Ham cap nhat Username vao bang SkipSignIn
     public void updateSkipSignIn(String username) {
-
+        SQLiteDatabase db = getDatabase();
+        ContentValues values = new ContentValues();
+        values.put("Username", username);
+        db.insert("SkipSignIn", null, values);
     }
 
     // Ham kiem tra xem co username da dang nhap truoc do hay chua
@@ -745,35 +783,73 @@ public class DbHelper extends SQLiteOpenHelper {
     // Tra ve: String: ten username da dang nhap truoc do
     // Tra ve: null: neu chua tung co username dang nhap
     public String checkSkipSignIn() {
+        SQLiteDatabase db = getDatabase();
+        String countQuery = "select COUNT(*) as count from SkipSignIn";
+        String query = "select Username" +
+                " from SkipSignIn";
+        Cursor c = db.rawQuery(countQuery, null);
+        c.moveToFirst();
+        int count = c.getInt(c.getColumnIndex("count"));
+        c.close();
+        if (count > 0) {
+            c = db.rawQuery(query, null);
+            c.moveToFirst();
+            String username = c.getString(c.getColumnIndex("Username"));
+            return username;
+        }
         return null;
     }
 
     // Ham nay xoa userName trong bang SkipSignIn khi username logout ra khoi he thong
     public void deleteRecentSignIn() {
-
+        SQLiteDatabase db = getDatabase();
+        String query = "delete from SkipSignIn";
+        db.execSQL(query);
     }
 
     // ham lay so luong item trong bang Item
     public int getNumberItem() {
-        return 0;
+        SQLiteDatabase db = getDatabase();
+        String countQuery = "select COUNT(*) as count from Item";
+        Cursor c = db.rawQuery(countQuery, null);
+        c.moveToFirst();
+        int count = c.getInt(c.getColumnIndex("count"));
+        c.close();
+        return count;
     }
 
     // ham tra ve danh sach Item trong database
     // cau truc Item xem class Item.java
     // Thuc hien tren bang Item
     public ArrayList<Item> getItemList() {
-
-
-        return new ArrayList<Item>();
+        ArrayList<Item> items = new ArrayList<Item>();
+        SQLiteDatabase db = getDatabase();
+        String query = "select i.ItemID, i.ItemName, i.ImageLocation, i.Effect, i.Cost" +
+                " from Item i";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            Item item = new Item(c.getInt(c.getColumnIndex("ItemID")), c.getString(c.getColumnIndex("ItemName")),
+                    c.getInt(c.getColumnIndex("Cost")), c.getString(c.getColumnIndex("ImageLocation")),
+                    c.getString(c.getColumnIndex("Effect")));
+            items.add(item);
+            c.moveToNext();
+        }
+        c.close();
+        return items;
     }
 
     // Ham load thong tin itemList cua User
     // Luu thong tin ItemList trong database vao String s
     public ArrayList<Integer> loadItemList(String username) {
-        String s = "";
-
-        // Lay thong tin trong database
-
+        ArrayList<Item> items = new ArrayList<Item>();
+        SQLiteDatabase db = getDatabase();
+        String query = "select ItemList" +
+                " from UserAccount where Username = '" + username + "'";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        String s = c.getString(c.getColumnIndex("ItemList"));
+        c.close();
         return convertString2ItemList(s);
     }
 
@@ -782,12 +858,41 @@ public class DbHelper extends SQLiteOpenHelper {
     // chi can cap nhat vao database
     public void updateItemList(String userName, ArrayList<Integer> itemList) {
         String s = convertItemList2String(itemList);
-
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        String password = "";
+        while (!c.isAfterLast()) {
+            if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
+                ContentValues v = new ContentValues();
+                v.put("ItemList", s);
+                int id = c.getPosition();
+                db.update("UserAccount", v, "_id=" + id, null);
+                break;
+            }
+            c.moveToNext();
+        }
+        c.close();
         // cap nhat s vao database
     }
 
     // Ham lay item co id la ind trong bang Item
     public Item getItem(int ind) {
-        return null;
+        SQLiteDatabase db = getDatabase();
+        String query = "select i.ItemID, i.ItemName, i.ImageLocation, i.Effect, i.Cost" +
+                " from Item i where i.ItemID = '" + String.valueOf(ind) + "'";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        Item item = new Item(
+                c.getInt(c.getColumnIndex("ItemID")),
+                c.getString(c.getColumnIndex("ItemName")),
+                c.getInt(c.getColumnIndex("Cost")),
+                c.getString(c.getColumnIndex("ImageLocation")),
+                c.getString(c.getColumnIndex("Effect")));
+        c.close();
+        return item;
     }
 }
+

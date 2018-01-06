@@ -11,6 +11,14 @@ public class Item {
     private String m_image;
     private String m_effect;
 
+    public Item(int id, String name, int price, String image, String effect) {
+        m_id = id;
+        m_name = name;
+        m_price = price;
+        m_image = image;
+        m_effect = effect;
+    }
+
     public int getId() {
         return m_id;
     }

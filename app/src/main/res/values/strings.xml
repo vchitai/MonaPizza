@@ -88,4 +88,5 @@
     <string name="default_email">/@monapizza.com</string>
     <string name="lesson_restudy">Học lại bài này</string>
     <string name="lesson_title">Bài</string>
+    <string name="currency">Pizza</string>
 </resources>

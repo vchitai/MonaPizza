@@ -20,6 +20,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
         if (User.getInstance().skipSignIn() == 1) {
             Intent intent = new Intent(context,MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
 

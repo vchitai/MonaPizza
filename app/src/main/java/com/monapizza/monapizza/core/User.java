@@ -62,7 +62,7 @@ public class User {
         m_checkList = database.loadCheckList(userName);
         m_level = database.loadLevel(userName);
         m_friends = database.loadFriend(userName);
-        m_itemList = database.loadItemList(userName);
+        //m_itemList = database.loadItemList(userName);
 
         database.updateSkipSignIn(userName);
     }
@@ -153,7 +153,8 @@ public class User {
         m_name = "";
         m_money = 0;
         m_friends.clear();
-        m_itemList.clear();
+        if (m_itemList != null)
+            m_itemList.clear();
     }
 
     // Cap nhat tien trinh hoc cua user

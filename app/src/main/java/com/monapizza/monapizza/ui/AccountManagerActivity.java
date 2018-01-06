@@ -1,5 +1,6 @@
 package com.monapizza.monapizza.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.TextInputEditText;
@@ -38,6 +39,18 @@ public class AccountManagerActivity extends AppCompatActivity {
         mAccountManagerEditButton = (Button) findViewById(R.id.account_manager_edit_button);
         mAccountManagerLogoutButton = (Button) findViewById(R.id.account_manager_logout_button);
 
+        mAccountManagerLogoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User.getInstance().logOut();
+                Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
         final ConstraintLayout AccountManagerEditFrame = (ConstraintLayout) findViewById(R.id.account_manager_edit);
 
         final TableLayout AccountMangerInfo = (TableLayout)findViewById(R.id.account_manager_info);
