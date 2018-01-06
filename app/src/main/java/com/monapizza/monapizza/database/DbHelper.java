@@ -30,7 +30,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private Context context;
     private String DB_PATH = "data/data/com.monapizza.monapizza/";
-    private static String DB_NAME = "databasev3.db";
+    private static String DB_NAME = "databasev4.db";
     private SQLiteDatabase myDatabase;
 
     public DbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -64,7 +64,7 @@ public class DbHelper extends SQLiteOpenHelper {
         AssetManager  dirPath = context.getAssets();
         InputStream myInput = context.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;
-        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/databasev3.db");
+        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/databasev4.db");
         byte[] buffer = new byte[1024];
         int len;
         while ((len = myInput.read(buffer)) > 0) {
@@ -226,13 +226,6 @@ public class DbHelper extends SQLiteOpenHelper {
         c.close();
         //db.close();
         return cats;
-        /*ArrayList<Category> categories = new ArrayList<Category>();
-        categories.add(new Category(0,"LOL1",1,"ic_shortcut_account_balance.png"));
-        categories.add(new Category(1,"LOL2",1,"ic_shortcut_account_balance.png"));
-        categories.add(new Category(2,"LOL3",1,"ic_shortcut_account_balance.png"));
-        categories.add(new Category(3,"LOL4",1,"ic_shortcut_account_balance.png"));
-        categories.add(new Category(4,"LOL5",1,"ic_shortcut_account_balance.png"));
-        return categories;*/
     }
 
     // Lay danh sach cac lesson (hien thi)
@@ -303,6 +296,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
     //Kiểm tra username có thỏa điều kiện
     private Boolean isValidUsername(String username) {
+        if (username.length() == 0)
+            return false;
         int nValid = 0;
         for(char ch: username.toCharArray())
             if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')) nValid = nValid + 1;
@@ -457,6 +452,8 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put("Username", userName);
         values.put("Password", password);
         values.put("CheckList", checkLists);
+        values.put("Level", level);
+        values.put("UserMoney", money);
         SQLiteDatabase db = getDatabase();
         db.insert("UserAccount", null, values);
         //db.close();

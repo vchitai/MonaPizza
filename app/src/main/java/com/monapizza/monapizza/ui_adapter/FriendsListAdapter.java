@@ -58,7 +58,7 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
         RoundedBitmapDrawable drawable = MonaPizza.getRoundedBitmapDrawable(currentFriend.getAvatar());
         holder.mFriendImage.setBackground(drawable);
         holder.mFriendName.setText(currentFriend.getName());
-        String progress = MonaPizza.getAppContext().getResources().getString(R.string.progress) + ' ' +
+        String progress = MonaPizza.getResourceString(R.string.progress) + ' ' +
                                 currentFriend.getProgress() + " % ";
         holder.mFriendSummary.setText(progress);
     }

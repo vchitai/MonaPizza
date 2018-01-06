@@ -55,7 +55,7 @@ public class LessonsActivity extends AppCompatActivity {
         });
 
         if (User.getInstance().getStatus(-1, mCategoryID, -1) == User.getInstance().STT_PASS) {
-            mLessonTestButton.setText(MonaPizza.getAppContext().getResources().getString(R.string.completed_checkpoint));
+            mLessonTestButton.setText(MonaPizza.getResourceString(R.string.completed_checkpoint));
         }
     }
 
@@ -64,7 +64,7 @@ public class LessonsActivity extends AppCompatActivity {
         super.onResume();
         mLessonList.setAdapter(mLessonListAdapter);
         if (User.getInstance().getStatus(-1, mCategoryID, -1) == User.getInstance().STT_PASS) {
-            mLessonTestButton.setText(MonaPizza.getAppContext().getResources().getString(R.string.completed_checkpoint));
+            mLessonTestButton.setText(MonaPizza.getResourceString(R.string.completed_checkpoint));
         }
     }
 }

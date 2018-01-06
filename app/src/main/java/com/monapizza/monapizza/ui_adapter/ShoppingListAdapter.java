@@ -64,7 +64,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         holder.mItemName.setText(currentItem.getName());
         holder.mItemSummary.setText(currentItem.getEffect());
         String price = currentItem.getPrice()
-                            +" " +MonaPizza.getAppContext().getResources().getString(R.string.currency);
+                            +" " +MonaPizza.getResourceString(R.string.currency);
         holder.mItemBuy.setText(price);
         holder.mItemBuy.setOnClickListener(new View.OnClickListener() {
             @Override

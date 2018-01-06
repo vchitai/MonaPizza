@@ -71,7 +71,7 @@
     <string name="EM_WrongPassword">Sai mật khẩu.</string>
     <string name="EM_SamePassword">Mật khẩu mới phải khác mật khẩu đã đặt trước đây!</string>
     <string name="EM_UsernameNotExisted">Tên tài khoản không tồn tại.</string>
-    <string name="EM_UsernameErrorFormat">Tên tài khoản chỉ sử dụng các kí tự a..z và các kí tự số 0..9.</string>
+    <string name="EM_UsernameErrorFormat">Tên tài khoản chỉ sử dụng các kí tự A..Z, a..z và các kí tự số 0..9.</string>
     <string name="EM_AlreadyFriend">Hai bạn đã là bạn bè.</string>
     <string name="EM_FriendNotExist">Người bạn thêm vào danh sách bạn bè không tồn tại.</string>
     <string name="EM_NotSignedIn">Bạn phải đăng nhập để dùng chức năng này.</string>

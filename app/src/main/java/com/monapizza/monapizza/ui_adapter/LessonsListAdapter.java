@@ -57,7 +57,7 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
 
     @Override
     public void onBindViewHolder(LessonsListAdapter.ViewHolder holder, final int position) {
-        StringBuilder stringBuilder1 = new StringBuilder(MonaPizza.getAppContext().getString(R.string.lesson_title) + " "
+        StringBuilder stringBuilder1 = new StringBuilder(MonaPizza.getResourceString(R.string.lesson_title) + " "
                             + (position + 1) + "/" + mNumberOfLessons);
         holder.mLessonTitleTextView.setText(stringBuilder1.toString());
         ArrayList<Word> lessonWords = Ultility.getDbHelper().getWordInLesson(mCategoryID,position+1);
@@ -73,8 +73,8 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), QuizActivity.class);
-                intent.putExtra(MonaPizza.getAppContext().getResources().getString(R.string.EA_CategoryID), mCategoryID);
-                intent.putExtra(MonaPizza.getAppContext().getResources().getString(R.string.EA_LessonID), position);
+                intent.putExtra(MonaPizza.getResourceString(R.string.EA_CategoryID), mCategoryID);
+                intent.putExtra(MonaPizza.getResourceString(R.string.EA_LessonID), position);
                 
                 v.getContext().startActivity(intent);
             }
@@ -82,7 +82,7 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
         int flag = 0;
         flag = User.getInstance().getStatus(-1,mCategoryID,position+1);
         if  (flag == User.getInstance().STT_PASS) {
-            holder.mLessonStartButton.setText(MonaPizza.getAppContext().getResources().getString(R.string.lesson_restudy));
+            holder.mLessonStartButton.setText(MonaPizza.getResourceString(R.string.lesson_restudy));
         }
     }
 

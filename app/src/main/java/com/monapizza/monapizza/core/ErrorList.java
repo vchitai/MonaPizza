@@ -28,33 +28,61 @@ public class ErrorList {
     public static final int TOO_MANY_WRONGS         =   -11;
 
     public static String getMessage(int idError) {
+        String mess = null;
         switch (idError) {
-            case PASSWORD_ERROR_FORMAT:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_PasswordErrorFormat);
-            case USERNAME_EXISTED:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_UsernameExisted);
-            case WRONG_PASSWORD:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_WrongPassword);
-            case SAME_PASSWORD:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_SamePassword);
-            case USERNAME_NOT_EXISTED:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_UsernameNotExisted);
-            case USERNAME_ERROR_FORMAT:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_UsernameErrorFormat);
-            case ALREADY_FRIEND:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_AlreadyFriend);
-            case FRIEND_NOT_EXIST:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_FriendNotExist);
-            case NOT_SIGN_IN:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_NotSignedIn);
-            case NOT_ENOUGH_MONEY:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_NotEnoughMoney);
-            case TOO_MANY_WRONGS:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_TooManyWrongs);
+            case PASSWORD_ERROR_FORMAT: {
+                mess = MonaPizza.getResourceString(R.string.EM_PasswordErrorFormat);
+                break;
+            }
+            case USERNAME_EXISTED: {
+                mess = MonaPizza.getResourceString(R.string.EM_UsernameExisted);
+                break;
+            }
+            case WRONG_PASSWORD: {
+                mess = MonaPizza.getResourceString(R.string.EM_WrongPassword);
+                break;
+            }
+            case SAME_PASSWORD: {
+                mess = MonaPizza.getResourceString(R.string.EM_SamePassword);
+                break;
+            }
+            case USERNAME_NOT_EXISTED: {
+                mess = MonaPizza.getResourceString(R.string.EM_UsernameNotExisted);
+                break;
+            }
+            case USERNAME_ERROR_FORMAT: {
+                mess = MonaPizza.getResourceString(R.string.EM_UsernameErrorFormat);
+                break;
+            }
+            case ALREADY_FRIEND: {
+                mess = MonaPizza.getResourceString(R.string.EM_AlreadyFriend);
+                break;
+            }
+            case FRIEND_NOT_EXIST: {
+                mess = MonaPizza.getResourceString(R.string.EM_FriendNotExist);
+                break;
+            }
+            case NOT_SIGN_IN: {
+                mess = MonaPizza.getResourceString(R.string.EM_NotSignedIn);
+                break;
+            }
+            case NOT_ENOUGH_MONEY: {
+                mess = MonaPizza.getResourceString(R.string.EM_NotEnoughMoney);
+                break;
+            }
+            case TOO_MANY_WRONGS: {
+                mess = MonaPizza.getResourceString(R.string.EM_TooManyWrongs);
+                break;
+            }
 
-            default:
-                return MonaPizza.getAppContext().getResources().getString(R.string.EM_NotKnowingError);
+            default: {
+                mess = MonaPizza.getResourceString(R.string.EM_NotKnowingError);
+                break;
+            }
         }
+
+        m_exitcode = 0;
+        return mess;
     }
 
     public static void setExitCode(int e) {

@@ -133,7 +133,7 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), LessonsActivity.class);
-                    intent.putExtra(MonaPizza.getAppContext().getResources().getString(R.string.EA_CategoryID), mCategoryList.get(realPos).getId());
+                    intent.putExtra(MonaPizza.getResourceString(R.string.EA_CategoryID), mCategoryList.get(realPos).getId());
 
                     v.getContext().startActivity(intent);
                 }
@@ -143,7 +143,7 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
             int flag = 0;
             flag = User.getInstance().getStatus(-realPos,-1,-1);
             if (flag == User.getInstance().STT_PASS) {
-                holder.mCheckpointButton.setText(MonaPizza.getAppContext().getResources().getString(R.string.completed_checkpoint));
+                holder.mCheckpointButton.setText(MonaPizza.getResourceString(R.string.completed_checkpoint));
             }
             else if (flag == User.getInstance().STT_LOCK) {
                 holder.mCheckpointButton.setBackground(MonaPizza.getAppContext().getDrawable(R.drawable.round_corner_button_l));
@@ -153,7 +153,7 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), QuizActivity.class);
-                    intent.putExtra(MonaPizza.getAppContext().getResources().getString(R.string.EA_LevelID), -realPos);
+                    intent.putExtra(MonaPizza.getResourceString(R.string.EA_LevelID), -realPos);
 
                     v.getContext().startActivity(intent);
                 }

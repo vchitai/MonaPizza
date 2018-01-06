@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.R;
+import com.monapizza.monapizza.core.ErrorList;
 import com.monapizza.monapizza.core.Exam;
 import com.monapizza.monapizza.core.Question;
 import com.monapizza.monapizza.core.User;
@@ -89,6 +90,10 @@ public class QuizActivity extends AppCompatActivity {
 
     private void loadQuestion() {
         mCurrentQuestion  =  mCurrentExam.getQuestion();
+        if (mCurrentQuestion == null) {
+            MonaPizza.toastShowText(ErrorList.getMessage(ErrorList.getExitCode()));
+            finish();
+        }
         String ques = mCurrentQuestion.getQuestion();
         int quesType = mCurrentQuestion.getQuestionType();
         switch (quesType) {

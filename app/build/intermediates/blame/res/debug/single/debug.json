@@ -552,16 +552,16 @@
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\7723298be797960bc38179e74c107291\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
-        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable_answer_right.xml.flat",
-        "source": "C:\\Codes\\Android\\MonaPizza\\app\\src\\main\\res\\drawable\\answer_right.xml"
-    },
-    {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple.xml.flat",
         "source": "C:\\Users\\chita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\7723298be797960bc38179e74c107291\\res\\layout\\abc_screen_simple.xml"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Codes\\Android\\MonaPizza\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable_answer_right.xml.flat",
+        "source": "C:\\Codes\\Android\\MonaPizza\\app\\src\\main\\res\\drawable\\answer_right.xml"
     },
     {
         "merged": "C:\\Codes\\Android\\MonaPizza\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",

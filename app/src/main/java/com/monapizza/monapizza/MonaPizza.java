@@ -63,4 +63,8 @@ public class MonaPizza extends Application {
             mToast.show();
         }
     }
+
+    public static String getResourceString(int id) {
+        return context.getResources().getString(id);
+    }
 }

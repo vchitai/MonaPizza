@@ -15,16 +15,16 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
-        final Context context          = this;
-
         if (User.getInstance().skipSignIn() == 1) {
-            Intent intent = new Intent(context,MainActivity.class);
+            Intent intent = new Intent(this,MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
+
+        setContentView(R.layout.activity_welcome);
+        final Context context          = this;
 
         Button        guestLoginButton = (Button)findViewById(R.id.welcome_guest_login_button);
         guestLoginButton.setOnClickListener(new View.OnClickListener() {
