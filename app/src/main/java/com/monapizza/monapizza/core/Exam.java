@@ -28,7 +28,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 
 public class Exam {
-    private static final int numberQuestionHaveToPass = 10;
+    private static final int numberQuestionHaveToPass = 2;
     private static final int numberAcceptedWrongAnswer = 3;
 
     // Danh sach cac tu trong bai hoc lesson cua category
