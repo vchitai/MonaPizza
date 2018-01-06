@@ -17,6 +17,8 @@ import com.monapizza.monapizza.ui_adapter.LecturesListAdapter;
 import java.util.ArrayList;
 
 public class LecturesFragment extends Fragment {
+    private RecyclerView mLectureList;
+    private LecturesListAdapter mLectureListAdapter;
 
     public LecturesFragment() {
         // Required empty public constructor
@@ -29,24 +31,29 @@ public class LecturesFragment extends Fragment {
         DbHelper dbHelper = Ultility.getDbHelper();
         ArrayList<Category> categories = dbHelper.getCategoryList();
 
-        final LecturesListAdapter lecturesListAdapter = new LecturesListAdapter(categories);
-        RecyclerView              recyclerView        = (RecyclerView) rootView.findViewById(R.id.lectures_list);
-        recyclerView.setAdapter(lecturesListAdapter);
+        mLectureListAdapter = new LecturesListAdapter(categories);
+        mLectureList        = (RecyclerView) rootView.findViewById(R.id.lectures_list);
+        mLectureList.setAdapter(mLectureListAdapter);
         final GridLayoutManager mng_layout = new GridLayoutManager(this.getActivity(), 4/*In your case 4*/);
 
         mng_layout.setSpanSizeLookup( new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                if (lecturesListAdapter.getSpanSize(position) >= 4) {
+                if (mLectureListAdapter.getSpanSize(position) >= 4) {
                     return 4;
                 } else {
                     return 2;
                 }
             }
         });
-        recyclerView.setLayoutManager(mng_layout);
+        mLectureList.setLayoutManager(mng_layout);
 
         return rootView;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mLectureList.setAdapter(mLectureListAdapter);
+    }
 }

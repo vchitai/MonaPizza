@@ -80,7 +80,7 @@ public class LessonsListAdapter extends RecyclerView.Adapter<LessonsListAdapter.
             }
         });
         int flag = 0;
-        flag = User.getInstance().getStatus(-1,mCategoryID+1,position+1);
+        flag = User.getInstance().getStatus(-1,mCategoryID,position+1);
         if  (flag == User.getInstance().STT_PASS) {
             holder.mLessonStartButton.setText(MonaPizza.getAppContext().getResources().getString(R.string.lesson_restudy));
         }

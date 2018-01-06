@@ -143,7 +143,7 @@ public class LecturesListAdapter extends RecyclerView.Adapter<LecturesListAdapte
             int flag = 0;
             flag = User.getInstance().getStatus(-realPos,-1,-1);
             if (flag == User.getInstance().STT_PASS) {
-                holder.mCheckpointButton.setText("Đã hoàn thành Checkpoint");
+                holder.mCheckpointButton.setText(MonaPizza.getAppContext().getResources().getString(R.string.completed_checkpoint));
             }
             else if (flag == User.getInstance().STT_LOCK) {
                 holder.mCheckpointButton.setBackground(MonaPizza.getAppContext().getDrawable(R.drawable.round_corner_button_l));
