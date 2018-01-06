@@ -305,7 +305,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private Boolean isValidUsername(String username) {
         int nValid = 0;
         for(char ch: username.toCharArray())
-            if ((ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')) nValid = nValid + 1;
+            if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')) nValid = nValid + 1;
         if (nValid == username.length()) return true;
         else return false;
     }
@@ -766,6 +766,11 @@ public class DbHelper extends SQLiteOpenHelper {
             return ErrorList.ALREADY_FRIEND;
 
         // them ban be vao database
+        SQLiteDatabase db = getDatabase();
+        ContentValues values = new ContentValues();
+        values.put("Username", currentUserName);
+        values.put("Friendname", friendUsername);
+        db.insert("Friend", null, values);
 
         return 1;
     }
