@@ -90,4 +90,5 @@
     <string name="lesson_title">Bài</string>
     <string name="currency">Pizza</string>
     <string name="completed_checkpoint">Đã hoàn thành Checkpoint</string>
+    <string name="account_manager_title">Quản lý tài khoản</string>
 </resources>

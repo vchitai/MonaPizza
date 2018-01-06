@@ -6,6 +6,14 @@
     <item
         android:id="@+id/main_menu_account_mananger"
         android:icon="@drawable/ic_action_account_circle"
-        android:title="Account Manager"
+        android:title="@string/account_manager_title"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/main_menu_account_process"
+        android:title="@string/progress"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/main_menu_account_money"
+        android:title="@string/currency"
+        app:showAsAction="always" />
 </menu>

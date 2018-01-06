@@ -27,6 +27,7 @@ public class AccountManagerActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         try {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getString(R.string.account_manager_title));
         } catch (NullPointerException e) {
             e.printStackTrace();
         }

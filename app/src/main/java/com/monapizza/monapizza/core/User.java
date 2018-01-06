@@ -350,4 +350,13 @@ public class User {
 
         return STT_LOCK;
     }
+
+    public int getProcess() {
+        int res = 0;
+        for (int i =0; i<m_checkList.size(); i++)
+            for (int j = 0; j <m_checkList.get(i).size(); j++)
+                if (m_checkList.get(i).get(j))
+                    res++;
+        return res;
+    }
 }

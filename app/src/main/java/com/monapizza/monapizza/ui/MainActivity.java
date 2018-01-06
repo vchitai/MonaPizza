@@ -10,11 +10,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.monapizza.monapizza.R;
+import com.monapizza.monapizza.core.Ultility;
+import com.monapizza.monapizza.core.User;
 import com.monapizza.monapizza.ui_adapter.MainPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager        mMainViewPager;
     private MainPagerAdapter mMainPagerAdapter;
+    private Menu             mMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
+        mMenu = menu;
         return true;
     }
 
@@ -67,7 +71,13 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setActionBarTitle(String title) {
-        getSupportActionBar().setTitle(title);
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        String money = User.getInstance().getMoney() + ' ' + getString(R.string.currency);
+        menu.findItem(R.id.main_menu_account_money).setTitle(money);
+        int progress = (int) (User.getInstance().getProcess() * 1.0 / Ultility.getNumberOfLesson());
+        String process = progress + " %";
+        menu.findItem(R.id.main_menu_account_process).setTitle(process);
+        return super.onPrepareOptionsMenu(menu);
     }
 }
