@@ -28,6 +28,7 @@ public class LecturesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_lectures, container, false);
+        getActivity().supportInvalidateOptionsMenu();
         DbHelper dbHelper = Ultility.getDbHelper();
         ArrayList<Category> categories = dbHelper.getCategoryList();
 

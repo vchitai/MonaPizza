@@ -53,6 +53,7 @@ public class FriendsFragment extends Fragment {
         });
         notifyChange();
         // Inflate the layout for this fragment
+        getActivity().supportInvalidateOptionsMenu();
         return rootView;
     }
 

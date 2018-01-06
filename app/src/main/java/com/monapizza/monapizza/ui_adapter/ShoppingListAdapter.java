@@ -2,6 +2,7 @@ package com.monapizza.monapizza.ui_adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 
 public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>  {
     ArrayList<Item> mItemList;
+    Context mContext;
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView mItemImage;
         public TextView  mItemName;
@@ -43,8 +45,8 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     }
     @Override
     public ShoppingListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context        context  = parent.getContext();
-        LayoutInflater inflater = LayoutInflater.from(context);
+        mContext  = parent.getContext();
+        LayoutInflater inflater = LayoutInflater.from(mContext);
 
         // Inflate the custom layout
         View lectureView = inflater.inflate(R.layout.shop_item, parent, false);
@@ -70,6 +72,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
             @Override
             public void onClick(View v) {
                 User.getInstance().buyItem(currentItem.getId());
+                ((AppCompatActivity)mContext).supportInvalidateOptionsMenu();
             }
         });
     }

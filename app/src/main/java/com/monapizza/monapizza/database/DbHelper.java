@@ -452,6 +452,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put("Username", userName);
         values.put("Password", password);
         values.put("CheckList", checkLists);
+        values.put("ItemList", itemLists);
         values.put("Level", level);
         values.put("UserMoney", money);
         SQLiteDatabase db = getDatabase();
@@ -861,7 +862,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void updateItemList(String userName, ArrayList<Integer> itemList) {
         String s = convertItemList2String(itemList);
         SQLiteDatabase db = getDatabase();
-        String query = "select u.Username" +
+        String query = "select u.Username, u.UserID" +
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
@@ -871,7 +872,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 ContentValues v = new ContentValues();
                 v.put("ItemList", s);
                 int id = c.getPosition();
-                db.update("UserAccount", v, "_id=" + id, null);
+                db.update("UserAccount", v, "UserID=" + id, null);
                 break;
             }
             c.moveToNext();

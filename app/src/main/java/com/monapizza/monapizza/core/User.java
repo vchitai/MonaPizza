@@ -62,7 +62,7 @@ public class User {
         m_checkList = database.loadCheckList(userName);
         m_level = database.loadLevel(userName);
         m_friends = database.loadFriend(userName);
-        //m_itemList = database.loadItemList(userName);
+        m_itemList = database.loadItemList(userName);
 
         database.updateSkipSignIn(userName);
     }
