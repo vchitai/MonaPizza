@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         style="@style/ButtonStyle2"
         android:minWidth="200dp"
+        android:paddingLeft="@dimen/padding_medium"
+        android:paddingRight="@dimen/padding_medium"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

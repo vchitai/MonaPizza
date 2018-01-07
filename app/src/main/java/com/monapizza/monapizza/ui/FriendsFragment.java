@@ -20,6 +20,8 @@ import com.monapizza.monapizza.core.ErrorList;
 import com.monapizza.monapizza.core.User;
 import com.monapizza.monapizza.ui_adapter.FriendsListAdapter;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,6 +60,7 @@ public class FriendsFragment extends Fragment {
     }
 
     public void notifyChange() {
+        ArrayList res = User.getInstance().getFriendList();
         if (User.getInstance().getFriendList().size() == 0) {
             mFriendEmptyView.setVisibility(View.VISIBLE);
             mFriendList.setVisibility(View.GONE);

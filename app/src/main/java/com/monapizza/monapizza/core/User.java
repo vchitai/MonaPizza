@@ -232,16 +232,7 @@ public class User {
     // Ham lay danh sach ban be
     // Ham tam thoi, database chua ton tai nen van load friend tam
     public ArrayList<Friend> getFriendList() {
-        ArrayList<Friend> friends = new ArrayList<Friend>();/*
-        friends.add(new Friend("friend1","default-avatar.png",50));
-        friends.add(new Friend("friend2","default-avatar.png",50));
-        friends.add(new Friend("friend3","default-avatar.png",50));
-        friends.add(new Friend("friend4","default-avatar.png",50));
-        friends.add(new Friend("friend5","default-avatar.png",50));
-        friends.add(new Friend("friend6","default-avatar.png",50));*/
-        return friends;
-
-        //return m_friends;
+        return m_friends;
     }
 
     // Them ban be
@@ -250,7 +241,11 @@ public class User {
     //      < 0: loi, loi xem trong file ErrorList.java
     public int addFriend(String currentUserName, String friendUsername) {
         DbHelper database = Ultility.getDbHelper();
-        return database.addFriend(currentUserName, friendUsername);
+        int res = database.addFriend(currentUserName, friendUsername);
+        if (res == 1) {
+            m_friends = database.loadFriend(currentUserName);
+        }
+        return  res;
     }
 
     // Mua vat pham

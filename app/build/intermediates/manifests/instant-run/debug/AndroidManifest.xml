@@ -25,7 +25,7 @@
         <activity
             android:name="com.monapizza.monapizza.ui.LessonsActivity"
             android:parentActivityName="com.monapizza.monapizza.ui.MainActivity"
-            android:theme="@style/AppTheme_NoActionBar" >
+            android:theme="@style/AppTheme_NoActionBar2" >
         </activity>
         <activity
             android:name="com.monapizza.monapizza.ui.QuizActivity"

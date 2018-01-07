@@ -91,4 +91,8 @@
     <string name="currency">Pizza</string>
     <string name="completed_checkpoint">Đã hoàn thành Checkpoint</string>
     <string name="account_manager_title">Quản lý tài khoản</string>
+    <string name="owned">Đã có</string>
+    <string name="buy_confirm_ques">Bạn có muốn mua</string>
+    <string name="yes_choice">Có</string>
+    <string name="no_choice">Không</string>
 </resources>

@@ -26,7 +26,7 @@ public class ShoppingFragment extends Fragment {
         View      rootView =  inflater.inflate(R.layout.fragment_shopping, container, false);
 
         ArrayList<Item> itemList = Ultility.getDbHelper().getItemList();
-        ShoppingListAdapter shoppingListAdapter = new ShoppingListAdapter(itemList);
+        ShoppingListAdapter shoppingListAdapter = new ShoppingListAdapter(getContext(),itemList);
         getActivity().supportInvalidateOptionsMenu();
         RecyclerView shoppingItemListView = (RecyclerView) rootView.findViewById(R.id.shopping_list);
 

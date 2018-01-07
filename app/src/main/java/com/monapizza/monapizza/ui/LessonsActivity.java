@@ -33,6 +33,9 @@ public class LessonsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getSupportActionBar().setTitle(Ultility.getDbHelper().getCategoryList().get(mCategoryID-1).getName());
+        (findViewById(R.id.lessons_image)).setBackground(MonaPizza.getRoundedBitmapDrawable(
+                Ultility.getDbHelper().getCategoryList().get(mCategoryID-1).getIcon()
+        ));
         mLessonListAdapter = new LessonsListAdapter(mCategoryID);
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);

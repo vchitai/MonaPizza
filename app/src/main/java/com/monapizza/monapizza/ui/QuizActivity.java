@@ -93,6 +93,7 @@ public class QuizActivity extends AppCompatActivity {
         if (mCurrentQuestion == null) {
             MonaPizza.toastShowText(ErrorList.getMessage(ErrorList.getExitCode()));
             finish();
+            getParent().invalidateOptionsMenu();
         }
         String ques = mCurrentQuestion.getQuestion();
         int quesType = mCurrentQuestion.getQuestionType();

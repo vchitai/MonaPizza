@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.monapizza.monapizza.MonaPizza;
 import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Friend;
+import com.monapizza.monapizza.core.Ultility;
 import com.monapizza.monapizza.core.User;
 
 import java.util.ArrayList;
@@ -58,8 +59,8 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
         RoundedBitmapDrawable drawable = MonaPizza.getRoundedBitmapDrawable(currentFriend.getAvatar());
         holder.mFriendImage.setBackground(drawable);
         holder.mFriendName.setText(currentFriend.getName());
-        String progress = MonaPizza.getResourceString(R.string.progress) + ' ' +
-                                currentFriend.getProgress() + " % ";
+        String progress = MonaPizza.getResourceString(R.string.progress) + " " +
+                ((int)(currentFriend.getProgress()*100.0/ Ultility.getNumberOfLesson())) + " % ";
         holder.mFriendSummary.setText(progress);
     }
 

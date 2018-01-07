@@ -86,7 +86,7 @@ ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:17:9-21:2
 	android:parentActivityName
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:19:13-58
 	android:theme
-		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:20:13-56
+		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:20:13-57
 	android:name
 		ADDED from C:\Codes\Android\MonaPizza\app\src\main\AndroidManifest.xml:18:13-47
 activity#com.monapizza.monapizza.ui.QuizActivity

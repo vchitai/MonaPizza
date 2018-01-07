@@ -2,45 +2,38 @@
 <instant-run
     abi="x86"
     api-level="25"
-    build-mode="COLD"
+    build-mode="HOT_WARM"
     density="420dpi"
     format="10"
-    ir-eligibility="FIELD_ADDED"
     plugin-version="3.0.1"
-    timestamp="1515252202979"
+    timestamp="1515293342878"
     token="-6827479214962656466"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="257" />
+        duration="290" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="6" />
     <task
         name="instant-run-transform"
-        duration="90" />
+        duration="8" />
     <task
         name="verifier"
-        duration="13" />
+        duration="1" />
 
     <artifact
-        location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
+        location="C:\Codes\Android\MonaPizza\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
     <artifact
-        location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
+        location="C:\Codes\Android\MonaPizza\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
-        timestamp="1515248163233"
+        timestamp="1515287407315"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Codes\Android\MonaPizza\app\build\outputs\apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
         <artifact
             location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
@@ -71,55 +64,63 @@
         <artifact
             location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1515250787177"
-        verifier="R_CLASS_CHANGE" >
         <artifact
-            location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1515251190872"
-        verifier="STATIC_INITIALIZER_CHANGE" >
         <artifact
             location="C:\Codes\Android\MonaPizza\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1515251488300"
+        timestamp="1515291659701"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1515293267651"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1515251566915"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="FIELD_ADDED"
-        timestamp="1515252202979"
-        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Codes\Android\MonaPizza\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Codes\Android\MonaPizza\app\build\outputs\apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1515293316547"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Codes\Android\MonaPizza\app\build\intermediates\builds\debug\1515293316547\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1515293342878"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Codes\Android\MonaPizza\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="C:\Codes\Android\MonaPizza\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

@@ -73,11 +73,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        String money = User.getInstance().getMoney() + ' ' + getString(R.string.currency);
+        String money = User.getInstance().getMoney() + " " + getString(R.string.currency);
         menu.findItem(R.id.main_menu_account_money).setTitle(money);
-        int progress = (int) (User.getInstance().getProcess() * 1.0 / Ultility.getNumberOfLesson());
+        int progress = (int) (User.getInstance().getProcess() * 100.0 / Ultility.getNumberOfLesson());
         String process = progress + " %";
         menu.findItem(R.id.main_menu_account_process).setTitle(process);
         return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public void onResume() {
+        supportInvalidateOptionsMenu();
+        super.onResume();
+    }
+
+    @Override
+    public void onRestart() {
+        supportInvalidateOptionsMenu();
+        super.onRestart();
     }
 }

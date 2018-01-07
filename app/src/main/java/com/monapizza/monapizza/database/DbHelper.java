@@ -729,7 +729,7 @@ public class DbHelper extends SQLiteOpenHelper {
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            if (username2 == c.getString(c.getColumnIndex("Friendname"))) {
+            if (username2.equals(c.getString(c.getColumnIndex("Friendname")))) {
                 c.close();
                 return true;
             }
@@ -742,7 +742,7 @@ public class DbHelper extends SQLiteOpenHelper {
         c = db.rawQuery(query, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            if (username1 == c.getString(c.getColumnIndex("Friendname"))) {
+            if (username1.equals(c.getString(c.getColumnIndex("Friendname")))) {
                 c.close();
                 return true;
             }
@@ -758,10 +758,14 @@ public class DbHelper extends SQLiteOpenHelper {
     // Add friend nay la add friend mot chieu
     // Chi them friendUsername vao danh sach currentUserName.
     public int addFriend(String currentUserName, String friendUsername) {
-        if (isExistingUser(friendUsername) == false)
+        if (isExistingUser(friendUsername) == false) {
+            ErrorList.setExitCode(ErrorList.FRIEND_NOT_EXIST);
             return ErrorList.FRIEND_NOT_EXIST;
-        if (checkFriend(currentUserName, friendUsername))
+        }
+        if (checkFriend(currentUserName, friendUsername)) {
+            ErrorList.setExitCode(ErrorList.ALREADY_FRIEND);
             return ErrorList.ALREADY_FRIEND;
+        }
 
         // them ban be vao database
         SQLiteDatabase db = getDatabase();
@@ -769,7 +773,10 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put("Username", currentUserName);
         values.put("Friendname", friendUsername);
         db.insert("Friend", null, values);
-
+        ContentValues values2 = new ContentValues();
+        values2.put("Username", friendUsername);
+        values2.put("Friendname",currentUserName);
+        db.insert("Friend", null,values2);
         return 1;
     }
 
@@ -871,7 +878,7 @@ public class DbHelper extends SQLiteOpenHelper {
             if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
                 ContentValues v = new ContentValues();
                 v.put("ItemList", s);
-                int id = c.getPosition();
+                int id = c.getInt(c.getColumnIndex("UserID"));
                 db.update("UserAccount", v, "UserID=" + id, null);
                 break;
             }

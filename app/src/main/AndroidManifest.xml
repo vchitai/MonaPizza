@@ -17,7 +17,7 @@
         <activity
             android:name=".ui.LessonsActivity"
             android:parentActivityName=".ui.MainActivity"
-            android:theme="@style/AppTheme_NoActionBar">
+            android:theme="@style/AppTheme_NoActionBar2">
         </activity>
         <activity
             android:name=".ui.QuizActivity"
