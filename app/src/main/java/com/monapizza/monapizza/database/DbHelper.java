@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.monapizza.monapizza.MonaPizza;
+import com.monapizza.monapizza.R;
 import com.monapizza.monapizza.core.Category;
 import com.monapizza.monapizza.core.ErrorList;
 import com.monapizza.monapizza.core.Friend;
@@ -30,7 +32,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private Context context;
     private String DB_PATH = "data/data/com.monapizza.monapizza/";
-    private static String DB_NAME = "databasev4_1.db";
+    private static String DB_NAME = "databasev4_2.db";
     private SQLiteDatabase myDatabase;
 
     public DbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -64,7 +66,7 @@ public class DbHelper extends SQLiteOpenHelper {
         AssetManager  dirPath = context.getAssets();
         InputStream myInput = context.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;
-        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/databasev4_1.db");
+        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/databasev4_2.db");
         byte[] buffer = new byte[1024];
         int len;
         while ((len = myInput.read(buffer)) > 0) {
@@ -513,11 +515,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 " from UserAccount u";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
-        String password = "";
         while (!c.isAfterLast()) {
             if (userName.equals(c.getString(c.getColumnIndex("Username")))) {
                 ContentValues v = new ContentValues();
-                v.put("Password", password);
+                v.put("Password", newPassword);
                 int id = c.getInt(c.getColumnIndex("UserID"));
                 db.update("UserAccount", v, "UserID=" + id, null);
                 break;
@@ -903,6 +904,14 @@ public class DbHelper extends SQLiteOpenHelper {
                 c.getString(c.getColumnIndex("Effect")));
         c.close();
         return item;
+    }
+
+    public boolean validateUser(String username, String password) {
+        return  password.equals(getPassword(username));
+    }
+
+    public boolean isUsingDefaultPassword(String username) {
+        return getPassword(username).equals(MonaPizza.getResourceString(R.string.default_guest_password));
     }
 }
 

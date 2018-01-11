@@ -202,9 +202,15 @@ public class User {
     //ham cap nhat password cho user
     // Tra ve 1: thanh cong
     // Tra ve < 0: loi tuong ung trong file ErrorList.java
-    public int updatePass(String username, String new_password) {
+    public int updatePass(String username, String old_password, String new_password) {
         DbHelper database = Ultility.getDbHelper();
-        int res = database.updateUserPass(username, new_password);
+        int res;
+        if (database.validateUser(username, old_password)) {
+            res = database.updateUserPass(username, new_password);
+        } else {
+            ErrorList.setExitCode(ErrorList.WRONG_PASSWORD);
+            res = ErrorList.WRONG_PASSWORD;
+        }
         return res;
     }
 
@@ -353,5 +359,9 @@ public class User {
                 if (m_checkList.get(i).get(j))
                     res++;
         return res;
+    }
+
+    public boolean isUsingDefaultPassword() {
+        return Ultility.getDbHelper().isUsingDefaultPassword(m_name);
     }
 }

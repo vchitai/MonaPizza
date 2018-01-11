@@ -88,80 +88,82 @@ public class QuizActivity extends AppCompatActivity {
         mProgressBar.setProgress(0);
     }
 
-    private void loadQuestion() {
+    private boolean loadQuestion() {
         mCurrentQuestion  =  mCurrentExam.getQuestion();
         if (mCurrentQuestion == null) {
             MonaPizza.toastShowText(ErrorList.getMessage(ErrorList.getExitCode()));
             finish();
-            getParent().invalidateOptionsMenu();
-        }
-        String ques = mCurrentQuestion.getQuestion();
-        int quesType = mCurrentQuestion.getQuestionType();
-        switch (quesType) {
-            case Question.QUES_TYPE_STR: {
-                String tmp = ques.substring(0, 1).toUpperCase() + ques.substring(1);
-                String textQues = mCurrentQuestion.getQuestionDesc() + "<b>" + tmp + "</b>";
-                mTextQuestion.setText(Html.fromHtml(textQues));
-                mImageQuestion.setVisibility(View.GONE);
-                mSoundQuestion.setVisibility(View.GONE);
-                break;
-            }
-            case Question.QUES_TYPE_SOU: {
-                mTextQuestion.setText(mCurrentQuestion.getQuestionDesc());
-                MediaPlayer mp = null;
-                try {
-                    AssetFileDescriptor afd = getAssets().openFd(ques);
-                    mp = new MediaPlayer();
-                    mp.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
-                    mSoundQuestion.setClickable(false);
-                    mp.prepare();
-                    mp.start();
-                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            return false;
+        } else {
+            String ques     = mCurrentQuestion.getQuestion();
+            int    quesType = mCurrentQuestion.getQuestionType();
+            switch (quesType) {
+                case Question.QUES_TYPE_STR: {
+                    String tmp      = ques.substring(0, 1).toUpperCase() + ques.substring(1);
+                    String textQues = mCurrentQuestion.getQuestionDesc() + "<b>" + tmp + "</b>";
+                    mTextQuestion.setText(Html.fromHtml(textQues));
+                    mImageQuestion.setVisibility(View.GONE);
+                    mSoundQuestion.setVisibility(View.GONE);
+                    break;
+                }
+                case Question.QUES_TYPE_SOU: {
+                    mTextQuestion.setText(mCurrentQuestion.getQuestionDesc());
+                    MediaPlayer mp = null;
+                    try {
+                        AssetFileDescriptor afd = getAssets().openFd(ques);
+                        mp = new MediaPlayer();
+                        mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+                        mSoundQuestion.setClickable(false);
+                        mp.prepare();
+                        mp.start();
+                        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                mSoundQuestion.setClickable(true);
+                            }
+                        });
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    final MediaPlayer mpp = mp;
+                    mSoundQuestion.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            mSoundQuestion.setClickable(true);
+                        public void onClick(View v) {
+                            try {
+                                if (mpp != null) {
+                                    mSoundQuestion.setClickable(false);
+                                    mpp.stop();
+                                    mpp.prepare();
+                                    mpp.start();
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     });
-                } catch (IOException e) {
-                    e.printStackTrace();
+
+                    mImageQuestion.setVisibility(View.GONE);
+                    mSoundQuestion.setVisibility(View.VISIBLE);
+                    break;
                 }
-                final MediaPlayer mpp = mp;
-                mSoundQuestion.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        try {
-                            if (mpp != null) {
-                                mSoundQuestion.setClickable(false);
-                                mpp.stop();
-                                mpp.prepare();
-                                mpp.start();
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                case Question.QUES_TYPE_PIC: {
+                    mTextQuestion.setText(mCurrentQuestion.getQuestionDesc());
+                    Drawable drawable = null;
+                    try {
+                        drawable = Drawable.createFromStream(getAssets().open(ques), null);
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                });
+                    mImageQuestion.setBackground(drawable);
 
-                mImageQuestion.setVisibility(View.GONE);
-                mSoundQuestion.setVisibility(View.VISIBLE);
-                break;
-            }
-            case Question.QUES_TYPE_PIC: {
-                mTextQuestion.setText(mCurrentQuestion.getQuestionDesc());
-                Drawable drawable = null;
-                try {
-                    drawable = Drawable.createFromStream(getAssets().open(ques), null);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    mImageQuestion.setVisibility(View.VISIBLE);
+                    mSoundQuestion.setVisibility(View.GONE);
+                    break;
                 }
-                mImageQuestion.setBackground(drawable);
-
-                mImageQuestion.setVisibility(View.VISIBLE);
-                mSoundQuestion.setVisibility(View.GONE);
-                break;
+                default:
+                    break;
             }
-            default:
-                break;
+            return true;
         }
     }
 
@@ -226,20 +228,22 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void nextQuestion() {
-        loadQuestion();
-        loadAnswer();
-        for (int i = 0; i<NUMBER_OF_ANSWERS; i++) {
-            mAnswerButton.get(i).setClickable(true);
-            mAnswerButton.get(i).setBackground(getResources().getDrawable(R.drawable.round_corner_button));
-        }
-        mCurrentAns = -1;
-        mNextButton.setText(getResources().getString(R.string.QS_CheckAsnwer));
-        mNextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                processAnswer();
+        boolean loadSuccess = loadQuestion();
+        if (loadSuccess) {
+            loadAnswer();
+            for (int i = 0; i < NUMBER_OF_ANSWERS; i++) {
+                mAnswerButton.get(i).setClickable(true);
+                mAnswerButton.get(i).setBackground(getResources().getDrawable(R.drawable.round_corner_button));
             }
-        });
+            mCurrentAns = -1;
+            mNextButton.setText(getResources().getString(R.string.QS_CheckAsnwer));
+            mNextButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    processAnswer();
+                }
+            });
+        }
     }
 
     private void updateProgressBar()

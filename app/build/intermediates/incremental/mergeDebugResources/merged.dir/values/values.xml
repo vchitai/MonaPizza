@@ -717,6 +717,7 @@
     <string name="EM_WrongPassword">Sai mật khẩu.</string>
     <string name="IS_AddFriendSuccess">Thêm bạn thành công</string>
     <string name="IS_UpdatePassSuccess">Thay đổi mật khẩu thành công</string>
+    <string name="NT_UsingDefaultPassword">Bạn đang sử dụng mật khẩu mặc định: mona123. \nHãy sớm đổi mật khẩu! </string>
     <string name="QS_CheckAsnwer">Kiểm tra câu trả lời</string>
     <string name="QS_NextQuestion">Câu kế tiếp</string>
     <string name="QS_QuestionUnanswered">Câu hỏi chưa được trả lời</string>
@@ -759,7 +760,8 @@
     <string name="account_manager_finish_button">Hoàn tất</string>
     <string name="account_manager_logout_button">Đăng xuất</string>
     <string name="account_manager_title">Quản lý tài khoản</string>
-    <string name="account_password">Mật khẩu</string>
+    <string name="account_new_password">Mật khẩu mới</string>
+    <string name="account_old_password">Mật khẩu cũ</string>
     <string name="account_repassword">Nhập lại mật khẩu</string>
     <string name="account_username">Tên tài khoản</string>
     <string name="add_friend_dialog_cancel">Hủy</string>
@@ -779,7 +781,8 @@
     <string name="friend_summary">Thông tin</string>
     <string name="friends_fragment_title">Bạn bè</string>
     <string name="guest_login_username">Tên tài khoản</string>
-    <string name="guest_login_welcome">Xin chào! \nNhập tên của bạn để bắt đầu</string>
+    <string name="guest_login_welcome">Xin chào! \n
+        Nhập tên của bạn để bắt đầu</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lecture_icon">Icon</string>
     <string name="lecture_name">Name</string>

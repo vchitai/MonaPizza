@@ -17,7 +17,8 @@
 
     <string name="account_username">Tên tài khoản</string>
     <string name="account_email">Email</string>
-    <string name="account_password">Mật khẩu</string>
+    <string name="account_old_password">Mật khẩu cũ</string>
+    <string name="account_new_password">Mật khẩu mới</string>
     <string name="account_repassword">Nhập lại mật khẩu</string>
     <string name="account_manager_button">Lưu thay đổi</string>
     <string name="account_manager_edit_button">Chỉnh sửa</string>
@@ -26,7 +27,8 @@
     <string name="login_username">Tên tài khoản</string>
     <string name="login_password">Mật khẩu</string>
     <string name="guest_login_username">Tên tài khoản</string>
-    <string name="guest_login_welcome">Xin chào! \nNhập tên của bạn để bắt đầu</string>
+    <string name="guest_login_welcome">Xin chào! \n
+        Nhập tên của bạn để bắt đầu</string>
     <string name="signup_username">Tên tài khoản</string>
     <string name="signup_password">Mật khẩu</string>
     <string name="signup_repassword">Nhập lại mật khẩu</string>
@@ -82,6 +84,9 @@
     <!-- Inform Success -->
     <string name="IS_UpdatePassSuccess">Thay đổi mật khẩu thành công</string>
     <string name="IS_AddFriendSuccess">Thêm bạn thành công</string>
+
+    <!-- Notification -->
+    <string name="NT_UsingDefaultPassword">Bạn đang sử dụng mật khẩu mặc định: mona123. \nHãy sớm đổi mật khẩu! </string>
 
     <!-- New -->
     <string name="account_manager_logout_button">Đăng xuất</string>
