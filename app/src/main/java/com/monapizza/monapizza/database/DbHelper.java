@@ -292,8 +292,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         if (cntNum == 0 || cntChr == 0) return false;
 
-        if (pass.length() >= 6) return true;
-        else return false;
+        return pass.length() >= 6;
     }
 
     //Kiểm tra username có thỏa điều kiện
@@ -303,8 +302,7 @@ public class DbHelper extends SQLiteOpenHelper {
         int nValid = 0;
         for(char ch: username.toCharArray())
             if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')) nValid = nValid + 1;
-        if (nValid == username.length()) return true;
-        else return false;
+        return nValid == username.length();
     }
 
     // Chuyen tu checkList thanh String de luu tru trong database.

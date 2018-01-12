@@ -297,9 +297,7 @@ public class User {
             for(int i = 0; i < temp.size(); ++i)
                 if (temp.get(i) == true) numFinish = numFinish + 1;
 
-            if (numFinish == temp.size())
-                return true;
-            return false;
+            return numFinish == temp.size();
         }
         return m_checkList.get(category - 1).get(lesson - 1);
     }
