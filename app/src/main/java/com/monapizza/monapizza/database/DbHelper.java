@@ -32,7 +32,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private Context context;
     private String DB_PATH = "data/data/com.monapizza.monapizza/";
-    private static String DB_NAME = "databasev4_2.db";
+    private static String DB_NAME = "databasev4_4.db";
     private SQLiteDatabase myDatabase;
 
     public DbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -66,7 +66,7 @@ public class DbHelper extends SQLiteOpenHelper {
         AssetManager  dirPath = context.getAssets();
         InputStream myInput = context.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;
-        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/databasev4_2.db");
+        OutputStream myOutput = new FileOutputStream("data/data/com.monapizza.monapizza/databasev4_4.db");
         byte[] buffer = new byte[1024];
         int len;
         while ((len = myInput.read(buffer)) > 0) {
@@ -693,7 +693,24 @@ public class DbHelper extends SQLiteOpenHelper {
         return getFriend(username);
     }
 
-
+    private int getID(String username) {
+        SQLiteDatabase db = getDatabase();
+        String query = "select u.Username, u.UserID" +
+                " from UserAccount u";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        int id = -1;
+        while (!c.isAfterLast()) {
+            if (username.equals(c.getString(c.getColumnIndex("Username")))) {
+                id = c.getInt(c.getColumnIndex("UserID"));
+                break;
+            }
+            c.moveToNext();
+        }
+        c.close();
+        //db.close();
+        return id;
+    }
     // Cac ham moi them
 
 
@@ -706,12 +723,16 @@ public class DbHelper extends SQLiteOpenHelper {
     public ArrayList<Friend> getFriend(String username) {
         ArrayList<Friend> friends = new ArrayList<Friend>();
         SQLiteDatabase db = getDatabase();
-        String query = "select f.Friendname" +
-                " from Friend f where f.Username = '" + username + "'";
+        int id = getID(username);
+        String query = "select u.Username, u.Avatar" +
+                " from Friend f join UserAccount u on f.FriendID = u.UserID and f.UserID = " + id;
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            Friend friend = new Friend(c.getString(c.getColumnIndex("Friendname")), "default-avatar.png", 0);
+            String avatar = c.getString(c.getColumnIndex("Avatar"));
+            if (avatar == null)
+                avatar = "default-avatar.png";
+            Friend friend = new Friend(c.getString(c.getColumnIndex("Username")), avatar, 0);
             friends.add(friend);
             c.moveToNext();
         }
@@ -725,12 +746,14 @@ public class DbHelper extends SQLiteOpenHelper {
     // 2 username nay chac chan nam trong database nen chi can kiem tra xem co phai ban be hay khong
     public Boolean checkFriend(String username1, String username2) {
         SQLiteDatabase db = getDatabase();
-        String query = "select f.Friendname" +
-                " from Friend f where f.Username = '" + username1 + "'";
+        int id1 = getID(username1);
+        int id2 = getID(username2);
+        String query = "select f.FriendID" +
+                " from Friend f where f.UserID = '" + id1 + "'";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            if (username2.equals(c.getString(c.getColumnIndex("Friendname")))) {
+            if (c.getInt(c.getColumnIndex("FriendID")) == id2) {
                 c.close();
                 return true;
             }
@@ -738,12 +761,12 @@ public class DbHelper extends SQLiteOpenHelper {
         }
         c.close();
 
-        query = "select f.Friendname" +
-                " from Friend f where f.Username = '" + username2 + "'";
+        query = "select f.FriendID" +
+                " from Friend f where f.UserID = '" + id2 + "'";
         c = db.rawQuery(query, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            if (username1.equals(c.getString(c.getColumnIndex("Friendname")))) {
+            if (c.getInt(c.getColumnIndex("FriendID")) == id1) {
                 c.close();
                 return true;
             }
@@ -767,16 +790,17 @@ public class DbHelper extends SQLiteOpenHelper {
             ErrorList.setExitCode(ErrorList.ALREADY_FRIEND);
             return ErrorList.ALREADY_FRIEND;
         }
-
+        int id1 = getID(currentUserName);
+        int id2 = getID(friendUsername);
         // them ban be vao database
         SQLiteDatabase db = getDatabase();
         ContentValues values = new ContentValues();
-        values.put("Username", currentUserName);
-        values.put("Friendname", friendUsername);
+        values.put("UserID", id1);
+        values.put("FriendID", id2);
         db.insert("Friend", null, values);
         ContentValues values2 = new ContentValues();
-        values2.put("Username", friendUsername);
-        values2.put("Friendname",currentUserName);
+        values2.put("UserID", id2);
+        values2.put("FriendID",id1);
         db.insert("Friend", null,values2);
         return 1;
     }
